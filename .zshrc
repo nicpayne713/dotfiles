@@ -88,6 +88,7 @@ alias cyberpunk="alacritty-colorscheme -V apply $CYBERPUNK"
 alias nord="alacritty-colorscheme -V apply $NORD"
 alias tokyonight="alacritty-colorscheme -V apply $TOKYONIGHT"
 alias tokyonightstorm="alacritty-colorscheme -V apply $TOKYONIGHTSTORM"
+alias dbox="python3 /usr/local/bin/dropbox.py start"
 # starship
 eval "$(starship init zsh)"
 # direnv
