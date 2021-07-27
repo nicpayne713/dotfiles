@@ -87,12 +87,13 @@ create_detached_session() {
 if [ "$DIR" == "--start" ]; then
     (TMUX='' 
     tmux new-session -Ad -s "$session_name" -c $path_name
+    tmux send-keys -t "$session_name" "deac" Enter;
     )
 else
     (TMUX='' 
     tmux new-session -Ad -s "$session_name" -c $path_name;
-    tmux split-window -vb -t "$session_name" -c $path_name -p 70;
     tmux send-keys -t "$session_name" "deac" Enter;
+    tmux split-window -vb -t "$session_name" -c $path_name -p 70;
     tmux send-keys -t "$session_name" "vim" Enter;
     )
 fi
@@ -109,7 +110,7 @@ create_if_needed_and_attach() {
     fi
 }
 
-attatch_to_first_session() {
+attach_to_first_session() {
      tmux attach -t $(tmux list-sessions -F "${session_name}" | head -n 1)
      tmux choose-tree -Za
 }

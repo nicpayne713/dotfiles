@@ -74,7 +74,7 @@ a() {
 alias cdg="cd ~/git"
 alias new_window="alacritty &"
 alias deac="conda deactivate && conda deactivate"
-alias ts="cdg && /usr/local/bin/ta"
+alias ts="cdg && /usr/local/bin/ta ."
 # themes
 AFTERGLOW='afterglow.yaml'
 CYBERPUNK='cyber_punk_neon.yaml'
