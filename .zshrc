@@ -73,9 +73,8 @@ a() {
 # aliases
 alias cdg="cd ~/git"
 alias new_window="alacritty &"
-# alias fzo="vim $(fzf)"
 alias deac="conda deactivate && conda deactivate"
-
+alias ts="cdg && /usr/local/bin/ta"
 # themes
 AFTERGLOW='afterglow.yaml'
 CYBERPUNK='cyber_punk_neon.yaml'
@@ -89,6 +88,12 @@ alias nord="alacritty-colorscheme -V apply $NORD"
 alias tokyonight="alacritty-colorscheme -V apply $TOKYONIGHT"
 alias tokyonightstorm="alacritty-colorscheme -V apply $TOKYONIGHTSTORM"
 alias dbox="python3 /usr/local/bin/dropbox.py start"
+
+# work stuff
+alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
+alias sproxy=". ~/scripts/set_proxy.sh"
+alias uproxy=". ~/scripts/unset_proxy.sh"
+
 # starship
 eval "$(starship init zsh)"
 # direnv
