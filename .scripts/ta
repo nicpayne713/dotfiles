@@ -114,4 +114,4 @@ attatch_to_first_session() {
      tmux choose-tree -Za
 }
 
-crete_if_needed_and_attach || attach_to_first_session
+create_if_needed_and_attach || attach_to_first_session

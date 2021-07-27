@@ -67,7 +67,7 @@ unset __conda_setup
 
 # fuzzies
 a() {
-     source activate "$(conda info --envs | fzf | awk '{print $1}')"
+     conda activate "$(conda info --envs | fzf | awk '{print $1}')"
  }
 
 # aliases
