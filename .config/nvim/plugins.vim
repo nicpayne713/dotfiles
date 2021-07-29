@@ -9,13 +9,13 @@ Plug 'Pocco81/TrueZen.nvim'
 Plug 'windwp/nvim-spectre'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 " Git
-Plugin 'zivyangll/git-blame.vim'
+Plug 'zivyangll/git-blame.vim'
 
 " syntax checking
-"Plugin 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 
 " braces
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 
 " color

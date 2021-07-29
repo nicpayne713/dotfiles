@@ -47,6 +47,7 @@ nnoremap <C-v> :r !pbpaste<CR><CR>
 " source current file
 nnoremap <leader>so :source %<CR>
 nnoremap gso :source %<CR>
+nnoremap <leader>><CR> :source ~/.config/nvim/init.vim
 " edit nvim dotfiles
 nnoremap gen :Telescope find_files cwd=~/.config/nvim<CR>
 nnoremap <leader>en :Telescope find_files cwd=~/.config/nvim<CR>

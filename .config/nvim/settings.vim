@@ -1,7 +1,3 @@
-"             _   _   _                       _           
-"    ___  ___| |_| |_(_)_ __   __ _ _____   _(_)_ __ ___  
-"   / __|/ _ \ __| __| | '_ \ / _` / __\ \ / / | '_ ` _ \ 
-"   \__ \  __/ |_| |_| | | | | (_| \__ \\ V /| | | | | | |
 "   |___/\___|\__|\__|_|_| |_|\__, |___(_)_/ |_|_| |_| |_|
 "                             |___/                       
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
@@ -32,12 +28,10 @@ let g:ale_completion_enabled = 1
 :set backspace=indent,eol,start
 
 " Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-" Enable folding with the spacebar
 nnoremap <space> za
 
+set foldmethod=indent
+set foldlevel=99
 " enable syntax highlighting
 let g:python_syntax_highlighting = 0
 
@@ -79,8 +73,6 @@ let g:markdown_fenced_languaged = ['python', 'bash=sh']
 
 " show docstring for folded code
 let g:SimpylFold_docstring_preview=1
-
-call togglebg#map("<F5>")
 
 " indent guide
 let g:indent_guides_enable_on_vim_startup = 1
