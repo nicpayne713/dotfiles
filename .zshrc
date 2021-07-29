@@ -77,6 +77,7 @@ alias cdg="cd ~/git"
 alias new_window="alacritty &"
 alias deac="conda deactivate && conda deactivate"
 alias ts="cdg && /usr/local/bin/ta ."
+alias sourcez="source ~/.zshrc"
 # themes
 AFTERGLOW='afterglow.yaml'
 CYBERPUNK='cyber_punk_neon.yaml'
@@ -102,3 +103,5 @@ eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 # jump right into tmux
 #eval "$(tmux new -t base)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
