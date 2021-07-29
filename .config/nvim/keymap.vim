@@ -13,8 +13,8 @@ filetype plugin indent on    " required
 let g:flake8_cmd='/usr/local/bin/flake8'
 let g:flake8_quickfix_location="topleft"
 
-" Enable folding with the spacebar
-nnoremap <space> za
+" Enable folding with space f
+nnoremap <space> f
 " navigation
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 
@@ -29,9 +29,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-nnoremap <leader>g :GFiles<cr>
+nnoremap <leader>p :GFiles<cr>
 nnoremap <leader>r :Ag<cr>
-nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
+nnoremap <Leader>l :<C-u>call gitblame#echo()<CR>
 
 " remap visual block mode so ctrl v can be paste
 command! Vb normal! <C-v>
@@ -45,9 +45,8 @@ nnoremap <C-v> :r !pbpaste<CR><CR>
 " edit things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " source current file
-nnoremap <leader>so :source %<CR>
 nnoremap gso :source %<CR>
-nnoremap <leader>><CR> :source ~/.config/nvim/init.vim
+"nnoremap <leader>><CR> :source ~/.config/nvim/init.vim
 " edit nvim dotfiles
 nnoremap gen :Telescope find_files cwd=~/.config/nvim<CR>
 nnoremap <leader>en :Telescope find_files cwd=~/.config/nvim<CR>
@@ -56,7 +55,7 @@ nnoremap gel :e ~/.config/nvim/lsp-config.lua<CR>
 nnoremap gep :e ~/.config/nvim/plugins.vim<CR>
 nnoremap ges :e ~/.config/nvim/settings.vim<CR>
 " edit tmuux config
-nnoremap get :e ~/.tmux.conf<CR>
+nnoremap get :e ~/.tmux.conf.local<CR>
 " edit zshrc
 nnoremap gez :e ~/.zshrc<CR>
 " Plug

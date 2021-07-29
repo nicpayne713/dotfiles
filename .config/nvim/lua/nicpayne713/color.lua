@@ -15,5 +15,4 @@ vim.g.nb_style = 'midnight'
 
 require('nebulous').setup()
 
-api.nvim_set_keymap('n', '<leader><cr>', ":lua require'nicpayne713.color'.nobg()<cr>", { noremap = true, silent = true })
 

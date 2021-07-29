@@ -28,8 +28,6 @@ let g:ale_completion_enabled = 1
 :set backspace=indent,eol,start
 
 " Enable folding
-nnoremap <space> za
-
 set foldmethod=indent
 set foldlevel=99
 " enable syntax highlighting
