@@ -1,5 +1,5 @@
 export PATH="$HOME/.local/bin:$PATH"
-export EDITOR=vim
+export EDITOR=nvim
 export TERM=xterm-256color
 # Set up the prompt
 
@@ -71,6 +71,8 @@ a() {
  }
 
 # aliases
+alias vim="nvim"
+alias bim="nvim"
 alias cdg="cd ~/git"
 alias new_window="alacritty &"
 alias deac="conda deactivate && conda deactivate"
