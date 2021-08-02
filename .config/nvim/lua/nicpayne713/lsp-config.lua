@@ -1,4 +1,3 @@
--- require'lspconfig'.pyright.setup{}
 local function on_attach()
 end
 require'lspconfig'.pylsp.setup{
@@ -14,7 +13,6 @@ require'lspconfig'.pylsp.setup{
                         live_mode =true,
                         strict = true
                     },
-                    -- jedi_completion = {fuzzy = true},
                     jedi_completion = {fuzzy = true, enabled=true},
                     jedi_hover = {enabled = true},
                     jedi_references = {enabled = true},
@@ -36,17 +34,7 @@ configs.kedro = {
     };
 };
 require'lspconfig'.kedro.setup{on_attach=on_attach}
--- require'lspconfig'.pyright.setup{on_attach=on_attach}
--- require'lspconfig'.pyright.setup{on_attach=on_attach, settings = {python  =  {analysis = {useLibraryCodeForTypes = true}}}}
 require'lspconfig'.jedi_language_server.setup{on_attach=on_attach}
--- require'lspconfig'.pylsp.setup{on_attach=on_attach}
---require'lspconfig'.cssls.setup{on_attach=on_attach}
 require'lspconfig'.yamlls.setup{on_attach=on_attach}
 require'lspconfig'.bashls.setup{on_attach=on_attach}
---require('telescope').load_extension('dap')
---require('dap-python').setup('~/miniconda3/envs/markata/bin/python')
--- require('trouble').setup{}
--- require('navigator').setup({
---  pyls={filetype={}}
--- })
 

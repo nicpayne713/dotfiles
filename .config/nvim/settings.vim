@@ -17,22 +17,11 @@ let g:python3_host_prog = '~/miniconda3/envs/nvim3/bin/python'
 let g:flake8_cmd='/usr/local/bin/flake8'
 let g:flake8_quickfix_location="topleft"
 
-" linting with Ale
-let b:ale_linters = {'python': ['gitlint','flake8', 'mypy', 'autoflake', "pyright"]} "'vulture','pyright', 'pyls',
-let g:ale_python_mypy_options = '--show-error-codes'
-"let b:ale_fixers =  ['black', 'isort', 'remove_trailing_lines', 'reorder-python-imports', 'trim_whitespace']
-let b:ale_fixers = {'python': ['black', 'isort', 'remove_trailing_lines', 'reorder-python-imports', 'trim_whitespace']}
-let b:ale_fix_on_save = 0
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_set_baloons = 1
-let g:ale_completion_enabled = 1
+" black
+let g:black_virtualenv='~/.local/pipx/venvs/black'
+autocmd bufwritepre *.py execute 'Black'
 
-" Enable backspace
-":set backspace=indent,eol,start
-
-" Enable folding
+"" Enable folding
 set foldmethod=indent
 set foldlevel=99
 " enable syntax highlighting
