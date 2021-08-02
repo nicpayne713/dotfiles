@@ -1,6 +1,11 @@
 "   |___/\___|\__|\__|_|_| |_|\__, |___(_)_/ |_|_| |_| |_|
 "                             |___/                       
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+" Ignore files
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/.git/*
 
 set clipboard+=unnamedplus
 
@@ -25,7 +30,7 @@ let g:ale_set_baloons = 1
 let g:ale_completion_enabled = 1
 
 " Enable backspace
-:set backspace=indent,eol,start
+":set backspace=indent,eol,start
 
 " Enable folding
 set foldmethod=indent
@@ -35,9 +40,9 @@ let g:python_syntax_highlighting = 0
 
 syntax enable
 set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
+let g:lightline = {'colorscheme': "Tomorrow_Night_Blue"}
+set laststatus=2
 " doq for pydocstring
 let g:pydocstring_doq_path = '/usr/local/bin/doq'
 

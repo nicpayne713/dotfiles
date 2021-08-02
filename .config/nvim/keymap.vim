@@ -17,6 +17,32 @@ let g:flake8_quickfix_location="topleft"
 nnoremap <space> f
 " navigation
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+" Behave Vim
+nnoremap Y y$
+
+" Keep everything centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Undo Breakpoints
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+inoremap [ [<c-g>u
+
+" Jumplist
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k' 
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j' 
+
+" Moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
 
 " search
 let g:ackprg = 'ag --vimgrep'
@@ -65,7 +91,7 @@ nnoremap gpc :PlugClean<CR>
 
 " formatting
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
-" nnoremap <leader><leader>p :!prettier % --write l<cr>
+nnoremap <leader><leader>p :!prettier % --write l<cr>
 " nnoremap <leader>f :black<cr>
 " nnoremap <leader>c :Commentary<cr>
 " nnoremap <leader>u gu

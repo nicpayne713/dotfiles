@@ -8,6 +8,8 @@ Plug 'folke/which-key.nvim'
 Plug 'Pocco81/TrueZen.nvim'
 Plug 'windwp/nvim-spectre'
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
+Plug 'ThePrimeagen/vim-be-good'
+
 " Git
 Plug 'zivyangll/git-blame.vim'
 
@@ -17,6 +19,8 @@ Plug 'zivyangll/git-blame.vim'
 " braces
 Plug 'jiangmiao/auto-pairs'
 
+" Lightline
+Plug 'itchyny/lightline.vim'
 
 " color
 Plug 'Yagua/nebulous.nvim'
@@ -71,4 +75,6 @@ Plug 'mfussenegger/nvim-dap-python'
 Plug 'hrsh7th/vim-vsnip/'
 Plug 'L3MON4D3/LuaSnip'
 
+" prettier
+Plug 'sbdchd/neoformat'
 call plug#end()
