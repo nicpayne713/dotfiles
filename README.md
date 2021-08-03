@@ -4,7 +4,7 @@ Also for python lsp stuff need to use these 2 commands from Waylon's repo:
 
 ```
 pipx install 'python-lsp-server[all]'
-pipx inject python-lsp-server ##something
+pipx inject python-lsp-server pylsp-mypy
 ```
 
 ```
