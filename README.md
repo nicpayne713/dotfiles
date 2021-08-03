@@ -1,4 +1,11 @@
 ## Setup
+Need to create a python3 conda environment with 'conda create --name nvim3 python=3.9' for the python3 provider for neovim and install "pip install neovim"
+Also for python lsp stuff need to use these 2 commands from Waylon's repo:
+
+```
+pipx install 'python-lsp-server[all]'
+pipx inject python-lsp-server ##something
+```
 
 ```
 ln -s ~/git/dotfiles/.zshrc ~/.zshrc
