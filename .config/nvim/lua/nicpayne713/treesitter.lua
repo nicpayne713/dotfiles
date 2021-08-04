@@ -1,7 +1,7 @@
 
 require'nvim-treesitter.configs'.setup {
   highlight = {
-    enable = true
+    enable = false 
   },
   playground = {
     enable = true,

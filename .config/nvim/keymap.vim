@@ -44,6 +44,8 @@ inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
+" Python
+nnoremap <leader>ad :Pydocstring<CR>
 " search
 let g:ackprg = 'ag --vimgrep'
 
@@ -80,6 +82,8 @@ nnoremap gek :e ~/.config/nvim/keymap.vim<CR>
 nnoremap gel :e ~/.config/nvim/lsp-config.lua<CR>
 nnoremap gep :e ~/.config/nvim/plugins.vim<CR>
 nnoremap ges :e ~/.config/nvim/settings.vim<CR>
+" Telescopihng
+nnoremap geg :Telescope find_files cwd=~/git<CR>
 " edit tmuux config
 nnoremap get :e ~/.tmux.conf.local<CR>
 " edit zshrc

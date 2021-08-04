@@ -21,17 +21,17 @@ let g:flake8_quickfix_location="topleft"
 let g:black_virtualenv='~/.local/pipx/venvs/black'
 autocmd bufwritepre *.py execute 'Black'
 
-"" Enable folding
+" docstring
+let g:pydocstring_formatter='google'
+" Enable folding
 set foldmethod=indent
 set foldlevel=99
-" enable syntax highlighting
-let g:python_syntax_highlighting = 0
 
 syntax enable
 set statusline+=%#warningmsg#
 set statusline+=%*
 let g:lightline = {'colorscheme': "Tomorrow_Night_Blue"}
-set laststatus=2
+
 " doq for pydocstring
 let g:pydocstring_doq_path = '/usr/local/bin/doq'
 
