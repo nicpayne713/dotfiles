@@ -24,6 +24,7 @@ Plug 'itchyny/lightline.vim'
 
 " color
 Plug 'Yagua/nebulous.nvim'
+Plug 'folke/tokyonight.nvim'
 
 " formatter
 Plug 'ambv/black'

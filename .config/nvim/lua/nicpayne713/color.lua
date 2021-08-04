@@ -11,8 +11,9 @@ local api = vim.api
 
 vim.o.termguicolors = true
 vim.o.background = 'dark'
-vim.g.nb_style = 'midnight'
-vim.g.nb_disable_background = true
-require('nebulous').setup()
-
+--vim.g.nb_style = 'midnight'
+vim.cmd[[colorscheme tokyonight]]
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_italic_functions = true
+vim.g.tokyonight_sidebars = { "quickfix", "__vista__", "terminal" }
 
