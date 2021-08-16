@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'sheerun/vim-polyglot'
 Plug 'jbyuki/instant.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
@@ -28,6 +29,7 @@ Plug 'folke/tokyonight.nvim'
 
 " formatter
 Plug 'ambv/black'
+Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " navigation
 Plug 'ThePrimeagen/harpoon'
@@ -47,6 +49,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
+Plug 'preservim/nerdtree'
 
 " objects
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 

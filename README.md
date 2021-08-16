@@ -7,6 +7,8 @@ pipx install 'python-lsp-server[all]'
 pipx inject python-lsp-server pylsp-mypy
 ```
 
+Will need to make sure that `isort`, `black`, and `flake8` are installed globally
+
 ```
 ln -s ~/git/dotfiles/.zshrc ~/.zshrc
 ln -s ~/git/dotfiles/.vimrc ~/.vimrc

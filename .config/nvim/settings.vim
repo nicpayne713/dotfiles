@@ -6,7 +6,7 @@
 "                             |___/                       
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
  
-set scrolloff=8
+set scrolloff=30
 
 "" Ignore files
 set wildignore+=*.pyc
@@ -24,7 +24,10 @@ let g:python3_host_prog = '~/miniconda3/envs/nvim3/bin/python'
 let g:flake8_cmd='/usr/local/bin/flake8'
 let g:flake8_quickfix_location="topleft"
 
-" black
+" isort
+let g:isort_cmd='isort'
+
+"" black
 let g:black_virtualenv='~/.local/pipx/venvs/black'
 autocmd bufwritepre *.py execute 'Black'
 

@@ -71,6 +71,10 @@ a() {
      conda activate "$(conda info --envs | fzf | awk '{print $1}')"
  }
 
+c() {
+     cdg && cd "$(ls ~/git | fzf | awk '{print $1}')"
+ }
+
 # aliases
 alias vim="nvim"
 alias bim="nvim"

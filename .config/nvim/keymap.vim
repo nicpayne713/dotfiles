@@ -9,10 +9,6 @@
 let mapleader=" "
 filetype plugin indent on    " required
 
-" flake8
-let g:flake8_cmd='/usr/local/bin/flake8'
-let g:flake8_quickfix_location="topleft"
-
 " Enable folding with space f
 nnoremap <space> f
 " navigation
@@ -20,7 +16,10 @@ nnoremap <space> f
 " Behave Vim
 nnoremap Y y$
 
-" Keep everything centered
+" ESC
+inoremap jk <esc>
+
+"" Keep everything centered
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
@@ -46,6 +45,7 @@ nnoremap <leader>k :m .-2<CR>==
 
 " Python
 nnoremap <leader>ad :Pydocstring<CR>
+
 " search
 let g:ackprg = 'ag --vimgrep'
 
@@ -72,26 +72,28 @@ nnoremap <C-v> :r !pbpaste<CR><CR>
 
 " edit things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+" sourceconfig 
+nnoremap gsv <cmd>source ~/.config/nvim/init.vim<CR>
+
 " source current file
-nnoremap gso :source %<CR>
-"nnoremap <leader>><CR> :source ~/.config/nvim/init.vim
+nnoremap gso <cmd>source %<CR>
 " edit nvim dotfiles
-nnoremap gen :Telescope find_files cwd=~/.config/nvim<CR>
+nnoremap gen <cmd>Telescope find_files cwd=~/.config/nvim<CR>
 nnoremap <leader>en :Telescope find_files cwd=~/.config/nvim<CR>
-nnoremap gek :e ~/.config/nvim/keymap.vim<CR>
-nnoremap gel :e ~/.config/nvim/lsp-config.lua<CR>
-nnoremap gep :e ~/.config/nvim/plugins.vim<CR>
-nnoremap ges :e ~/.config/nvim/settings.vim<CR>
+nnoremap gek <cmd>e ~/.config/nvim/keymap.vim<CR>
+nnoremap gel <cmd>e ~/.config/nvim/lsp-config.lua<CR>
+nnoremap gep <cmd>e ~/.config/nvim/plugins.vim<CR>
+nnoremap ges <cmd>e ~/.config/nvim/settings.vim<CR>
 " Telescopihng
-nnoremap geg :Telescope find_files cwd=~/git<CR>
+nnoremap geg <cmd>Telescope find_files cwd=~/git<CR>
 " edit tmuux config
-nnoremap get :e ~/.tmux.conf.local<CR>
+nnoremap get <cmd>e ~/.tmux.conf.local<CR>
 " edit zshrc
-nnoremap gez :e ~/.zshrc<CR>
+nnoremap gez <cmd>e ~/.zshrc<CR>
 " Plug
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
-nnoremap gpi :PlugInstall<CR>
-nnoremap gpc :PlugClean<CR>
+nnoremap gpi <cmd>PlugInstall<CR>
+nnoremap gpc <cmd>PlugClean<CR>
 
 " formatting
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
@@ -101,9 +103,9 @@ nnoremap <leader><leader>p :!prettier % --write l<cr>
 " nnoremap <leader>u gu
 nnoremap <leader>f8 :call flake8#Flake8()<cr>
 
-nnoremap gR :Telescope lsp_references<cr>
-nnoremap gr :lua vim.lsp.buf.references()<cr>
-nnoremap gd :Telescope lsp_definitions<cr>
+nnoremap gR <cmd>Telescope lsp_references<cr>
+nnoremap gr <cmd>lua vim.lsp.buf.references()<cr>
+nnoremap gd <cmd>Telescope lsp_definitions<cr>
 
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
@@ -112,5 +114,5 @@ nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <silent> gh :Lspsaga lsp_finder<CR>
-nnoremap <silent>K :Lspsaga hover_doc<CR>
+nnoremap <silent> gh <cmd>Lspsaga lsp_finder<CR>
+nnoremap <silent>K <cmd>Lspsaga hover_doc<CR>
