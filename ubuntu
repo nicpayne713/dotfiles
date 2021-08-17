@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="nvim,tmux,starship,zsh"
+fi
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/dotfiles
+fi
+export STOW_FOLDERS=$STOW_FOLDERS
+export DOTFILES=$DOTFILES
+eval $DOTFILES/install
