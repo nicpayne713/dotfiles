@@ -131,7 +131,7 @@ alias vim="nvim"
 alias bim="nvim"
 alias cdg="cd ~/git"
 alias deac="conda deactivate && conda deactivate"
-alias ts="cdg && /usr/local/bin/ta ."
+alias ts="cdg && ta ."
 alias sourcez="source ~/.zshrc"
 # themes
 AFTERGLOW='afterglow.yaml'
