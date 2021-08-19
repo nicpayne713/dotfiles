@@ -8,13 +8,12 @@ pipx inject python-lsp-server pylsp-mypy
 ```
 
 Will need to make sure that `isort`, `black`, and `flake8` are installed globally
+ 
+## Stow
+Use `stow` since it's awesome!
 
-```
-ln -s ~/git/dotfiles/.zshrc ~/.zshrc
-ln -s ~/git/dotfiles/.vimrc ~/.vimrc
-ln -s ~/git/dotfiles/.tmux.conf.local ~/.tmux.conf.local
-ln -s ~/git/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-ln -s ~/git/dotfiles/.scripts/ta /usr/local/bin/ta 
-ln -s ~/git/dotfiles/.config/nvim ~/.config/nvim 
+Caveats: fresh machine will need https://github.com/gpakosz/.tmux and https://github.com/ohmyzsh/ohmyzsh setup first
+Then using the OS script (`darwin` or `ubuntu` set the variables and let `stow` do the rest!)
 
-```
+## Notes
+My tmux stuff jumps you right into `base` tmux session when you open a terminal that inits my `zshrc`
