@@ -1,9 +1,12 @@
 # If you come from bash you might have to change your $PATH.
+export ZSH=$HOME/.oh-my-zsh
+export DOTFILES=$HOME/dotfiles
+export STOW_FOLDERS="nvim,tmux,zsh,starship"
+export PATH="$HOME/.local/bin:$PATH"
+export EDITOR=nvim
+export TERM=xterm-256color
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -70,7 +73,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git dotenv ag colorize fzf git-auto-fetch)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,3 +123,40 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# fuzzies
+a() {
+     conda activate "$(conda info --envs | fzf | awk '{print $1}')"
+ }
+
+c() {
+     cdg && cd "$(ls ~/git | fzf | awk '{print $1}')"
+ }
+
+# aliases
+alias vim="nvim"
+alias bim="nvim"
+alias cdg="cd ~/git"
+alias deac="conda deactivate && conda deactivate"
+alias ts="cdg && ta ."
+alias src="source ~/.zshrc"
+
+## for starting dropbox at home
+alias dbox="python3 /usr/local/bin/dropbox.py start"
+
+# work stuff
+alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
+alias sproxy=". ~/scripts/set_proxy.sh"
+alias uproxy=". ~/scripts/unset_proxy.sh"
+
+# starship
+eval "$(starship init zsh)"
+# direnv
+eval "$(direnv hook zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Jump into a tmux session
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t base || tmux new -s base
+fi
