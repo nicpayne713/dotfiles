@@ -87,12 +87,16 @@ create_detached_session() {
 if [ "$DIR" == "--start" ]; then
     (TMUX='' 
     tmux new-session -Ad -s "$session_name" -c $path_name
+    tmux send-keys -t "$session_name" "source ~/.zshrc" Enter;
     tmux send-keys -t "$session_name" "deac" Enter;
+    tmux send-keys -t "$session_name" "cdg && cd $session_name" Enter;
     )
 else
     (TMUX='' 
     tmux new-session -Ad -s "$session_name" -c $path_name;
+    tmux send-keys -t "$session_name" "source ~/.zshrc" Enter;
     tmux send-keys -t "$session_name" "deac" Enter;
+    tmux send-keys -t "$session_name" "cdg && cd $session_name" Enter;
     tmux split-window -vb -t "$session_name" -c $path_name -p 70;
     tmux send-keys -t "$session_name" "vim" Enter;
     )
