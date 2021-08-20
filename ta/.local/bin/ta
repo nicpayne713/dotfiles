@@ -65,9 +65,9 @@ if [ "$DIR" == "--start" ]; then
     session_name=${path_name//./_}
 else
     # ask the user which directory to start in
-    _session_name=$(cd $DIR && ls -d */ | sed  "s|/||g" | fzf -p "$(basename $DIR) >" -l 40)
+    _session_name=$(cd $DIR && ls -d */ | sed  "s|/||g" | fzf --reverse --header="Select project from $(basename $DIR) >")
     session_name=${_session_name//./_}
-    path_name=$DIR/$session_name
+    path_name=$PWD/$session_name
 fi
 
 echo session name is \"$session_name\"
@@ -87,22 +87,16 @@ create_detached_session() {
 if [ "$DIR" == "--start" ]; then
     (TMUX='' 
     tmux new-session -Ad -s "$session_name" -c $path_name
-    tmux send-keys -t "$session_name" "source ~/.zshrc" Enter;
-    tmux send-keys -t "$session_name" "deac" Enter;
-    tmux send-keys -t "$session_name" "cdg && cd $session_name" Enter;
     )
 else
     (TMUX='' 
     tmux new-session -Ad -s "$session_name" -c $path_name;
-    tmux send-keys -t "$session_name" "source ~/.zshrc" Enter;
-    tmux send-keys -t "$session_name" "deac" Enter;
-    tmux send-keys -t "$session_name" "cdg && cd $session_name" Enter;
     tmux split-window -vb -t "$session_name" -c $path_name -p 70;
-    tmux send-keys -t "$session_name" "vim" Enter;
+    tmux send-keys -t "$session_name" "nvim '+Telescope find_files'" Enter;
     )
 fi
- }
- 
+ } 
+
 create_if_needed_and_attach() {
     if not_in_tmux; then
         tmux new-session -As "$session_name" -c $path_name
