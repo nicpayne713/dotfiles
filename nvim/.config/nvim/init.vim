@@ -13,3 +13,4 @@ source ~/.config/nvim/compe.vim
 lua require 'nicpayne713.color'
 lua require 'nicpayne713.lsp-config'
 lua require 'nicpayne713.treesitter'
+lua require 'nicpayne713.filesystem'
