@@ -12,6 +12,8 @@ Will need to make sure that `isort`, `black`, and `flake8` are installed globall
 ## Stow
 Use `stow` since it's awesome!
 
+For a quick intro check out [ThePrimeagen's YT video](https://www.youtube.com/watch?v=tkUllCAGs3c)
+
 Caveats: fresh machine will need https://github.com/gpakosz/.tmux and https://github.com/ohmyzsh/ohmyzsh setup first
 Then using the OS script (`darwin` or `ubuntu` set the variables and let `stow` do the rest!)
 
