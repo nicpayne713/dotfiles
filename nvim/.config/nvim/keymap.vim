@@ -79,7 +79,6 @@ nnoremap gsv <cmd>source ~/.config/nvim/init.vim<CR>
 nnoremap gso <cmd>source %<CR>
 " edit nvim dotfiles
 nnoremap gen <cmd>Telescope find_files cwd=~/.config/nvim<CR>
-nnoremap <leader>en :Telescope find_files cwd=~/.config/nvim<CR>
 nnoremap gek <cmd>e ~/.config/nvim/keymap.vim<CR>
 nnoremap gel <cmd>e ~/.config/nvim/lsp-config.lua<CR>
 nnoremap gep <cmd>e ~/.config/nvim/plugins.vim<CR>
