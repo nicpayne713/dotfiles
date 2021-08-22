@@ -9,4 +9,6 @@ set termguicolors
 
 set background=dark
 
-nnoremap <silent> <leader><cr> :NoBg<cr>:noh<cr>
+"nnoremap <silent> <leader><cr> :NoBg<cr>:noh<cr>
+hi Normal guibg=NONE ctermbg=NONE
+

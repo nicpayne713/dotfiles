@@ -43,6 +43,12 @@ inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Python
 nnoremap <leader>ad :Pydocstring<CR>
 
@@ -51,11 +57,6 @@ let g:ackprg = 'ag --vimgrep'
 
 " Add fzf to vim
 set rtp+=/usr/local/opt/fzf
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 nnoremap <leader>p :GFiles<cr>
 nnoremap <leader>r :Ag<cr>

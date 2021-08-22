@@ -7,10 +7,9 @@
                                  
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/settings.vim
-"source ~/.config/nvim/color.vim
 source ~/.config/nvim/keymap.vim
 source ~/.config/nvim/compe.vim
-lua require 'nicpayne713.color'
-lua require 'nicpayne713.lsp-config'
-lua require 'nicpayne713.treesitter'
-lua require 'nicpayne713.filesystem'
+lua require("nicpayne713")
+" Sets transparency
+source ~/.config/nvim/color.vim
+
