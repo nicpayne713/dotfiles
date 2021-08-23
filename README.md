@@ -1,14 +1,26 @@
 ## Setup
-Need to create a python3 conda environment with 'conda create --name nvim3 python=3.9' for the python3 provider for neovim and install "pip install neovim"
-Also for python lsp stuff need to use these 2 commands from Waylon's repo:
+- Need to create a python3 conda environment with 'conda create --name nvim3 python=3.9' for the python3 provider for neovim and install "pip install neovim"
+- Also for python lsp stuff need to use these 2 commands from Waylon's repo:
 
-```
-pipx install 'python-lsp-server[all]'
-pipx inject python-lsp-server pylsp-mypy
-```
-
-Will need to make sure that `isort`, `black`, and `flake8` are installed globally
- 
+    ```
+    pipx install 'python-lsp-server[all]'
+    pipx inject python-lsp-server pylsp-mypy
+    ```
+- If using `pyright`
+    - Will need `npm` for `nvim-lsp`
+        ```
+        sudo apt updatde
+        sudo apt install nodejs npm
+        ``` 
+    - Will then need `pyright`
+        ```
+        sudo npm i -g pyright
+    ```
+- Can use `jedi-language-server` and `pyls` instead
+    - Install them
+- Will need to make sure that `isort`, `black`, and `flake8` are installed globally
+- For autocompletion
+-
 ## Stow
 Use `stow` since it's awesome!
 
