@@ -39,7 +39,7 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'fabi1cazenave/termopen.vim'
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install'  }
 Plug 'junegunn/fzf.vim'
-
+Plug 'cloudhead/neovim-fuzzy'
 Plug 'justinmk/vim-sneak'
 Plug 'mbbill/undotree'
 Plug 'nvim-lua/popup.nvim'
