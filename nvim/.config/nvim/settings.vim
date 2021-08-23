@@ -20,7 +20,10 @@ let g:python_lint_config = '~/pylint.rc'
 let g:python3_host_prog = '~/miniconda3/bin/python'
 let g:python3_host_prog = '~/miniconda3/envs/nvim3/bin/python'
 
-" flake8
+" LSP
+
+
+"" flake8
 let g:flake8_cmd='/usr/local/bin/flake8'
 let g:flake8_quickfix_location="topleft"
 
