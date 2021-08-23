@@ -53,16 +53,27 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>ad :Pydocstring<CR>
 
 " search
-let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'ag --vimgrep --hidden'
 
 " Add fzf to vim
 set rtp+=/usr/local/opt/fzf
 
-nnoremap <leader>p :GFiles<cr>
-nnoremap <leader>r :Ag<cr>
-nnoremap <Leader>l :<C-u>call gitblame#echo()<CR>
+" fzf searching until Telescope has better grep
+function! s:ag_with_opts(arg, bang)
+      let tokens  = split(a:arg)
+        let ag_opts = join(filter(copy(tokens), 'v:val =~ "^-"'))
+          let query   = join(filter(copy(tokens), 'v:val !~ "^-"'))
+            call fzf#vim#ag(query, ag_opts, a:bang ? {} : {'down': '100%'})
+        endfunction
+
+        autocmd VimEnter * command! -nargs=* -bang Ag call s:ag_with_opts(<q-args>, <bang>0)
+
+nnoremap <Leader>r :Ag --hidden<CR>
+
+"nnoremap <Leader>l :<C-u>call gitblame#echo()<CR>
 
 " remap visual block mode so ctrl v can be paste
+" Note pbcopy/paste is only for MacOS
 command! Vb normal! <C-v>
 nnoremap <leader>b :Vb<CR>
 " copy to clipboard
@@ -98,10 +109,6 @@ nnoremap gpc <cmd>PlugClean<CR>
 " formatting
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 nnoremap <leader><leader>p :!prettier % --write l<cr>
-" nnoremap <leader>f :black<cr>
-" nnoremap <leader>c :Commentary<cr>
-" nnoremap <leader>u gu
-nnoremap <leader>f8 :call flake8#Flake8()<cr>
 
 nnoremap gR <cmd>Telescope lsp_references<cr>
 nnoremap gr <cmd>lua vim.lsp.buf.references()<cr>
