@@ -62,7 +62,7 @@ disabled = true
 [python]
 format = "[$symbol$version]($style) "
 style = "bold green"
-python_binary = "python"
+python_binary = "~/miniconda3/bin/python"
 
 [rust]
 format = "[$symbol$version]($style) "
