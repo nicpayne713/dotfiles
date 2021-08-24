@@ -77,6 +77,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git dotenv ag colorize fzf git-auto-fetch)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.zprofile
 
 # User configuration
 

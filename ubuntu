@@ -6,6 +6,8 @@ fi
 if [[ -z $DOTFILES ]]; then
     DOTFILES=$HOME/dotfiles
 fi
+# for brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export STOW_FOLDERS=$STOW_FOLDERS
 export DOTFILES=$DOTFILES
 eval $DOTFILES/install
