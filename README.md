@@ -18,6 +18,7 @@
     ```
 - Can use `jedi-language-server` and `pyls` instead
     - Install them
+    ```pipx install jedi-language-server```
 - Will need to make sure that `isort`, `black`, and `flake8` are installed globally
 - For autocompletion
 -
