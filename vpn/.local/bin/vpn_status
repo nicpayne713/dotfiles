@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ "$(/opt/cisco/anyconnect/bin/vpn status)" == *"state: Disconnected"* ]]; then
+    echo "Connected"
+else
+    echo "Disconnected"
+fi
