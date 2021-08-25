@@ -31,4 +31,6 @@ Caveats: fresh machine will need https://github.com/gpakosz/.tmux and https://gi
 Then using the OS script (`darwin` or `ubuntu` set the variables and let `stow` do the rest!)
 
 ## Notes
-My tmux stuff jumps you right into `base` tmux session when you open a terminal that inits my `zshrc`
+- My tmux stuff jumps you right into `base` tmux session when you open a terminal that inits my `zshrc`
+- If starship is showing your environment twice set the following:
+    `conda config --set changeps1 false` and then resource `zsh`
