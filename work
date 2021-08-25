@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+if [[ -z $STOW_FOLDERS ]]; then
+    STOW_FOLDERS="nvim,tmux,starship,zsh,ipython"
+fi
+
+if [[ -z $DOTFILES ]]; then
+    DOTFILES=$HOME/dotfiles
+fi
+# for brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export STOW_FOLDERS=$STOW_FOLDERS
+export DOTFILES=$DOTFILES
+export HOME="/home/paynen3"
+eval $DOTFILES/install
