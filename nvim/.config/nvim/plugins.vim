@@ -65,8 +65,8 @@ Plug 'tpope/vim-commentary'
 " lsp
 Plug 'folke/lsp-colors.nvim'
 "Plug 'glepnir/lspsaga.nvim'
-"Plug 'hrsh7th/nvim-compe'
-"Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+Plug 'hrsh7th/nvim-compe'
+Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'nvim-lua/completion-nvim'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'michaeljsmith/vim-indent-object'
@@ -86,4 +86,7 @@ Plug 'L3MON4D3/LuaSnip'
 
 " prettier
 Plug 'sbdchd/neoformat'
+
+" emoji
+Plug 'junegunn/vim-emoji'
 call plug#end()
