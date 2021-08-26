@@ -1,4 +1,5 @@
 require("nicpayne713.telescope")
+require("nicpayne713.treesitter")
 require("nicpayne713.filesystem")
 require("nicpayne713.lsp-config")
 require("nicpayne713.color")
