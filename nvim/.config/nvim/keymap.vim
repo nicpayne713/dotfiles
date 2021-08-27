@@ -35,6 +35,9 @@ inoremap [ [<c-g>u
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k' 
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j' 
 
+" Quikfix
+nnoremap <Leader>cf <cmd>cexpr []<CR>
+
 " Moving text
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -51,12 +54,6 @@ nnoremap <C-H> <C-W><C-H>
 
 " Python
 nnoremap <leader>ad :Pydocstring<CR>
-
-" search
-let g:ackprg = 'ag --vimgrep --hidden'
-
-" Add fzf to vim
-set rtp+=/usr/local/opt/fzf
 
 " fzf searching until Telescope has better grep
 function! s:ag_with_opts(arg, bang)
@@ -82,6 +79,11 @@ vnoremap <C-c> :w !pbcopy<CR><CR>
 " paste with ctrl v
 nnoremap <C-v> :r !pbpaste<CR><CR>
 
+" copy to clipbord
+vnoremap <Leader>y "+y
+" Copy whole file to system clipboard
+vnoremap <Leader>Y gg"+yG
+
 " edit things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " sourceconfig 
@@ -95,8 +97,7 @@ nnoremap gek <cmd>e ~/.config/nvim/keymap.vim<CR>
 nnoremap gel <cmd>e ~/.config/nvim/lsp-config.lua<CR>
 nnoremap gep <cmd>e ~/.config/nvim/plugins.vim<CR>
 nnoremap ges <cmd>e ~/.config/nvim/settings.vim<CR>
-" Telescopihng
-nnoremap geg <cmd>Telescope find_files cwd=~/git<CR>
+
 " edit tmuux config
 nnoremap get <cmd>e ~/.tmux.conf.local<CR>
 " edit zshrc
@@ -108,7 +109,6 @@ nnoremap gpc <cmd>PlugClean<CR>
 
 " formatting
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
-nnoremap <leader><leader>p :!prettier % --write l<cr>
 
 
 " LSP
@@ -118,8 +118,8 @@ nnoremap gr <cmd>lua vim.lsp.buf.references()<cr>
 nnoremap gd <cmd>Telescope lsp_definitions<cr>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+"nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+"nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
@@ -136,3 +136,9 @@ nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
 nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>vll :call LspLocationList()<CR>
+
+" Testing things
+"―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+nnoremap <C-n> <cmd>cnext<CR>
+" quickfix list navigation/jumping
+nnoremap <C-p> <cmd>cprev<CR>

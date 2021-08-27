@@ -1,7 +1,7 @@
 lua require("nicpayne713")
 
 nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-nnoremap <C-p> <cmd>lua require('telescope.builtin').git_files()<CR>
+"nnoremap <C-p> <cmd>lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>p <cmd>lua require('telescope.builtin').git_files()<CR>
 nnoremap <Leader>pf <cmd>lua require('telescope.builtin').find_files({hidden=true})<CR>
 nnoremap <Leader>pg <cmd>lua require('telescope.builtin').live_grep()<CR>

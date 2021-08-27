@@ -36,6 +36,13 @@ autocmd bufwritepre *.py execute 'Black'
 
 " docstring
 let g:pydocstring_formatter='google'
+
+" search
+let g:ackprg = 'ag --vimgrep --hidden'
+
+" Add fzf to vim
+set rtp+=/usr/local/opt/fzf
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
