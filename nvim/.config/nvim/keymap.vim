@@ -15,6 +15,8 @@ nnoremap <space> f
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Behave Vim
 nnoremap Y y$
+" yank text to first regiter then when you paste it the yanked text is still first in the register
+vnoremap <Leader>p "_P 
 
 " ESC
 inoremap jk <esc>
