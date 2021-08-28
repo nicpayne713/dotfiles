@@ -9,3 +9,4 @@ nnoremap <leader>pw <cmd>lua require('telescope.builtin').grep_string { search =
 nnoremap <leader>pb <cmd>lua require('telescope.builtin').buffers()<CR>
 nnoremap <leader>ch <cmd>lua require('telescope.builtin').help_tags()<CR>
 nnoremap <leader>vrc <cmd>lua require('nicpayne713.telescope').search_dotfiles()<CR>
+nnoremap <leader>a <cmd>lua require('nicpayne713.telescope').bg_selector()<CR>

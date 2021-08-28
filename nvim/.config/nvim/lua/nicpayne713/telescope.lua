@@ -37,7 +37,7 @@ end
 
 local function set_background(content)
     vim.fn.system(
-        "dconf write /org/mate/desktop/background/picture-filename \"'"
+        "feh --bg-fill ~/dotfile/backgrounds \"'"
             .. content
             .. "'\""
     )
@@ -80,7 +80,7 @@ local function image_selector(prompt, cwd)
     end
 end
 
---M.anime_selector = image_selector("< Anime Bobs > ", "~/dotfiles/backgrounds")
+M.bg_selector = image_selector("< wallpapers > ", "~/dotfiles/backgrounds")
 --M.chat_selector = image_selector("< Chat Sucks > ", "~/dotfiles/chat")
 
 local function refactor(prompt_bufnr)

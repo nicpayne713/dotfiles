@@ -22,6 +22,10 @@
 - Will need to make sure that `isort`, `black`, and `flake8` are installed globally
 - For autocompletion
 -
+- For transparency with default terminal in i3
+-   - Need to install picom (on older Ubuntu I had to build from source: https://github.com/jonaburg/picom)
+-   - https://www.linuxfordevices.com/tutorials/linux/picom
+
 ## Stow
 Use `stow` since it's awesome!
 
