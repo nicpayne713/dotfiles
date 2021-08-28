@@ -144,7 +144,7 @@ alias dbox="python3 /usr/local/bin/dropbox.py start"
 # work stuff
 alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
 alias sproxy="~/.local/bin/set_proxy"
-alias uproxy="~/.local/bin/unsauto_proxy"
+alias uproxy="~/.local/bin/unset_proxy"
 alias aproxy-"~/.local/bin/auto_proxy"
 
 # starship
