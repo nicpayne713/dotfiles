@@ -1,0 +1,2 @@
+xrandr --output HDMI-0 --auto --left-of DP-2 --output DP-2 --auto
+

@@ -25,7 +25,8 @@
 - For transparency with default terminal in i3
 -   - Need to install picom (on older Ubuntu I had to build from source: https://github.com/jonaburg/picom)
 -   - https://www.linuxfordevices.com/tutorials/linux/picom
-
+-polybar
+    - install fontawesome with `apt install fonts-font-awesome`
 ## Stow
 Use `stow` since it's awesome!
 
