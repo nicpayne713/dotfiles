@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# 101 Network is unreachable
+aws s3 ls &> /dev/null && echo "%{T4}%{F#00ff00}%{F-}%{T-}"  ||( echo "%{T4}%{F#ff0000}%{F-}%{T-}" && exit 101 )
