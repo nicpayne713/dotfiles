@@ -5,9 +5,9 @@
 "  \___\___/|_|\___/|_|(_) \_/ |_|_| |_| |_|
 
 "                                           
-set termguicolors
+"set termguicolors
 
-set background=dark
+"set background=dark
 
 "nnoremap <silent> <leader><cr> :NoBg<cr>:noh<cr>
 hi Normal guibg=NONE ctermbg=NONE

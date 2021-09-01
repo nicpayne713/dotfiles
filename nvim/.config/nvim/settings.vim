@@ -88,3 +88,9 @@ let g:SimpylFold_docstring_preview=1
 
 " indent guide
 let g:indent_guides_enable_on_vim_startup = 1
+
+" emoji
+"for e in emoji#list():
+"    call append(line('$'), printf('%s (%s)', emoji#for(e), e))
+"endfor
+set completefunc=emoji#complete
