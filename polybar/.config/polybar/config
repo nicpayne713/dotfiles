@@ -1,5 +1,5 @@
-;==========================================================
 ;
+;==========================================================
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
 ;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
@@ -33,8 +33,9 @@ width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
-fixed-center = false
+radius = 0.0
+fixed-center = true
+bottom = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -45,19 +46,22 @@ line-color = #f00
 border-size = 4
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = FontAwesome:style=Regular
+;font-0 = fixed:pixelsize=10;1
+font-0 = "JetBrainsMono Nerd Font:style=Regular:size=8;2"
+font-1 = "Noto Color Emoji:style=Regular:scale=10;2"
+font-2 = unifont:fontformat=truetype:size=8:antialias=false;
+font-3 = "JetBrainsMono Nerd Font:style=Regular:size=12;2"
+font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=20;2"
 
-modules-left = date
-modules-center = i3 vpn_status vpn
-modules-right = memory cpu wlan eth vpn battery temperature 
+modules-left = run date aws vpn
+modules-center = i3  
+modules-right = nm-editor  cpu wlan eth  vpn_addr battery temperature 
 
 tray-position = right
 tray-padding = 2
@@ -76,63 +80,6 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-[module/vpn_status]
-type = custom/script
-exec = vpn_statu-1
-interval = 3.0
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
 
 [module/i3]
 type = internal/i3
@@ -165,21 +112,11 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+
 
 ; Separator in between workspaces
 ; label-separator = |
 
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -206,7 +143,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -214,10 +151,16 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+;format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
+
+[module/nm-editor]
+content = "%{T4}%{F#5d3fd3}%{F-}%{T-}"
+type = custom/text
+click-left = "nm-connection-editor"
+
 
 [module/wlan]
 type = internal/network
@@ -234,35 +177,21 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+;ramp-signal-1 = 
+;ramp-signal-2 = 
+;ramp-signal-3 = 
+;ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/vpn]
-type = internal/network
-interface = cscotun0
-interval = 3.0
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = eno1
+interface = eth
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+;format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -271,18 +200,24 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+ramp-signal-0 = *
+ramp-signal-1 = *
+ramp-signal-2 = *
+ramp-signal-3 = *
+ramp-signal-4 = *  
+ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
 interval = 5
 
-date =
+date = %a, %b %d
 date-alt = " %Y-%m-%d"
 
-time = %H:%M
+time = %l:%M %p
 time-alt = %H:%M:%S
 
-format-prefix = 
+;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -295,7 +230,6 @@ format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -314,7 +248,8 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
-
+click-right = pavucontrol
+click-left = pavucontrol
 [module/alsa]
 type = internal/alsa
 
@@ -355,45 +290,27 @@ format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = "> "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = >
+ramp-capacity-1 = > 
+ramp-capacity-2 = >
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = >
+animation-charging-1 = >
+animation-charging-2 = >
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = >
+animation-discharging-1 = >
+animation-discharging-2 = >
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -404,7 +321,7 @@ format-spacing = 1
 
 label-open = 
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
@@ -434,6 +351,83 @@ screenchange-reload = true
 
 [global/wm]
 margin-top = 5
-margin-bottom = 5
+margin-bottom = 3
 
 ; vim:ft=dosini
+[module/aws]
+interval = 5.0
+type = custom/script
+exec = has_aws_token
+click-left = gnome-terminal  -e "bash -c ~/.local/bin/get_aws_token"
+click-right = rm -rf ~/.aws/credentials
+
+[module/vpn_addr]
+inherit = module/eth
+interface = cscotun0
+
+[module/vpn]
+interval = 5
+type = custom/script
+exec = /home/paynen3/.local/bin/vpn_status
+click-right = "vpn disconnect"
+click-left = gnome-terminal -e "bash -c vpn connect"
+
+
+[module/run]
+type = custom/text
+content = "%{T4}%{F#5d3fd3}省%{F-}%{T-}"
+click-left = rofi -show window -sorting-method fzf -sort -show-icon
+click-right = rofi -show run -modi run
+
+; For awesome wm
+[module/1]
+type = custom/script
+exec = is_active 1
+interval = .1
+click-left = "xdotool key --clearmodifiers Super_L+1"
+[module/2]
+type = custom/script
+exec = is_active 2
+interval = .1
+click-left = "xdotool key --clearmodifiers Super_L+2"
+[module/3]
+type = custom/script
+exec = is_active 3
+interval = .1
+click-left = "xdotool key --clearmodifiers Super_L+3"
+[module/4]
+type = custom/script
+exec = is_active 4
+interval = .1
+click-left = "xdotool key --clearmodifiers Super_L+4"
+[module/5]
+type = custom/script
+exec = is_active 5
+interval = .1
+click-left = "xdotool key --clearmodifiers Super_L+5"
+[module/6]
+type = custom/script
+exec = is_active 6
+interval = .1
+click-left = "xdotool key --clearmodifiers Super_L+6"
+[module/7]
+type = custom/script
+exec = is_active 7
+interval = .1
+click-left = "xdotool key --clearmodifiers Super_L+7"
+[module/8]
+type = custom/script
+exec = is_active 8
+interval = .1
+click-left = "xdotool key --clearmodifiers Super_L+8"
+[module/9]
+type = custom/script
+exec = is_active 9
+interval = .1
+click-left = "xdotool key --clearmodifiers Super_L+9"
+
+[module/layout]
+format-prefix = %{T5}%{F#FF10F0}
+type = custom/script
+exec = get_awm_layout
+interval = .1
