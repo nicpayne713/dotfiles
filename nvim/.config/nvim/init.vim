@@ -11,5 +11,5 @@ source ~/.config/nvim/keymap.vim
 source ~/.config/nvim/compe.vim
 lua require("nicpayne713")
 " Sets transparency
-"source ~/.config/nvim/color.vim
+source ~/.config/nvim/color.vim
 
