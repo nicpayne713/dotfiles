@@ -423,3 +423,4 @@ bind C-u popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s remananalytics_w
 bind C-i popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s dotfiles 'cd ~/dotfiles && nvim'"
 bind C-n display-popup -E "ta ~/git"
 bind C-g display-popup -d '#{pane_current_path}' -E 'gitui'
+bind C-p display-popup -d '#{pane_current_path}' -E "cd && zsh "
