@@ -172,7 +172,7 @@ bindsym $mod+p move workspace to output right
 #exec --no-startup-id nm-applet
 
 # status
-exec --no-startup-id sh ~/.config/polybar/polybar.sh
+exec --no-startup-id sh launch_polybar
 
 # gaps
 gaps inner 20
@@ -180,6 +180,7 @@ gaps outer 10
 for_window [class="^.*"] border pixel 2
 # transparency
 #exec compton --config ~/.config/compton.conf
-exec --no-startup-id bash ~/.config/picom/launch_picom
+exec --no-startup-id bash $HOME/.config/picom/launch_picom
 #exec --no-startup-id picom
 
+exec --no-startup-id bash flameshot gui
