@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 export ZSH=$HOME/.oh-my-zsh
 export DOTFILES=$HOME/dotfiles
-export STOW_FOLDERS="nvim,tmux,zsh,starship"
 export PATH="$HOME/.local/bin:$PATH"
+export PYTHONPATH="$HOME/miniconda3/bin/python3"
 export EDITOR=nvim
 export TERM=screen-256color-bce
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
@@ -12,13 +12,13 @@ export ZSH_DISABLE_COMPFIX="true"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
+#ZSH_THEME="robbyrussell"
+ZSH_THEME=random
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -74,7 +74,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dotenv ag colorize fzf git-auto-fetch)
+plugins=(git dotenv ag colorize fzf )
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zprofile
@@ -84,7 +84,7 @@ source ~/.zprofile
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -104,22 +104,26 @@ source ~/.zprofile
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/paynen3/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#
+# >>> my export init >>>
+export iam="$(whoami)"
+export CONDA_HOME="$HOME/miniconda3"
+[[ ":${PATH}:" != *":${CONDA_HOME}/bin:"* ]] && export PATH="${CONDA_HOME}/bin:${PATH}"
+# <<< my export init <<<
+# >>> conda init >>>
+# !! Contents within this block are managed by ‘conda init' !!
+__conda_setup="$('$HOME/miniconda3/bin/conda' shell.bash hook 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/paynen3/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/paynen3/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/paynen3/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
-
+# <<< conda init <<<
 
 # fuzzies
 a() {
@@ -127,7 +131,7 @@ a() {
  }
 
 c() {
-     cdg && cd "$(ls ~/git | fzf | awk '{print $1}')"
+     cd "$(ls ~/git | fzf | awk '{print $1}')"
  }
 
 # aliases
@@ -143,9 +147,7 @@ alias dbox="python3 /usr/local/bin/dropbox.py start"
 
 # work stuff
 alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
-alias sproxy="~/.local/bin/set_proxy"
-alias uproxy="~/.local/bin/unset_proxy"
-alias aproxy-"~/.local/bin/auto_proxy"
+alias aproxy="source ~/.local/bin/auto_proxy"
 
 # starship
 eval "$(starship init zsh)"
@@ -153,7 +155,8 @@ eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+# autoproxy for work
+eval source auto_proxy
 # Jump into a tmux session
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t base || tmux new -s base
