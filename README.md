@@ -6,14 +6,14 @@
 - - pip and pipx
 - - python3
 - - obs and v4l2loopback for virtual cam support
-- - autorandr
+- - autorandr https://github.com/phillipberndt/autorandr 
 - - i3 gaps
 - - rofi
 - - picom
 - - JetBrainsMono Nerd Font installed for polybar icons
 - - polybar
 - - starship prompt
-
+- - Need powerline fonts for oh-my-zsh
 ### Neovim
 - Need to create a python3 conda environment with 'conda create --name nvim3 python=3.9' for the python3 provider for neovim and install "pip install neovim"
 - Also for python lsp stuff need to use these 2 commands from Waylon's repo:
