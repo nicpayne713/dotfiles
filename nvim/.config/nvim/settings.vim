@@ -1,6 +1,6 @@
 "             _   _   _                       _           
-"    ___  ___| |_| |_(_)_ __   __ _ _____   _(_)_ __ ___  
 "   / __|/ _ \ __| __| | '_ \ / _` / __\ \ / / | '_ ` _ \ 
+"    ___  ___| |_| |_(_)_ __   __ _ _____   _(_)_ __ ___  
 "   \__ \  __/ |_| |_| | | | | (_| \__ \\ V /| | | | | | |
 "   |___/\___|\__|\__|_|_| |_|\__, |___(_)_/ |_|_| |_| |_|
 "                             |___/                       
@@ -17,21 +17,20 @@ set wildignore+=**/.git/*
 set clipboard+=unnamedplus
 
 let g:python_lint_config = '~/pylint.rc'
-let g:python3_host_prog = '~/miniconda3/bin/python'
 let g:python3_host_prog = '~/miniconda3/envs/nvim3/bin/python'
 
 " LSP
 
 
 "" flake8
-let g:flake8_cmd='/usr/local/bin/flake8'
-let g:flake8_quickfix_location="topleft"
+"let g:flake8_cmd='~/.local/bin/flake8'
+let g:flake8_quickfix_location="bottom"
+autocmd BufWritePost *.py call flake8#Flake8()
 
 " isort
 let g:isort_cmd='isort'
 
 "" black
-let g:black_virtualenv='~/.local/pipx/venvs/black'
 autocmd bufwritepre *.py execute 'Black'
 
 " docstring

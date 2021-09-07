@@ -15,6 +15,7 @@ Plug 'tpope/vim-fugitive'
 
 " syntax checking
 "Plug 'vim-syntastic/syntastic'
+Plug 'nvie/vim-flake8'
 
 " braces
 Plug 'jiangmiao/auto-pairs'
