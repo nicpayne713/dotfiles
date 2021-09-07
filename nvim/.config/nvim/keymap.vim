@@ -37,8 +37,10 @@ inoremap [ [<c-g>u
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k' 
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j' 
 
-" Quikfix
+" Quickfix
 nnoremap <Leader>cf <cmd>cexpr []<CR>
+nnoremap <C-n> <cmd>cnext<CR>
+nnoremap <C-p> <cmd>cprev<CR>
 
 " Moving text
 vnoremap J :m '>+1<CR>gv=gv
@@ -111,7 +113,8 @@ nnoremap gpc <cmd>PlugClean<CR>
 
 " formatting
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
-
+nnoremap <leader>f8 <cmd>call flake8#Flake8()<CR>
+nnoremap <leader>fb <cmd>Black<CR>
 
 " LSP
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
@@ -141,6 +144,3 @@ nnoremap <leader>vll :call LspLocationList()<CR>
 
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
-nnoremap <C-n> <cmd>cnext<CR>
-" quickfix list navigation/jumping
-nnoremap <C-p> <cmd>cprev<CR>
