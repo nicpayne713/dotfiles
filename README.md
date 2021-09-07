@@ -41,6 +41,9 @@
 ### polybar
     - install fontawesome with `apt install fonts-font-awesome`
     - build from source here: https://github.com/polybar/polybar 
+### OBS
+    - ❯ echo "options v4l2loopback devices=1 video_nr=13 card_label='OBS Virtual Camera'    exclusive_caps=1" | sudo tee /etc/modprobe.d/v4l2loopback.conf
+    - That command is needed if the virtual cam support isn't immediately availble with obs-studio. I need this for work since we're on older Ubuntu with a locked down set of repositories to go to
 ## Stow
 Use `stow` since it's awesome!
 
