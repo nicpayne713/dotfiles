@@ -37,8 +37,26 @@ inoremap [ [<c-g>u
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k' 
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j' 
 
-" Quickfix
-nnoremap <Leader>cf <cmd>cexpr []<CR>
+" quickfix
+let s:cisopen = 0
+
+function! s:ToggleQuickFix()
+
+    if s:cisopen  == 1
+        let s:cisopen = 0
+        :bel copen
+        :wincmd k
+
+    else
+        let s:cisopen = 1
+        :cclose
+    endif
+endfunction
+
+:command! ToggleQuickFix :call s:ToggleQuickFix()
+nnoremap <Leader>qft :ToggleQuickFix<CR>
+
+nnoremap <Leader>qfc <cmd>cexpr []<CR>
 nnoremap <C-n> <cmd>cnext<CR>
 nnoremap <C-p> <cmd>cprev<CR>
 
@@ -120,8 +138,9 @@ nnoremap <leader>fb <cmd>Black<CR>
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 nnoremap gR <cmd>Telescope lsp_references<cr>
 nnoremap gr <cmd>lua vim.lsp.buf.references()<cr>
-nnoremap gd <cmd>Telescope lsp_definitions<cr>
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+"nnoremap gd <cmd>Telescope lsp_definitions<cr>
+nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
+"nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 "nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 "nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
@@ -144,3 +163,5 @@ nnoremap <leader>vll :call LspLocationList()<CR>
 
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
+" Work
+nnoremap <leader>gec <cmd>e ~/.caterpillar/credentials.yml<CR>
