@@ -131,7 +131,7 @@ a() {
  }
 
 c() {
-     cd "$(ls ~/git | fzf | awk '{print $1}')"
+     cd && cd "$(find -maxdepth 2 -type d  -ls  | fzf | awk '{print $1}')"
  }
 
 # aliases
