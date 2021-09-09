@@ -131,7 +131,7 @@ a() {
  }
 
 c() {
-     cd && cd "$(find -maxdepth 2 -type d  -ls  | fzf | awk '{print $1}')"
+     cd && cd "$(find -maxdepth 2 -type d  | cut -c 3-  | fzf | awk '{print $1}')"
  }
 
 # aliases
