@@ -12,6 +12,7 @@ Plug 'ThePrimeagen/vim-be-good'
 " Git
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'itchyny/vim-gitbranch'
 
 " syntax checking
 "Plug 'vim-syntastic/syntastic'

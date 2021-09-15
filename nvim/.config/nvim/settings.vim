@@ -49,10 +49,20 @@ set foldlevel=99
 syntax enable
 set statusline+=%#warningmsg#
 set statusline+=%*
-let g:lightline = {'colorscheme': "Tomorrow_Night_Blue"}
+set laststatus=2
+let g:lightline = {
+            \'colorscheme': "Tomorrow_Night_Blue",
+            \ 'active': {
+            \ 'left': [ [ 'mode', 'paste' ],
+            \          [ 'gitbranch', 'readonly', 'filename', 'modified' ]]
+            \ },
+            \ 'component_function': {
+            \ 'gitbranch': 'gitbranch#name'
+            \ }
+            \ }
 
 " doq for pydocstring
-let g:pydocstring_doq_path = '/usr/local/bin/doq'
+let g:pydocstring_doq_path = '$HOME/.local/bin/doq'
 
 " General VIM
 " show line numbers
