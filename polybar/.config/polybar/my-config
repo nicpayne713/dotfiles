@@ -62,7 +62,7 @@ font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=20;2"
 
 modules-left = run date aws vpn
 modules-center = i3  
-modules-right = pulseaudio-control cpu wlan eth  vpn_addr battery 
+modules-right = pulseaudio-control cpu memory ywlan eth  vpn_addr battery 
 
 tray-position = right
 tray-padding = 2
@@ -118,7 +118,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = ""
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
