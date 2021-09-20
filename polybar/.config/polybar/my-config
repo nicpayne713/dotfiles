@@ -62,7 +62,7 @@ font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=20;2"
 
 modules-left = run date aws vpn
 modules-center = i3  
-modules-right = bluetooth nm-editor cpu wlan eth  vpn_addr battery 
+modules-right = pulseaudio-control cpu wlan eth  vpn_addr battery 
 
 tray-position = right
 tray-padding = 2
@@ -182,6 +182,24 @@ format-underline = #0a6cf5
 
 label = %date% %time%
 
+[module/pulseaudio-control]
+type = custom/script
+tail = true
+format-underline = ${colors.foreground-alt}
+label-padding = 2
+label-foreground = ${colors.foreground}
+
+# Icons mixed from Font Awesome 5 and Material Icons
+# You can copy-paste your options for each possible action, which is more
+# trouble-free but repetitive, or apply only the relevant ones (for example
+# --sink-blacklist is only needed for next-sink).
+exec = pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_00_1b.0.analog-stereo:  Speakers" --sink-nickname "alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo:  Headphones" listen
+click-right = exec pavucontrol &
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
+scroll-up = pulseaudio-control --volume-max 130 up
+scroll-down = pulseaudio-control --volume-max 130 down
+
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -189,7 +207,7 @@ format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted-foreground = #666
+label-mutusr/bin/env bashed-foreground = #666
 
 format-prefix = "蓼"
 format-prefix-foreground = ${colors.foreground-alt}
