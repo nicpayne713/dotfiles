@@ -134,6 +134,10 @@ c() {
      cd && cd "$(find -maxdepth 2 -type d  | cut -c 3-  | fzf | awk '{print $1}')"
  }
 
+# Change backgrounds
+background() {
+    feh --bg-scale ~/dotfiles/backgrounds/"$(ls ~/dotfiles/backgrounds | fzf)"
+}
 # aliases
 alias vim="nvim"
 alias bim="nvim"
