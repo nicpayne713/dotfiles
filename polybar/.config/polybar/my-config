@@ -61,7 +61,7 @@ font-3 = "JetBrainsMono Nerd Font:style=Regular:size=12;2"
 font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=20;2"
 
 modules-left = run date aws vpn
-modules-center = i3  
+modules-center = i3 
 modules-right = pulseaudio-control cpu memory ywlan eth  vpn_addr battery 
 
 tray-position = right
