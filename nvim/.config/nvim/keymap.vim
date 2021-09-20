@@ -164,4 +164,4 @@ nnoremap <leader>vll :call LspLocationList()<CR>
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Work
-nnoremap <leader>gec <cmd>e ~/.caterpillar/credentials.yml<CR>
+nnoremap gec <cmd>e ~/.caterpillar/credentials.yml<CR>
