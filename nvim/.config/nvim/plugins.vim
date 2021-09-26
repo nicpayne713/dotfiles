@@ -54,7 +54,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
 "Plug 'preservim/nerdtree'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
-"Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 " objects
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
