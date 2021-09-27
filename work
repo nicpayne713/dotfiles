@@ -6,4 +6,5 @@ fi
 # for brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export STOW_FOLDERS=$STOW_FOLDERS
+export POLYBAR_BAR=work
 eval $DOTFILES/install
