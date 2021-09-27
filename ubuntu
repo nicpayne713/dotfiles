@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="nvim,tmux,starship,zsh,ipython,i3,shortcuts,picom,ta"
+    STOW_FOLDERS="nvim,tmux,starship,zsh,ipython,i3,polybar,shortcuts,picom,ta"
 fi
 
 if [[ -z $DOTFILES ]]; then
@@ -10,4 +10,5 @@ fi
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export STOW_FOLDERS=$STOW_FOLDERS
 export DOTFILES=$DOTFILES
+export POLYBAR_BAR=home
 eval $DOTFILES/install
