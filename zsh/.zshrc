@@ -143,7 +143,7 @@ alias ts="cdg && ta ."
 alias src="source ~/.zshrc"
 
 ## for starting dropbox at home
-alias dbox="python3 /usr/local/bin/dropbox.py start"
+alias dbox="python3 $HOME/dotfiles/dropbox/dropbox.py start"
 
 # work stuff
 alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
