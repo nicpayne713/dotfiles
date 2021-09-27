@@ -37,7 +37,7 @@ end
 
 local function set_background(content)
     vim.fn.system(
-        "feh --bg-fill ~/dotfile/backgrounds \"'"
+        "feh --bg-scale"
             .. content
             .. "'\""
     )
@@ -68,7 +68,7 @@ local function image_selector(prompt, cwd)
         require("telescope.builtin").find_files({
             prompt_title = prompt,
             cwd = cwd,
-
+            preview=false,
             attach_mappings = function(prompt_bufnr, map)
                 select_background(prompt_bufnr, map)
 
