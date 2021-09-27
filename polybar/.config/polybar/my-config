@@ -363,7 +363,7 @@ interval = 5
 type = custom/script
 exec = vpn_status
 click-right = "vpn disconnect"
-click-left = gnome-terminal -e "bash -c vpn connect"
+click-left = vpn
 
 
 [module/run]
