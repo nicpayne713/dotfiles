@@ -13,7 +13,9 @@ if type "xrandr"; then
     if [[ $m == *"eDP"* ]]; then
       echo "skipping laptop monitor"
     else
-      MONITOR=$m polybar --reload $POLYBAR_BAR  --config=$HOME/.config/polybar/my-config &
+      MONITOR=$m 
+      export MONITOR=$m
+      polybar --reload $POLYBAR_BAR  --config=$HOME/.config/polybar/my-config &
     fi
   done
 else

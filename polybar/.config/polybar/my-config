@@ -18,8 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #ff149l
-background-alt = #ff1493
+background = #58427c 
+background-alt = #483d8b
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
@@ -29,8 +29,8 @@ alert = #bd2c40
 
 [bar/home]
 monitor = ${env:MONITOR:}
-width = 100%
-height = 27
+width = 95%
+height = 3
 radius = 0.0
 fixed-center = true
 bottom = false
@@ -101,7 +101,7 @@ font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=20;2"
 
 modules-left = run date aws vpn
 modules-center = i3  
-modules-right = pulseaudio-control cpu memory wlan eth  vpn_addr battery 
+modules-right = pulseaudio-control cpu memory eth_work wlan battery 
 
 tray-position = right
 tray-padding = 2
@@ -186,9 +186,9 @@ format-disconnected =
 ramp-signal-0 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/eth]
+[module/eth_work]
 type = internal/network
-interface = eth
+interface = eno1
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -355,7 +355,7 @@ click-left = gnome-terminal  -e "bash -c get_aws_token"
 click-right = rm -rf ~/.aws/credentials
 
 [module/vpn_addr]
-inherit = module/eth
+inherit = module/eth_work
 interface = cscotun0
 
 [module/vpn]
