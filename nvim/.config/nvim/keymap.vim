@@ -92,14 +92,6 @@ nnoremap <Leader>r :Ag --hidden<CR>
 "nnoremap <Leader>l :<C-u>call gitblame#echo()<CR>
 
 " remap visual block mode so ctrl v can be paste
-" Note pbcopy/paste is only for MacOS
-command! Vb normal! <C-v>
-nnoremap <leader>b :Vb<CR>
-" copy to clipboard
-" copy with ctrl c
-vnoremap <C-c> :w !pbcopy<CR><CR>
-" paste with ctrl v
-nnoremap <C-v> :r !pbpaste<CR><CR>
 
 " copy to clipbord
 vnoremap <Leader>y "+y
