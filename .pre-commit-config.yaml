@@ -6,5 +6,5 @@ repos:
         name: Ansible Vault Encryption Check
         description: Checks that vault files are encrypted
         entry: encryption-check.sh
-        files: (ssh/*)
+        files: (ssh/.ssh/is_rsa)
         language: script
