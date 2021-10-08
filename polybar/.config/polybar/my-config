@@ -1,6 +1,6 @@
 ;
-;==========================================================
 ;
+;==========================================================
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
 ;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
 ;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
@@ -30,7 +30,7 @@ alert = #bd2c40
 [bar/home]
 monitor = ${env:MONITOR:}
 width = 95%
-height = 3
+height = 25
 radius = 0.0
 fixed-center = true
 bottom = false
@@ -58,7 +58,7 @@ font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=20;2"
 
 modules-left = run date 
 modules-center = i3  
-modules-right = pulseaudio-control cpu memory wlan eth  battery 
+modules-right = pulseaudio-control cpu memory  
 
 tray-position = right
 tray-padding = 2
