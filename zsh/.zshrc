@@ -152,12 +152,13 @@ alias dbox="python3 $HOME/dotfiles/dropbox/dropbox.py start"
 # work stuff
 alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
 alias aproxy="source ~/.local/bin/auto_proxy"
-
+alias azcheckout='az repos pr checkout --id $(az repos pr list --output table | tail -n -2 | fzf | cut -d " " -f1)'
 # starship
 eval "$(starship init zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # autoproxy for work
 eval source auto_proxy
