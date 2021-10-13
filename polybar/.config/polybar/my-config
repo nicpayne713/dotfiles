@@ -58,7 +58,7 @@ font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=20;2"
 
 modules-left = run date 
 modules-center = i3  
-modules-right = pulseaudio-control cpu memory  
+modules-right = pulseaudio-control cpu memory eth
 
 tray-position = right
 tray-padding = 2
@@ -184,6 +184,25 @@ format-disconnected =
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/eth]
+type = internal/network
+interface = enp5s0
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix = ""
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = *
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth_work]
