@@ -136,11 +136,9 @@ c() {
 
 # Change backgrounds
 background() {
-    feh --bg-scale ~/dotfiles/backgrounds/"$(ls ~/dotfiles/backgrounds | fzf)"
+    feh --bg-scale "$(find ~/dotfiles/backgrounds ~/git/anime -mindepth 1 -maxdepth 1 -type f | fzf)"
 }
-backgrounda() {
-    feh --bg-scale ~/git/anime/"$(ls ~/git/anime | fzf)"
-}
+
 # aliases
 alias vim="nvim"
 alias bim="nvim"
