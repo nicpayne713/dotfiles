@@ -424,3 +424,12 @@ bind C-i popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s dotfiles -d '~/d
 bind C-n display-popup -E "ta ~/git"
 bind C-k display-popup -h 95% -w 95% -d '#{pane_current_path}' -E 'gitui'
 bind C-p display-popup -d '#{pane_current_path}' -E "cd && zsh "
+
+# shortcut for cloning a new repo
+# This might need to get changed if I switch from just a "git" folder to a "personal" and "word" one...
+# This is also broken...
+#bind C-c display-popup -h 95% -w 95% -d '~/git'
+
+# overwrite .tmux.conf binding
+# This is somewhat unnecessary since ta will just switch to the session I want if it's open already
+bind C-f display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t" 

@@ -17,6 +17,9 @@ vim.g.tokyonight_italic_functions = true
 vim.g.tokyonight_sidebars = { "quickfix", "__vista__", "terminal" }
 vim.g.tokyonight_transparent_background=1
 vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
+vim.g.tokyonight_transparent_sidebar=1
+vim.g.tokyonight_dark_sidebar=0
+vim.g.tokyonight_dark_float=0
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)
