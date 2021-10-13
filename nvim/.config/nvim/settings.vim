@@ -7,6 +7,7 @@
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
  
 set scrolloff=30
+set nowrap
 
 "" Ignore files
 set wildignore+=*.pyc
