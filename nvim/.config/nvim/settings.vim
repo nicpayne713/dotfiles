@@ -104,3 +104,8 @@ let g:indent_guides_enable_on_vim_startup = 1
 "    call append(line('$'), printf('%s (%s)', emoji#for(e), e))
 "endfor
 set completefunc=emoji#complete
+
+" nvimtree
+" quit tree when file is opened
+let g:nvim_tree_quit_on_open=1
+
