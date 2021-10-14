@@ -176,9 +176,7 @@ bindsym $mod+p move workspace to output right
 exec --no-startup-id bash $HOME/.config/picom/launch_picom
 #exec --no-startup-id picom
 
-# status
-# Because I use this across work and home computer I'm not sure how to pick which polybar to use on startup...
-# exec --no-startup-id sh launch_polybar
+exec --no-startup-id bash $HOME/dotfiles/install
 
 # gaps
 gaps inner 20
