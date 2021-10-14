@@ -2,9 +2,23 @@
 # I am using zsh instead of bash.  I was having some troubles using bash with
 # arrays.  Didn't want to investigate, so I just did zsh
 pushd $DOTFILES
+echo "Checking location"
+if [ "$USER" = "paynen3" ]
+then
+    echo "At work"
+    export POLYBAR_BAR=work
+    eval ./work
+else
+    echo "At home"
+    export POLYBAR_BAR=home
+    eval ./ubuntu 
+fi
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
     stow -D $folder
     stow $folder
 done
+eval ./shortcuts/.local/bin/multimonitor
+eval ./shortcuts/.local/bin/launch_polybar 
+
 popd

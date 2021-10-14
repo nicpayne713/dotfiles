@@ -8,5 +8,3 @@ fi
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export STOW_FOLDERS=$STOW_FOLDERS
 export DOTFILES=$DOTFILES
-export POLYBAR_BAR=home
-eval $DOTFILES/install
