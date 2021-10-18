@@ -79,7 +79,7 @@ ZSH_THEME=random
 plugins=(git dotenv ag colorize fzf zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zprofile
+# source ~/.zprofile
 
 # User configuration
 
