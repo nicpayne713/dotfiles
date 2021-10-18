@@ -1,8 +1,0 @@
-#!/usr/bin/env zsh
-if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="nvim,tmux,starship,zsh,ipython,pip,vpn,proxy,i3,shortcuts,polybar,picom,gitui,visidata"
-fi
-
-# for brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-export STOW_FOLDERS=$STOW_FOLDERS
