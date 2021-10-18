@@ -1,6 +1,11 @@
-if [ $POLYBAR_BAR == "work" ] 
+if [[ $POLYBAR_BAR == "work" ]]
   then 
+    turn_off_laptop_screen
+    # start picom
+#    bash $HOME/.config/picom/launch_picom
+    bash $HOME/.fehbg
     xrandr --output HDMI-0 --auto --left-of DP-2 --output DP-2 --auto
+
 else
   xrandr --output HDMI-0 --auto --left-of DP-0 --output DP-0 --auto
 fi
