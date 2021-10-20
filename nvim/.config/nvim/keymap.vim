@@ -9,6 +9,8 @@
 let mapleader=" "
 filetype plugin indent on    " required
 
+" Be faster
+:command W w
 " Enable folding with space f
 nnoremap <space> f
 " navigation
