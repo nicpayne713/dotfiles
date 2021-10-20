@@ -13,7 +13,7 @@ export ZSH_DISABLE_COMPFIX="true"
 ZSH_THEME=random
 ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-plugins=(git dotenv ag colorize fzf zsh-autosuggestions)
+plugins=(git dotenv ag colorize zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.zprofile
