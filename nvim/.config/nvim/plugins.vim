@@ -23,6 +23,7 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/vim-gitbranch'
 Plug 'mhinz/vim-signify'
+Plug 'AndrewRadev/diffurcate.vim'
 
 " syntax checking
 "Plug 'vim-syntastic/syntastic'
