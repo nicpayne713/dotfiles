@@ -423,7 +423,8 @@ bind C-u popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s remananalytics_w
 bind C-i popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s dotfiles -d '~/dotfiles' 'nvim'"
 bind C-n display-popup -E "ta ~/git"
 bind C-k display-popup -h 95% -w 95% -d '#{pane_current_path}' -E 'gitui'
-bind C-p display-popup -d '#{pane_current_path}' -E "cd && zsh "
+# todo: figure out how to close this better
+bind C-p display-popup -h 60% -w 60% -d '#{pane_current_path}' -E "cd && zsh "
 
 # shortcut for cloning a new repo
 # This might need to get changed if I switch from just a "git" folder to a "personal" and "word" one...
