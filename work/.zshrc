@@ -50,6 +50,9 @@ alias src="source ~/.zshrc"
 alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
 alias aproxy="source ~/.local/bin/auto_proxy"
 alias azcheckout='az repos pr checkout --id $(az repos pr list --output table | tail -n -2 | fzf | cut -d " " -f1)'
+
+# temp git diff shortcuts
+alias gdiff="git diff ..main | nvim - -R +Diffurcate"
 # starship
 eval "$(starship init zsh)"
 # direnv
