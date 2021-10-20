@@ -9,17 +9,6 @@
 local M = {}
 local api = vim.api
 
---vim.o.termguicolors = true
---vim.o.background = 'dark'
-vim.cmd[[colorscheme tokyonight]]
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_sidebars = { "quickfix", "__vista__", "terminal" }
-vim.g.tokyonight_transparent_background=1
-vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
-vim.g.tokyonight_transparent_sidebar=1
-vim.g.tokyonight_dark_sidebar=0
-vim.g.tokyonight_dark_float=0
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)
@@ -35,3 +24,12 @@ require'nvim-web-devicons'.setup {
  -- will get overriden by `get_icons` option
  default = true;
 }
+
+vim.g.tokyonight_style = "storm"
+vim.g.tokyonight_italic_functions = true
+vim.g.tokyonight_sidebars = { "quickfix", "__vista__", "terminal" }
+vim.g.tokyonight_transparent=1
+vim.g.tokyonight_dark_sidebar=0
+vim.g.tokyonight_dark_float=1
+
+vim.cmd[[colorscheme tokyonight]]
