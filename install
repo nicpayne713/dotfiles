@@ -1,12 +1,9 @@
-#!/usr/bin/env zsh
-# I am using zsh instead of bash.  I was having some troubles using bash with
-# arrays.  Didn't want to investigate, so I just did zsh
+#!/usr/bin/env bash
 #
-if [ $USER == "paynen3" ];
-then
+if [ $USER="paynen3" ]; then
     stow -D work
     stow work
-else;
+else
     stow -D personal
     stow personal
 fi
