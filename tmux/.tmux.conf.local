@@ -433,3 +433,4 @@ bind C-p display-popup -E -h 60% -w 60% -x 60%  "tmux new-session -A -s prompt '
 # overwrite .tmux.conf binding
 # This is somewhat unnecessary since ta will just switch to the session I want if it's open already
 bind C-f display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t" 
+bind s display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t" 
