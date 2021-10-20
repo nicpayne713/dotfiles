@@ -1,5 +1,5 @@
-if [[ $POLYBAR_BAR == "work" ]]
-  then 
+#!/bin/bash
+if [ $POLYBAR_BAR == "work" ]; then 
     turn_off_laptop_screen
     # start picom
 #    bash $HOME/.config/picom/launch_picom
