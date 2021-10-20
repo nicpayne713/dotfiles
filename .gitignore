@@ -1,3 +1,5 @@
 key
 
 ipython/.ipython/profile_default/history.sqlite
+
+*.sqlite
