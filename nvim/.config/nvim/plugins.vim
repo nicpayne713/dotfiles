@@ -1,5 +1,14 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+
+" For vsnip user.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
+
 Plug 'sheerun/vim-polyglot'
 Plug 'jbyuki/instant.nvim'
 Plug 'folke/trouble.nvim'
@@ -26,7 +35,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 
 " color
-Plug 'Yagua/nebulous.nvim'
 Plug 'folke/tokyonight.nvim'
 
 " formatter
@@ -43,7 +51,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'cloudhead/neovim-fuzzy'
 Plug 'justinmk/vim-sneak'
 Plug 'mbbill/undotree'
-Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-lua/popup.nvim'
