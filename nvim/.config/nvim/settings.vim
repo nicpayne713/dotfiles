@@ -8,6 +8,11 @@
  
 set scrolloff=30
 set nowrap
+set colorcolumn=88
+hi ColorColumn ctermbg=darkgrey guibg=darkgrey
+
+" Transparency
+hi Normal guibg=NONE ctermbg=NONE
 
 "" Ignore files
 set wildignore+=*.pyc
