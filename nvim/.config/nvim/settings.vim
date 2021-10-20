@@ -57,7 +57,7 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 set laststatus=2
 let g:lightline = {
-            \'colorscheme': "Tomorrow_Night_Blue",
+            \'colorscheme': "tokyonight",
             \ 'active': {
             \ 'left': [ [ 'mode', 'paste' ],
             \          [ 'gitbranch', 'readonly', 'filename', 'modified' ]]
