@@ -10,8 +10,6 @@ export TERM=screen-256color-bce
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export ZSH_DISABLE_COMPFIX="true"
 export XDG_CURRENT_DESKTOP=KDE
-# To get icons to work in dolphin in i3
-export QT_QPA_PLATFORMTHEME="kde" dolphin                                            
 #ZSH_THEME="robbyrussell"
 ZSH_THEME=random
 ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
