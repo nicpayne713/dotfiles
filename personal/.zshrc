@@ -9,6 +9,7 @@ export EDITOR=nvim
 export TERM=screen-256color-bce
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export ZSH_DISABLE_COMPFIX="true"
+export XDG_CURRENT_DESKTOP=KDE
 #ZSH_THEME="robbyrussell"
 ZSH_THEME=random
 ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
