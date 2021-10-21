@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 #
-if [ $USER="paynen3" ]; then
+if [[ $USER == "paynen3" ]]
+then
+    echo "Stowing stuff for work"
     stow -D work
     stow work
 else
+    echo "Stowing stuff for home"
     stow -D personal
     stow personal
 fi
