@@ -11,7 +11,7 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export ZSH_DISABLE_COMPFIX="true"
 #ZSH_THEME="robbyrussell"
 ZSH_THEME=random
- ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 plugins=(git dotenv ag colorize zsh-autosuggestions)
 
@@ -58,6 +58,7 @@ eval "$(starship init zsh)"
 # direnv
 eval "$(direnv hook zsh)"
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # autoproxy for work
@@ -81,5 +82,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
