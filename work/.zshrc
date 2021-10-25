@@ -45,6 +45,7 @@ alias bim="nvim"
 alias cdg="cd ~/git"
 alias deac="conda deactivate && conda deactivate"
 alias src="source ~/.zshrc"
+alias envrc="cp $HOME/dotfiles/direnv/.envrc ."
 
 # work stuff
 alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
