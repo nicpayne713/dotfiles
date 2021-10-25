@@ -68,6 +68,7 @@ alias bim="nvim"
 alias cdg="cd ~/git"
 alias deac="conda deactivate && conda deactivate"
 alias src="source ~/.zshrc"
+alias envrc="cp $HOME/dotfiles/direnv/.envrc ."
 
 ## for starting dropbox at home
 alias dbox="python3 $HOME/dotfiles/dropbox/dropbox.py start"
