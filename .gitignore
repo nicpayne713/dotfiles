@@ -1,5 +1,6 @@
 key
 
+.venv
 ipython/.ipython/profile_default/history.sqlite
 
 *.sqlite
