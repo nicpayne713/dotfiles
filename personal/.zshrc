@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export ZSH=$HOME/.oh-my-zsh
 export DOTFILES=$HOME/dotfiles
-export STOW_FOLDERS="personal,nvim,tmux,starship,ipython,pip,i3,shortcuts,polybar,picom,gitui,visidata"
+export STOW_FOLDERS="personal,nvim,tmux,starship,ipython,i3,shortcuts,polybar,picom,gitui,visidata"
 export POLYBAR_BAR="home"
 export PATH="$HOME/.local/bin:$PATH"
 export PYTHONPATH="$HOME/miniconda3/bin/python3"
