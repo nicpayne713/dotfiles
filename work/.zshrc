@@ -46,7 +46,7 @@ alias cdg="cd ~/git"
 alias deac="conda deactivate && conda deactivate"
 alias src="source ~/.zshrc"
 alias envrc="cp $HOME/dotfiles/direnv/.envrc ."
-alias python3=python3.8
+# alias python3=python3.8
 
 # work stuff
 alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
