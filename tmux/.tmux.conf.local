@@ -419,16 +419,12 @@ tmux_conf_update_plugins_on_reload=true
 # # /!\ do not remove the previous line
 
 # My Custom
-bind C-u popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s remananalytics_wiki 'cd ~/git/remananalytics.wiki && nvim'"
+bind C-u popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s remananalytics_wiki 'cd ~/work/remananalytics.wiki && nvim'"
 bind C-i popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s dotfiles -d '~/dotfiles' 'nvim'"
-bind C-n display-popup -E "ta ~/git"
+#bind C-n "tmux display-popup 'pushd \"$(find ~/ -mindepth 1 -maxdepth 2 -type d | fzf)\" && ta '"
+bind C-n ta 
 bind C-k display-popup -h 95% -w 95% -d '#{pane_current_path}' -E 'gitui'
 bind C-p display-popup -E -h 60% -w 60% -x 60%  "tmux new-session -A -s prompt 'cd && zsh'"
-
-# shortcut for cloning a new repo
-# This might need to get changed if I switch from just a "git" folder to a "personal" and "word" one...
-# This is also broken...
-#bind C-c display-popup -h 95% -w 95% -d '~/git'
 
 # overwrite .tmux.conf binding
 # This is somewhat unnecessary since ta will just switch to the session I want if it's open already
