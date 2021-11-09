@@ -42,7 +42,8 @@ ts() {
 # aliases
 alias vim="nvim"
 alias bim="nvim"
-alias cdg="cd ~/git"
+alias cdw="cd ~/work"
+alias cdp="cd ~/personal"
 alias deac="conda deactivate && conda deactivate"
 alias src="source ~/.zshrc"
 alias envrc="cp $HOME/dotfiles/direnv/.envrc ."
