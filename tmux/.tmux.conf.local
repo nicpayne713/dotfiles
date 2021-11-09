@@ -421,7 +421,7 @@ tmux_conf_update_plugins_on_reload=true
 # My Custom
 bind C-u popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s remananalytics_wiki 'cd ~/work/remananalytics.wiki && nvim'"
 bind C-i popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s dotfiles -d '~/dotfiles' 'nvim'"
-bind C-n ~/.local/bin/ta 
+bind C-n popup  ~/.local/bin/ta 
 bind C-k display-popup -h 95% -w 95% -d '#{pane_current_path}' -E 'gitui'
 bind C-p display-popup -E -h 60% -w 60% -x 60%  "tmux new-session -A -s prompt 'cd && zsh'"
 
