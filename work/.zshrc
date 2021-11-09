@@ -34,11 +34,6 @@ background() {
     feh --bg-scale "$(find ~/dotfiles/backgrounds ~/git/anime -mindepth 1 -maxdepth 1 -type f | fzf)"
 }
 
-# Fuzzy tmux starter
-ts() {
-    # will popd with tmux session switcher in tmux.conf.local
-    pushd "$(find ~/ -mindepth 1 -maxdepth 2 -type d | fzf)" && ta --start
-}
 # aliases
 alias vim="nvim"
 alias bim="nvim"
