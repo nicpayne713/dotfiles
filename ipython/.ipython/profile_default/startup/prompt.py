@@ -1,6 +1,5 @@
 from IPython.terminal.prompts import Prompts, Token
 from pathlib import Path
-import os
 from platform import python_version
 import subprocess
 
@@ -9,7 +8,10 @@ def get_branch():
     try:
         return (
             subprocess.check_output(
-                "git branch --show-current", shell=True, stderr=subprocess.DEVNULL
+                "git rev-parse --abbrev-ref HEAD",
+                shell=True,
+                stderr=subprocess.DEVNULL
+                # "git branch --show-current", shell=True, stderr=subprocess.DEVNULL
             )
             .decode("utf-8")
             .replace("\n", "")
@@ -25,9 +27,8 @@ class MyPrompt(Prompts):
             (Token.OutPrompt, Path().absolute().stem),
             (Token, " "),
             (Token.Generic.Subheading, "↪"),
-            (Token.Generic.Subheading, get_branch()),
             (Token, " "),
-            (Token.Prompt, "©"),
+            (Token.Generic.Subheading, get_branch()),
             (Token, " "),
             (Token.Name.Class, "v" + python_version()),
             (Token, " "),
