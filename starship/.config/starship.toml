@@ -2,7 +2,7 @@
 # ~/.config/starship.toml
 
 [cmd_duration]
-min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+min_time = 5_000  # Show command duration over 5,000 milliseconds (=5 sec)
 format = " took [$duration]($style)"
 
 [directory]
