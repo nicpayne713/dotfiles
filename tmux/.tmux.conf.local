@@ -424,6 +424,8 @@ bind C-i popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s dotfiles -d '~/d
 bind C-n popup  ~/.local/bin/ta 
 bind C-k display-popup -h 95% -w 95% -d '#{pane_current_path}' -E 'gitui'
 bind C-p display-popup -E -h 60% -w 60% -x 60%  "tmux new-session -A -s prompt 'cd && zsh'"
+# todo
+bind C-t display-popup -E -h 60% -w 60% -x 60%  "tmux new-session -A -s todo 'cd && zsh'"
 
 # overwrite .tmux.conf binding
 # This is somewhat unnecessary since ta will just switch to the session I want if it's open already
