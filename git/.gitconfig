@@ -1,0 +1,14 @@
+[user]
+	name = Nicholas Payne
+	email = nic.payne@protonmail.com
+
+[credential]
+	helper = store
+
+[core]
+    editor = nvim
+
+[includeIf "gitdir:~/work/"]
+        path = ~/.gitconfig-work
+[includeIf "gitdir:~/personal/"]
+        path = ~/.gitconfig-personal
