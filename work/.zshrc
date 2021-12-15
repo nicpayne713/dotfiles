@@ -1,10 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 export ZSH=$HOME/.oh-my-zsh
 export DOTFILES=$HOME/dotfiles
-export STOW_FOLDERS="work,git,nvim,tmux,starship,ipython,pip,i3,shortcuts,polybar,picom,gitui,visidata"
+export STOW_FOLDERS="direnv,work,git,nvim,tmux,starship,ipython,pip,i3,shortcuts,polybar,picom,gitui,visidata"
 export POLYBAR_BAR="work"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export APPIMAGE_ROOT="$HOME/AppImages:"
+export PATH="$APP_IMAGE_ROOT:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PYTHONPATH="$HOME/miniconda3/bin/python3"
+# export PYTHONPATH="$HOME/miniconda3/bin/python3"
 export EDITOR=nvim
 export TERM=screen-256color-bce
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
@@ -41,8 +45,7 @@ alias cdw="cd ~/work"
 alias cdp="cd ~/personal"
 alias deac="conda deactivate && conda deactivate"
 alias src="source ~/.zshrc"
-alias envrc="cp $HOME/dotfiles/direnv/.envrc ."
-# alias python3=python3.8
+alias envrc="cp $HOME/dotfiles/.envrc ."
 
 # work stuff
 alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
@@ -66,3 +69,16 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t base || tmux new -s base
 fi
 
+# eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+# BEGIN ANSIBLE MANAGED BLOCK: pyenv
+if [ -e "$HOME/.pyenv/.pyenvrc" ]; then
+  source $HOME/.pyenv/.pyenvrc
+  if [ -e "$HOME/.pyenv/completions/pyenv.zsh" ]; then
+    source $HOME/.pyenv/completions/pyenv.zsh
+  elif [ -e "/usr/local/opt/pyenv/completions/pyenv.zsh" ]; then
+    source /usr/local/opt/pyenv/completions/pyenv.zsh
+  fi
+fi
+# END ANSIBLE MANAGED BLOCK: pyenv
