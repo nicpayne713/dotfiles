@@ -48,22 +48,22 @@ autocmd bufwritepre *.py execute 'Black'
 "     Black
 " endfunction
 
-" function! s:PyPostSave()
-"     execute "silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE " . bufname("%")
-"     execute "e"
-" endfunction
+function! s:PyPostSave()
+    execute "silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE " . bufname("%")
+    execute "e"
+endfunction
 
 " :command! PyPreSave :call s:PyPreSave()
-" :command! PyPostSave :call s:PyPostSave()
+:command! PyPostSave :call s:PyPostSave()
 
-" augroup pypeaday
-"     autocmd!
-"     autocmd bufwritepre *.py execute 'PyPreSave'
-"     autocmd bufwritepost *.py execute 'PyPostSave'
-"     autocmd bufwritepost .tmux.conf execute ':!tmux source-file %'
-"     autocmd bufwritepost .tmux.local.conf execute ':!tmux source-file %'
-"     autocmd bufwritepost *.vim execute ':source %'
-" augroup end
+augroup pypeaday
+    autocmd!
+    " autocmd bufwritepre *.py execute 'PyPreSave'
+    autocmd bufwritepost *.py execute 'PyPostSave'
+    autocmd bufwritepost .tmux.conf execute ':!tmux source-file %'
+    autocmd bufwritepost .tmux.local.conf execute ':!tmux source-file %'
+    autocmd bufwritepost *.vim execute ':source '
+augroup end
 
 " docstring
 let g:pydocstring_formatter='google'
