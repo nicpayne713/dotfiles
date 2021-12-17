@@ -62,7 +62,7 @@ augroup pypeaday
     autocmd bufwritepost *.py execute 'PyPostSave'
     autocmd bufwritepost .tmux.conf execute ':!tmux source-file %'
     autocmd bufwritepost .tmux.local.conf execute ':!tmux source-file %'
-    autocmd bufwritepost *.vim execute ':source '
+    " autocmd bufwritepost *.vim execute ':source %'
 augroup end
 
 " docstring
