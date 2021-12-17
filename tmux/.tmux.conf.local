@@ -419,6 +419,7 @@ tmux_conf_update_plugins_on_reload=true
 # # /!\ do not remove the previous line
 
 # My Custom
+set-option -sa terminal-overrides ',screen-256color-bce:RGB'
 bind C-u popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s remananalytics_wiki 'cd ~/work/remananalytics.wiki && nvim'"
 bind C-i popup -E -h 95% -w 95% -x 100% "tmux new-session -A -s dotfiles -d '~/dotfiles' 'nvim'"
 bind C-n popup  ~/.local/bin/ta 
