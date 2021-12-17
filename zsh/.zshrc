@@ -59,13 +59,15 @@ if [ $POLYBAR_BAR=="work" ]; then
     eval source auto_proxy
 fi
 
+# source rust 
+source "$HOME/.cargo/env"
 # Jump into a tmux session
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t base || tmux new -s base
 fi
 
-# eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 # BEGIN ANSIBLE MANAGED BLOCK: pyenv
 if [ -e "$HOME/.pyenv/.pyenvrc" ]; then
