@@ -46,6 +46,10 @@ Plug 'itchyny/lightline.vim'
 " color
 Plug 'folke/tokyonight.nvim'
 
+" splash screen
+" using https link since git username error
+" Plug 'mhinz/vim-stratify'
+Plug 'https://github.com/mhinz/vim-startify'
 " formatter
 Plug 'psf/black', { 'tag': '20.8b1' }
 Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
