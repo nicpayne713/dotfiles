@@ -8,9 +8,14 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'waylonwalker/Telegraph.nvim'
 
 " For vsnip user.
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
+
+" For ultisnips users.
+Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'jbyuki/instant.nvim'
