@@ -60,7 +60,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 if [ $POLYBAR_BAR=="work" ]; then
     eval source auto_proxy
 fi
-
+# when sourcing zshrc make sure PATH variables aren't duplicated
+eval "typeset -U path"
 # source rust 
 source "$HOME/.cargo/env"
 # Jump into a tmux session
