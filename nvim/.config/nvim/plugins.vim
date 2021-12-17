@@ -10,7 +10,7 @@ Plug 'waylonwalker/Telegraph.nvim'
 " For vsnip user.
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-
+Plug 'hrsh7th/vim-vsnip-integ'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'jbyuki/instant.nvim'
