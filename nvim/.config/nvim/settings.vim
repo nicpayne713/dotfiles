@@ -71,6 +71,10 @@ let g:pydocstring_formatter='google'
 " search
 let g:ackprg = 'ag --vimgrep --hidden'
 
+" Snippets vim vim-vsnip
+
+" If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
+let g:vsnip_filetypes = {}
 " Add fzf to vim
 set rtp+=/usr/local/opt/fzf
 
