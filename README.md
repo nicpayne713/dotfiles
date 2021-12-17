@@ -15,7 +15,7 @@
 - - starship prompt
 - - Need powerline fonts for oh-my-zsh
 ### Neovim
-- Need to create a python3 conda environment with 'conda create --name nvim3 python=3.9' for the python3 provider for neovim and install "pip install neovim"
+- Need to create a python3 environment with 'python -m venv ~/.config/neovim/.venv3/' for the python3 provider for neovim and install "pip install neovim"
 - Also for python lsp stuff need to use these 2 commands from Waylon's repo:
 
     ```
@@ -42,7 +42,7 @@
     - install fontawesome with `apt install fonts-font-awesome`
     - build from source here: https://github.com/polybar/polybar 
 ### OBS
-    - ❯ echo "options v4l2loopback devices=1 video_nr=13 card_label='OBS Virtual Camera'    exclusive_caps=1" | sudo tee /etc/modprobe.d/v4l2loopback.conf
+    - ❯ sudo modprobe v4l2loopback video_nr=10 card_label="OBS Video Source" exclusive_caps=1
     - That command is needed if the virtual cam support isn't immediately availble with obs-studio. I need this for work since we're on older Ubuntu with a locked down set of repositories to go to
 ## Stow
 Use `stow` since it's awesome!
