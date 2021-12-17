@@ -42,7 +42,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'folke/tokyonight.nvim'
 
 " formatter
-Plug 'ambv/black'
+Plug 'psf/black', { 'tag': '20.8b1' }
 Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " navigation

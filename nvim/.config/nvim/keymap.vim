@@ -127,7 +127,7 @@ nnoremap gpc <cmd>PlugClean<CR>
 
 " formatting
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
-nnoremap <leader>f8 <cmd>call flake8#Flake8()<CR>
+nnoremap <leader>f8 <cmd>! flake8 %<CR>
 nnoremap <leader>fb <cmd>Black<CR>
 
 " LSP
