@@ -1,3 +1,4 @@
+. "$HOME/.cargo/env"
 export STOW_FOLDERS="direnv,work,git,nvim,tmux,starship,ipython,pip,i3,shortcuts,polybar,picom,gitui,visidata"
 export POLYBAR_BAR="work"
 # work stuff
