@@ -1,14 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 export ZSH=$HOME/.oh-my-zsh
 export DOTFILES=$HOME/dotfiles
-export STOW_FOLDERS="direnv,work,git,nvim,tmux,starship,ipython,pip,i3,shortcuts,polybar,picom,gitui,visidata"
-export POLYBAR_BAR="work"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export APPIMAGE_ROOT="$HOME/AppImages:"
 export PATH="$APP_IMAGE_ROOT:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-# export PYTHONPATH="$HOME/miniconda3/bin/python3"
 export EDITOR=nvim
 export TERM=screen-256color-bce
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
@@ -47,11 +44,8 @@ alias deac="conda deactivate && conda deactivate"
 alias src="source ~/.zshrc"
 alias envrc="cp $HOME/dotfiles/.envrc ."
 
-# work stuff
-alias new_reman="cookiecutter https://reman-analytics-cat-com.visualstudio.com/reman_analytics_pipeline_project_template/_git/reman_analytics_pipeline_project_template"
-alias aproxy="source ~/.local/bin/auto_proxy"
+alias azlogin="az login --allow-no-subscriptions"
 alias azcheckout='az repos pr checkout --id $(az repos pr list --output table | tail -n -2 | fzf | cut -d " " -f1)'
-
 # temp git diff shortcuts
 alias gdiff="git diff main.. | nvim - -R +Diffurcate"
 # starship
@@ -63,15 +57,19 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # autoproxy for work
-eval source auto_proxy
+if [ $POLYBAR_BAR=="work" ]; then
+    eval source auto_proxy
+fi
+# source rust 
+source "$HOME/.cargo/env"
 # Jump into a tmux session
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t base || tmux new -s base
 fi
 
-# eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 # BEGIN ANSIBLE MANAGED BLOCK: pyenv
 if [ -e "$HOME/.pyenv/.pyenvrc" ]; then
   source $HOME/.pyenv/.pyenvrc
@@ -82,3 +80,6 @@ if [ -e "$HOME/.pyenv/.pyenvrc" ]; then
   fi
 fi
 # END ANSIBLE MANAGED BLOCK: pyenv
+#
+# when sourcing zshrc make sure PATH variables aren't duplicated
+eval "typeset -U path"

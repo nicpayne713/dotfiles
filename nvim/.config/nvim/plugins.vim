@@ -8,9 +8,14 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'waylonwalker/Telegraph.nvim'
 
 " For vsnip user.
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
 
+" For ultisnips users.
+Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'honza/vim-snippets'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'jbyuki/instant.nvim'
@@ -41,8 +46,12 @@ Plug 'itchyny/lightline.vim'
 " color
 Plug 'folke/tokyonight.nvim'
 
+" splash screen
+" using https link since git username error
+" Plug 'mhinz/vim-stratify'
+Plug 'https://github.com/mhinz/vim-startify'
 " formatter
-Plug 'ambv/black'
+Plug 'psf/black', { 'tag': '20.8b1' }
 Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " navigation

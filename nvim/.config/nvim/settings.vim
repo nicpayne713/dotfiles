@@ -19,25 +19,51 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=**/coverage/*
 set wildignore+=**/.git/*
+set wildignore+=**/.venv/*
 
 set clipboard+=unnamedplus
 
 let g:python_lint_config = '~/pylint.rc'
-let g:python3_host_prog = '~/miniconda3/envs/nvim3/bin/python'
+" let g:python3_host_prog = '~/.pyenv/versions/nvim3/bin/python'
+let g:python3_host_prog = '~/.config/nvim/.venv3/bin/python'
+
 
 " LSP
 
-
 "" flake8
-"let g:flake8_cmd='~/.local/bin/flake8'
-let g:flake8_quickfix_location="bottom"
-autocmd BufWritePost *.py call flake8#Flake8()
+" let g:flake8_cmd='$HOME/.local/bin/flake8'
+" let g:flake8_quickfix_location="bottom"
+" autocmd BufWritePost *.py call flake8#Flake8()
 
 " isort
 let g:isort_cmd='isort'
 
 "" black
+" let g:black_virtualenv = '~/.venv/dotfiles/bin/python' 
+let g:black_virtualenv = '~/.local/pipx/venvs/black/bin' 
+" let g:black_cmd='~/.local/bin/black'
 autocmd bufwritepre *.py execute 'Black'
+
+" function! s:PyPreSave()
+"     Black
+" endfunction
+
+function! s:PyPostSave()
+    execute "silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE " . bufname("%")
+    execute "e"
+endfunction
+
+" :command! PyPreSave :call s:PyPreSave()
+:command! PyPostSave :call s:PyPostSave()
+
+augroup pypeaday
+    autocmd!
+    " autocmd bufwritepre *.py execute 'PyPreSave'
+    autocmd bufwritepost *.py execute 'PyPostSave'
+    autocmd bufwritepost .tmux.conf execute ':!tmux source-file %'
+    autocmd bufwritepost .tmux.local.conf execute ':!tmux source-file %'
+    " autocmd bufwritepost *.vim execute ':source %'
+augroup end
 
 " docstring
 let g:pydocstring_formatter='google'
@@ -45,7 +71,21 @@ let g:pydocstring_formatter='google'
 " search
 let g:ackprg = 'ag --vimgrep --hidden'
 
-" Add fzf to vim
+" Snippets vim vim-vsnip
+
+" If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
+let g:vsnip_filetypes = {}
+
+" Try ultisnip
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-e>"
+let g:UltiSnipsJumpBackwardTrigger="<C-i>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"" Add fzf to vim
 set rtp+=/usr/local/opt/fzf
 
 " Enable folding

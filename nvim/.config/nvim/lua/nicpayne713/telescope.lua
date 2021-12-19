@@ -5,9 +5,20 @@ require("telescope").setup({
         prompt_prefix = " >",
         color_devicons = true,
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+         vimgrep_arguments = {
+              'rg',
+              -- '--color=never',
+              -- '--no-heading',
+              -- '--no-ignore',
+              '--hidden',
+              '--with-filename',
+              '--line-number',
+              '--column',
+              '--smart-case',
+              '-u'},
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-        file_ignore_patterns = {'.git/', '.pyc', 'mypy_cache'},
+        file_ignore_patterns = {'.venv/','.venv3/','.git/', '.pyc', 'mypy_cache'},
         mappings = {
             i = {
                 ["<C-x>"] = false,
