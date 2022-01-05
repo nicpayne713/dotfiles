@@ -83,3 +83,5 @@ fi
 #
 # when sourcing zshrc make sure PATH variables aren't duplicated
 eval "typeset -U path"
+
+lolcat $HOME/dotfiles/motd.txt
