@@ -93,6 +93,10 @@ set nowrap
 set colorcolumn=88
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 
+set list
+set listchars=tab:▸\ ,trail:·
+
+
 " Transparency
 hi Normal guibg=NONE ctermbg=NONE
 
