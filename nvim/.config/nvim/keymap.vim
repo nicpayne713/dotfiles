@@ -159,6 +159,9 @@ nnoremap <leader>vll :call LspLocationList()<CR>
 
 nnoremap <leader>x :!chmod +x %
 
+" Open the current file in the default program
+nmap <leader>o :!xdg-open %<cr><cr>
+
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Work
