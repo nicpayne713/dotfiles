@@ -84,5 +84,6 @@ fi
 #
 # when sourcing zshrc make sure PATH variables aren't duplicated
 eval "typeset -U path"
-
+hello() { clear && lolcat $HOME/dotfiles/motd.txt }
+bindkey -s '^k' 'hello \n'
 lolcat $HOME/dotfiles/motd.txt
