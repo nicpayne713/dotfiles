@@ -99,7 +99,7 @@ font-2 = unifont:fontformat=truetype:size=8:antialias=false;
 font-3 = "JetBrainsMono Nerd Font:style=Regular:size=12;2"
 font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=20;2"
 
-modules-left = run date aws vpn
+modules-left = run date vpn aws 
 modules-center = i3  
 modules-right = pulseaudio-control cpu memory eth_work wlan battery 
 
