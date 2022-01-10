@@ -1,6 +1,11 @@
 
 # ~/.config/starship.toml
 
+[env_var.http_proxy]
+default ="" 
+format = "[$env_value]($style)"
+# format= "[$symbol](dimmed red)"
+
 [cmd_duration]
 min_time = 5_000  # Show command duration over 5,000 milliseconds (=5 sec)
 format = " took [$duration]($style)"
