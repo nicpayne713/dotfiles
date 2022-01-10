@@ -71,7 +71,7 @@ cursor-scroll = ns-resize
 [bar/work]
 monitor = ${env:MONITOR:}
 ;monitor = DP-2
-width = 98%
+width = 100%
 height = 28
 radius = 8
 ;offset-x = 1%
