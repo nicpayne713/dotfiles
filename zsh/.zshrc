@@ -34,7 +34,7 @@ c() {
 
 # Change backgrounds
 background() {
-    feh --bg-scale "$(find ~/dotfiles/backgrounds ~/personal/anime -mindepth 1 -maxdepth 1 -type f | fzf)"
+    clear && feh --bg-scale "$(find ~/dotfiles/backgrounds ~/personal/anime -mindepth 1 -maxdepth 1 -type f | fzf)"
 }
 
 # aliases
