@@ -33,3 +33,10 @@ vim.g.tokyonight_dark_sidebar=0
 vim.g.tokyonight_dark_float=1
 
 vim.cmd[[colorscheme tokyonight]]
+
+-- Transparency
+vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
+vim.cmd[[hi clear Comment]]  -- comments had big blocks like visual selection - turn it off
+vim.cmd[[hi Comment guifg=gray]] -- need to set fg for comments after turning off the weird highlights
+vim.cmd[[hi clear Function]]  -- Had annoying function highlighting in python
+
