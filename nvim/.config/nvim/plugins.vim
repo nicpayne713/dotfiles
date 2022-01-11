@@ -34,7 +34,7 @@ Plug 'mhinz/vim-signify'
 Plug 'AndrewRadev/diffurcate.vim'
 
 " syntax checking
-"Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 
 " braces
@@ -74,7 +74,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
-Plug 'kyazdani42/nvim-tree.lua'
+" Plug 'kyazdani42/nvim-tree.lua'
+Plug 'preservim/nerdtree'
 " objects
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -112,6 +113,8 @@ Plug 'sbdchd/neoformat'
 Plug 'junegunn/vim-emoji'
 
 " icons need loaded last
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'PhilRunninger/nerdtree-visual-selection'
+" Plug 'kyazdani42/nvim-web-devicons' " for file icons
 call plug#end()

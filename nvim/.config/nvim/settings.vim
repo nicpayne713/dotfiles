@@ -178,3 +178,8 @@ set completefunc=emoji#complete
 " nvimtree
 " quit tree when file is opened
 let g:nvim_tree_quit_on_open=1
+
+" nerdtree
+let NERDTreeShowHidden=1
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['py'] = "689FB6"
