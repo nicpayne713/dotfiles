@@ -43,6 +43,7 @@ Plug 'jiangmiao/auto-pairs'
 " Lightline
 Plug 'itchyny/lightline.vim'
 
+
 " color
 Plug 'folke/tokyonight.nvim'
 
@@ -73,9 +74,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
-"Plug 'preservim/nerdtree'
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-"Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 " objects
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
@@ -87,7 +85,7 @@ Plug 'tpope/vim-commentary'
 
 " lsp
 Plug 'folke/lsp-colors.nvim'
-"Plug 'glepnir/lspsaga.nvim'
+Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'nvim-lua/completion-nvim'
@@ -97,8 +95,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
-"Plug 'vim-test/vim-test'
-"Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+Plug 'vim-test/vim-test'
+Plug 'rcarriga/vim-ultest'
 "Plug 'eddyekofo94/gruvbox-flat.nvim'
 "Plug 'mfussenegger/nvim-dap'
 "Plug 'nvim-telescope/telescope-dap.nvim'
@@ -112,4 +110,8 @@ Plug 'sbdchd/neoformat'
 
 " emoji
 Plug 'junegunn/vim-emoji'
+
+" icons need loaded last
+Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
 call plug#end()
