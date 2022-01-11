@@ -34,8 +34,6 @@ set list
 set listchars=tab:▸\ ,trail:·
 
 
-" Transparency
-hi Normal guibg=NONE ctermbg=NONE
 
 "" Ignore files
 set wildignore+=*.pyc
