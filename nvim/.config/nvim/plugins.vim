@@ -42,7 +42,7 @@ Plug 'mhinz/vim-signify'
 Plug 'AndrewRadev/diffurcate.vim'
 
 " syntax checking
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 
 " braces
