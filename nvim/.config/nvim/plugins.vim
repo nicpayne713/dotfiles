@@ -54,6 +54,7 @@ Plug 'itchyny/lightline.vim'
 
 " color
 Plug 'folke/tokyonight.nvim'
+Plug 'fladson/vim-kitty'
 
 " splash screen
 " using https link since git username error
