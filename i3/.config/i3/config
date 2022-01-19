@@ -190,3 +190,10 @@ gaps outer 10
 for_window [class="^.*"] border pixel 2
 
 exec --no-startup-id bash flameshot gui
+
+# for work - not sure how to not do this at HOME
+# this is for i3-gnome
+exec --no-startup-id /usr/lib/gsd-xsettings
+exec_always --no-startup-id gnome-power-manager
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id gnome-flashback
