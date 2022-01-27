@@ -123,10 +123,11 @@ let g:lightline = {
             \'colorscheme': "tokyonight",
             \ 'active': {
             \ 'left': [ [ 'mode', 'paste' ],
-            \          [ 'gitbranch', 'readonly', 'filename', 'modified' ]]
+            \          [ 'gitbranch', 'readonly', 'filename', 'modified', 'coverage' ]]
             \ },
             \ 'component_function': {
-            \ 'gitbranch': 'gitbranch#name'
+            \ 'gitbranch': 'gitbranch#name',
+            \ 'coverage': 'coverage_highlight#get_current'
             \ }
             \ }
 
