@@ -162,6 +162,11 @@ nnoremap <leader>x :!chmod +x %
 " Open the current file in the default program
 nmap <leader>o :!xdg-open %<cr><cr>
 
+" Coverage navigation
+noremap [C :<C-U>PrevUncovered<CR>
+noremap ]C :<C-U>NextUncovered<CR>
+nnoremap <leader>c <cmd>ToggleCoverage<CR>
+
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Work

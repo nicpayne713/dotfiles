@@ -111,6 +111,9 @@ Plug 'rcarriga/vim-ultest'
 "Plug 'mfussenegger/nvim-dap'
 "Plug 'nvim-telescope/telescope-dap.nvim'
 "Plupg 'mfussenegger/nvim-dap-python'
+"
+" Coverage
+Plug 'mgedmin/coverage-highlight.vim'
 
 Plug 'hrsh7th/vim-vsnip/'
 Plug 'L3MON4D3/LuaSnip'
