@@ -75,6 +75,10 @@ make[1]: Entering directory '/home/u_paynen3/third-party/v4l2loopback/utils'
 rm v4l2loopback-ctl
 make[1]: Leaving directory '/home/u_paynen3/third-party/v4l2loopback/utils'
 
+
+v4l2loopback  🌱 main on ☁️  (us-east-1)
+❯ sudo make install
+
 v4l2loopback  🌱 main on ☁️  (us-east-1)
 ❯ sudo depmod -a
 
