@@ -58,6 +58,7 @@ let g:python3_host_prog = '~/.config/nvim/.venv3/bin/python'
 
 " isort
 let g:isort_cmd='isort'
+" autocmd bufwritepre *.py execute 'isort'
 
 "" black
 " let g:black_virtualenv = '~/.venv/dotfiles/bin/python' 
@@ -70,7 +71,8 @@ autocmd bufwritepre *.py execute 'Black'
 " endfunction
 
 function! s:PyPostSave()
-    execute "silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE " . bufname("%")
+    execute 'silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE ' . bufname("%")
+    execute 'silent !isort' . bufname("%")
     execute "e"
 endfunction
 
