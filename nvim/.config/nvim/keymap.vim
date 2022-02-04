@@ -12,7 +12,7 @@ filetype plugin indent on    " required
 " Be faster
 :command W w
 " Enable folding with space f
-nnoremap <space> f
+nnoremap <leader> za
 " navigation
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Behave Vim
