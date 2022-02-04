@@ -69,8 +69,6 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-k> <esc>:m .-2<CR>==
-nnoremap <leader>j :m .+1<CR>==
-nnoremap <leader>k :m .-2<CR>==
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -92,8 +90,6 @@ function! s:ag_with_opts(arg, bang)
         autocmd VimEnter * command! -nargs=* -bang Ag call s:ag_with_opts(<q-args>, <bang>0)
 
 nnoremap <Leader>r :Ag --hidden<CR>
-
-"nnoremap <Leader>l :<C-u>call gitblame#echo()<CR>
 
 " remap visual block mode so ctrl v can be paste
 
