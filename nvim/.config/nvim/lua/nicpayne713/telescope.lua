@@ -5,11 +5,17 @@ require("telescope").setup({
         prompt_prefix = " >",
         color_devicons = true,
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-         vimgrep_arguments = {
+        find_command = {
+            'rg', 
+            '--files',
+            '--hidden',  
+            '-g' 
+            ,'!.git' 
+        },
+        vimgrep_arguments = {
               'rg',
               -- '--color=never',
               -- '--no-heading',
-              -- '--no-ignore',
               '--hidden',
               '--with-filename',
               '--line-number',
@@ -25,6 +31,12 @@ require("telescope").setup({
                 ["<C-q>"] = actions.send_to_qflist,
             },
         },
+    },
+    pickers = {
+        find_files = {
+            hidden = true
+        }
+            -- theme = "dropdown"
     },
     extensions = {
         fzy_native = {
