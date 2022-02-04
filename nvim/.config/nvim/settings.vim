@@ -184,3 +184,8 @@ let g:nvim_tree_quit_on_open=1
 let NERDTreeShowHidden=1
 let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
 let g:NERDTreeExtensionHighlightColor['py'] = "689FB6"
+
+" testing
+let test#python#runner = 'pytest'
+let test#python#pytest#options = "--color=yes"
+

@@ -163,6 +163,19 @@ noremap [C :<C-U>PrevUncovered<CR>
 noremap ]C :<C-U>NextUncovered<CR>
 nnoremap <leader>c <cmd>ToggleCoverage<CR>
 
+
+" Testing
+
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+nnoremap <silent> <leader><leader>t :UltestNearest<cr>
+nnoremap <silent> <leader><leader>s :UltestSummary<cr>
+
+
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Work
