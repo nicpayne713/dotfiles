@@ -1,87 +1,24 @@
-"             _   _   _                       _           
-"   / __|/ _ \ __| __| | '_ \ / _` / __\ \ / / | '_ ` _ \ 
-"    ___  ___| |_| |_(_)_ __   __ _ _____   _(_)_ __ ___  
-"   \__ \  __/ |_| |_| | | | | (_| \__ \\ V /| | | | | | |
-"   |___/\___|\__|\__|_|_| |_|\__, |___(_)_/ |_|_| |_| |_|
-"                             |___/                       
+"           _   _   _                       _           
+"  ___  ___| |_| |_(_)_ __   __ _ _____   _(_)_ __ ___  
+" / __|/ _ \ __| __| | '_ \ / _` / __\ \ / / | '_ ` _ \ 
+" \__ \  __/ |_| |_| | | | | (_| \__ \\ V /| | | | | | |
+" |___/\___|\__|\__|_|_| |_|\__, |___(_)_/ |_|_| |_| |_|
+"                           |___/                       
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 
 " startify
-" let g:ascii = [
-"       \ '        __',
-"       \ '.--.--.|__|.--------.',
-"       \ '|  |  ||  ||        |',
-"       \ ' \___/ |__||__|__|__|',
-"       \ ''
-"       \]
-"
-                                                                 
-let g:ascii = [
-                \  "@@@@@@@   @@@  @@@   @@@@@@   @@@@@@@@  @@@  @@@  @@@  @@@  @@@ ",
-                \  "@@@@@@@@  @@@  @@@  @@@@@@@@  @@@@@@@@  @@@@ @@@  @@@  @@@  @@@ ",
-                \  "@@!  @@@  @@!  @@@  @@!  @@@  @@!       @@!@!@@@  @@!  @@!  !@@ " ,
-                \  "!@!  @!@  !@!  @!@  !@!  @!@  !@!       !@!!@!@!  !@!  !@!  @!! " ,
-                \  "@!@@!@!   @!@!@!@!  @!@  !@!  @!!!:!    @!@ !!@!  !!@   !@@!@!  " ,
-                \  "!!@!!!    !!!@!!!!  !@!  !!!  !!!!!:    !@!  !!!  !!!    @!!!   " ,
-                \  "!!:       !!:  !!!  !!:  !!!  !!:       !!:  !!!  !!:   !: :!!  " ,
-                \  ":!:       :!:  !:!  :!:  !:!  :!:       :!:  !:!  :!:  :!:  !:! " ,
-                \  " ::       ::   :::  ::::: ::   :: ::::   ::   ::   ::   ::  ::: " ,
-                \  " :         :   : :   : :  :   : :: ::   ::    :   :     :   ::  " ,
-                \  "                                                                " ,
-                \  "                            .-==========                        " ,
-                \  "                         .-' O    =====                         " ,
-                \  "                        /___       ===                          " ,
-                \  "                           \_      |                            " ,
-                \  "_____________________________)    (_____________________________" ,
-                \  "\___________               .'      `,              ____________/" ,
-                \  "  \__________`.     |||<   `.      .'   >|||     .'__________/  " ,
-                \  "     \_________`._  |||  <   `-..-'   >  |||  _.'_________/     " ,
-                \  "        \_________`-..|_  _ <      > _  _|..-'_________/        " ,
-                \  "           \_________   |_|  //  \\  |_|   _________/           " ,
-                \  "                      .-\   //    \\   /-.                      " ,
-                \  "      ,  .         _.'.- `._        _.' -.`._         .  ,      " ,
-                \  "    <<<<>>>>     .' .'  /  '``----''`  \  `. `.     <<<<>>>>    " ,
-                \  "      '/\`         /  .' .'.'/|..|\`.`. `.  \         '/\`      " ,
-                \  "      (())        `  /  / .'| |||| |`. \  \  '        (())      " ,
-                \  "       /\          ::_.' .' /| || |\ `. `._::          /\       " ,
-                \  "      //\\           '``.' | | || | | `.''`           //\\      " ,
-                \  "      //\\             .` .` | || | '. '.             //\\      " ,
-                \  "      //\\                `  | `' |  '                //\\      " ,
-                \  "      \\//                                            \\//      " ,
-                \  "       \/                      MJP                     \/       " 
-                \]
-" let g:ascii=[
-"             \ "  ______         __  __            __  ___                  __        ",
-"             \ " /_  __/___     / /_/ /_  ___     /  |/  /___  ____  ____  / /        ",
-"             \ "  / / / __ \   / __/ __ \/ _ \   / /|_/ / __ \/ __ \/ __ \/ /         ",
-"             \ " / / / /_/ /  / /_/ / / /  __/  / /  / / /_/ / /_/ / / / /_/          ",
-"             \ "/_/  \____/   \__/_/ /_/\___/  /_/  /_/\____/\____/_/ /_(_)           ",
-"             \"                         `. ___                                        ",
-"             \"                       __,' __`.                _..----....____        ",
-"             \"           __...--.'``;.   ,.   ;``--..__     .'    ,-._    _.-'       ",
-"             \"     _..-''-------'   `'   `'   `'     O ``-''._   (,;') _,'           ",
-"             \"   ,'________________                          \`-._`-','              ",
-"             \"    `._              ```````````------...___   '-.._'-:                ",
-"             \"       ```--.._      ,.                     ````--...__\-.             ",
-"             \"               `.--. `-`                       ____    |  |`           ",
-"             \"                 `. `.                       ,'`````.  ;  ;`           ",
-"             \"                   `._`.        __________   `.      \'__/`            ",
-"             \"                      `-:._____/______/___/____`.     \  `             ",
-"             \"                                  |       `._    `.    \               ",
-"             \"                                  `._________`-.   `.   `.___          ",
-"             \"                                                SSt  `------'`         ",
-"             \"                                                                       "
-"             \]
-" let g:ascii=[
-"  \ '                                        ▟▙            ',
-"  \ '                                        ▝▘            ',
-"  \ '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
-"  \ '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
-"  \ '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
-"  \ '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
-"  \ '▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
-"  \ '',
-"  \]
+let g:ascii=[
+ \ '                                        ▟▙            ',
+ \ '                                        ▝▘            ',
+ \ '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
+ \ '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
+ \ '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
+ \ '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
+ \ '▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+ \ '                    The superior editor               ',
+ \ '                       Welcome, Nic!                  ',
+ \ '',
+ \]
 let g:startify_custom_header =
       \ 'startify#center(g:ascii + startify#fortune#boxed())'
 
@@ -93,8 +30,10 @@ set nowrap
 set colorcolumn=88
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 
-" Transparency
-hi Normal guibg=NONE ctermbg=NONE
+set list
+set listchars=tab:▸\ ,trail:·
+
+
 
 "" Ignore files
 set wildignore+=*.pyc
@@ -119,6 +58,7 @@ let g:python3_host_prog = '~/.config/nvim/.venv3/bin/python'
 
 " isort
 let g:isort_cmd='isort'
+" autocmd bufwritepre *.py execute 'isort'
 
 "" black
 " let g:black_virtualenv = '~/.venv/dotfiles/bin/python' 
@@ -131,7 +71,8 @@ autocmd bufwritepre *.py execute 'Black'
 " endfunction
 
 function! s:PyPostSave()
-    execute "silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE " . bufname("%")
+    execute 'silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE ' . bufname("%")
+    execute 'silent !isort' . bufname("%")
     execute "e"
 endfunction
 
@@ -184,10 +125,11 @@ let g:lightline = {
             \'colorscheme': "tokyonight",
             \ 'active': {
             \ 'left': [ [ 'mode', 'paste' ],
-            \          [ 'gitbranch', 'readonly', 'filename', 'modified' ]]
+            \          [ 'gitbranch', 'readonly', 'filename', 'modified', 'coverage' ]]
             \ },
             \ 'component_function': {
-            \ 'gitbranch': 'gitbranch#name'
+            \ 'gitbranch': 'gitbranch#name',
+            \ 'coverage': 'coverage_highlight#get_current'
             \ }
             \ }
 
@@ -238,6 +180,10 @@ set completefunc=emoji#complete
 " quit tree when file is opened
 let g:nvim_tree_quit_on_open=1
 
+" nerdtree
+let NERDTreeShowHidden=1
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['py'] = "689FB6"
 
 " LaTex
 " This is necessary for VimTeX to load properly. The "indent" is optional.
@@ -264,3 +210,8 @@ let g:vimtex_compiler_method = 'latexmk'
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
 let maplocalleader = ","
+
+" testing
+let test#python#runner = 'pytest'
+let test#python#pytest#options = "--color=yes"
+

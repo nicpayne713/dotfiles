@@ -1,3 +1,11 @@
+       " _             _                 _           
+ " _ __ | |_   _  __ _(_)_ __  _____   _(_)_ __ ___  
+" | '_ \| | | | |/ _` | | '_ \/ __\ \ / / | '_ ` _ \ 
+" | |_) | | |_| | (_| | | | | \__ \\ V /| | | | | | |
+" | .__/|_|\__,_|\__, |_|_| |_|___(_)_/ |_|_| |_| |_|
+" |_|            |___/                               
+"
+"―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/cmp-path'
@@ -37,7 +45,7 @@ Plug 'mhinz/vim-signify'
 Plug 'AndrewRadev/diffurcate.vim'
 
 " syntax checking
-"Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 
 " braces
@@ -46,8 +54,10 @@ Plug 'jiangmiao/auto-pairs'
 " Lightline
 Plug 'itchyny/lightline.vim'
 
+
 " color
 Plug 'folke/tokyonight.nvim'
+Plug 'fladson/vim-kitty'
 
 " splash screen
 " using https link since git username error
@@ -76,10 +86,8 @@ Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
-"Plug 'preservim/nerdtree'
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-"Plug 'https://github.com/ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
+" Plug 'kyazdani42/nvim-tree.lua'
+Plug 'preservim/nerdtree'
 " objects
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -90,7 +98,7 @@ Plug 'tpope/vim-commentary'
 
 " lsp
 Plug 'folke/lsp-colors.nvim'
-"Plug 'glepnir/lspsaga.nvim'
+Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 Plug 'nvim-lua/completion-nvim'
@@ -100,12 +108,15 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
-"Plug 'vim-test/vim-test'
-"Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+Plug 'vim-test/vim-test'
+Plug 'rcarriga/vim-ultest'
 "Plug 'eddyekofo94/gruvbox-flat.nvim'
 "Plug 'mfussenegger/nvim-dap'
 "Plug 'nvim-telescope/telescope-dap.nvim'
 "Plupg 'mfussenegger/nvim-dap-python'
+"
+" Coverage
+Plug 'mgedmin/coverage-highlight.vim'
 
 Plug 'hrsh7th/vim-vsnip/'
 Plug 'L3MON4D3/LuaSnip'
@@ -115,4 +126,10 @@ Plug 'sbdchd/neoformat'
 
 " emoji
 Plug 'junegunn/vim-emoji'
+
+" icons need loaded last
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'PhilRunninger/nerdtree-visual-selection'
+" Plug 'kyazdani42/nvim-web-devicons' " for file icons
 call plug#end()

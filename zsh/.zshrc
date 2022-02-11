@@ -7,12 +7,14 @@ export APPIMAGE_ROOT="$HOME/AppImages:"
 export PATH="$APP_IMAGE_ROOT:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim
-export TERM=screen-256color-bce
+# export TERM=screen-256color-bce
+# export TERM=xterm-256color
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export ZSH_DISABLE_COMPFIX="true"
 #ZSH_THEME="robbyrussell"
-ZSH_THEME=random
-ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# ZSH_THEME=random
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# ZSH_THEME_RANDOM_QUIET=true
 
 plugins=(git dotenv ag colorize zsh-autosuggestions)
 
@@ -32,7 +34,7 @@ c() {
 
 # Change backgrounds
 background() {
-    feh --bg-scale "$(find ~/dotfiles/backgrounds ~/personal/anime -mindepth 1 -maxdepth 1 -type f | fzf)"
+    clear && feh --bg-scale "$(find ~/dotfiles/backgrounds ~/personal/anime -mindepth 1 -maxdepth 1 -type f | fzf)"
 }
 
 # aliases
@@ -81,5 +83,9 @@ if [ -e "$HOME/.pyenv/.pyenvrc" ]; then
 fi
 # END ANSIBLE MANAGED BLOCK: pyenv
 #
+bindkey -s '^o' 'background \n'
 # when sourcing zshrc make sure PATH variables aren't duplicated
 eval "typeset -U path"
+hello() { clear && lolcat $HOME/dotfiles/motd.txt }
+bindkey -s '^k' 'hello \n'
+hello \n

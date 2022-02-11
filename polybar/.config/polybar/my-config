@@ -18,11 +18,13 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #58427c 
+; aa is for opacity
+background = #aa58427c
 background-alt = #483d8b
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
+;foreground-alt = #555
+foreground-alt = #5d3fd3
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -31,7 +33,7 @@ alert = #bd2c40
 monitor = ${env:MONITOR:}
 width = 100%
 height = 25
-radius = 0.0
+radius = 8.0
 fixed-center = true
 bottom = false
 
@@ -50,11 +52,11 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "JetBrainsMono Nerd Font:style=Regular:size=8;2"
-font-1 = "Noto Color Emoji:style=Regular:scale=10;2"
+font-0 = "JetBrainsMono Nerd Font:style=Regular:size=8;0"
+font-1 = "Noto Color Emoji:style=Regular:scale=10;1"
 font-2 = unifont:fontformat=truetype:size=8:antialias=false;
-font-3 = "JetBrainsMono Nerd Font:style=Regular:size=12;2"
-font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=20;2"
+font-3 = "JetBrainsMono Nerd Font:style=Regular:size=12;3"
+font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=50;4"
 
 modules-left = run date 
 modules-center = i3  
@@ -70,10 +72,10 @@ cursor-scroll = ns-resize
 monitor = ${env:MONITOR:}
 ;monitor = DP-2
 width = 100%
-height = 27
+height = 28
+radius = 8
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 0.0
 fixed-center = true
 bottom = false
 
@@ -99,9 +101,9 @@ font-2 = unifont:fontformat=truetype:size=8:antialias=false;
 font-3 = "JetBrainsMono Nerd Font:style=Regular:size=12;2"
 font-4 = "JetBrainsMono Nerd Font:style=Regular:scale=20;2"
 
-modules-left = run date aws vpn
+modules-left = run date vpn aws 
 modules-center = i3  
-modules-right = pulseaudio-control cpu memory eth_work wlan battery 
+modules-right = pulseaudio-control cpu memory eth_work wlan battery
 
 tray-position = right
 tray-padding = 2
@@ -370,7 +372,7 @@ margin-bottom = 3
 interval = 5.0
 type = custom/script
 exec = has_aws_token
-click-left = gnome-terminal  -e "bash -c get_aws_token"
+click-left = /home/u_paynen3/.local/bin/auto_get_aws_token
 click-right = rm -rf ~/.aws/credentials
 
 [module/vpn_addr]
