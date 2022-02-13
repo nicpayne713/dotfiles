@@ -1,8 +1,6 @@
-pushd $DOTFILES
-for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
-do
-    stow -D $folder
-    stow $folder
-done
+pushd ~/dotfiles
+
+stow -D zsh
+stow zsh
 
 popd
