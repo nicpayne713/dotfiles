@@ -1,7 +1,5 @@
-pushd ~/dotfiles
 
 mv ~/.zshrc ~/.zshrc-before-ansible-install
-stow -D zsh
-stow zsh
+stow -D ~/dotfiles/zsh
+stow zsh  ~/dotfiles/zsh
 
-popd
