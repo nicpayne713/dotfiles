@@ -1,6 +1,6 @@
 pushd ~/dotfiles
 
-mv ~/.zsh ~/.zsh-before-ansible-install
+mv ~/.zshrc ~/.zshrc-before-ansible-install
 stow -D zsh
 stow zsh
 
