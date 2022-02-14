@@ -7,15 +7,17 @@ require("telescope").setup({
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
         find_command = {
             'rg', 
+            '--no-ignore',
             '--files',
             '--hidden',  
-            '-g' 
-            ,'!.git' 
+            -- '--ignore-file',
+            -- '.venv',
+            '-g',
+            '!.git' 
         },
         vimgrep_arguments = {
               'rg',
-              -- '--color=never',
-              -- '--no-heading',
+              '--no-ignore',
               '--hidden',
               '--with-filename',
               '--line-number',
