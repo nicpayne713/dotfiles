@@ -1,6 +1,6 @@
 
-mv ~/.zshrc ~/.zshrc-before-ansible-install
-cd ~/dotfiles
+mv ~/.zshrc ~/.zshrc-before-ansible-install || echo "no existing zsh"
+
 stow -D zsh
 stow zsh  zsh
 
