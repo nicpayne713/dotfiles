@@ -137,7 +137,7 @@ set laststatus=2
 "             \ }
 "             \ }
 "
-let g:airline_airline_theme="deus"
+let g:airline_airline_theme="base16_dracula"
 let g:airline_powerline_fonts = 1
 
 " doq for pydocstring
