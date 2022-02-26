@@ -52,7 +52,9 @@ Plug 'nvie/vim-flake8'
 Plug 'jiangmiao/auto-pairs'
 
 " Lightline
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 
 " color
