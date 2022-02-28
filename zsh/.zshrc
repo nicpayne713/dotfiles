@@ -48,6 +48,7 @@ alias envrc="cp $HOME/dotfiles/.envrc ."
 
 alias azlogin="az login --allow-no-subscriptions"
 alias azcheckout='az repos pr checkout --id $(az repos pr list --output table | tail -n -2 | fzf | cut -d " " -f1)'
+alias awsrules="aws events list-rules | visidata -f json"
 # temp git diff shortcuts
 alias gdiff="git diff main.. | nvim - -R +Diffurcate"
 # starship
