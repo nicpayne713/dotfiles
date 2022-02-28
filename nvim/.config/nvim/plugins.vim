@@ -15,6 +15,9 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'waylonwalker/Telegraph.nvim'
 
+" LaTex
+" Plug 'jakewvincent/texmagic.nvim'
+Plug 'lervag/vimtex'
 " For vsnip user.
 " Plug 'hrsh7th/cmp-vsnip'
 " Plug 'hrsh7th/vim-vsnip'
@@ -49,7 +52,9 @@ Plug 'nvie/vim-flake8'
 Plug 'jiangmiao/auto-pairs'
 
 " Lightline
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 
 " color
