@@ -221,4 +221,4 @@ let maplocalleader = ","
 " testing
 let test#python#runner = 'pytest'
 let test#python#pytest#options = "--color=yes"
-
+let g:ultest_use_pty = 1
