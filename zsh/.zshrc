@@ -85,6 +85,7 @@ fi
 # END ANSIBLE MANAGED BLOCK: pyenv
 #
 bindkey -s '^o' 'background \n'
+bindkey '^e' edit-command-line
 # when sourcing zshrc make sure PATH variables aren't duplicated
 eval "typeset -U path"
 hello() { clear && lolcat $HOME/dotfiles/motd.txt }
