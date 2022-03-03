@@ -137,7 +137,7 @@ set laststatus=2
 "             \ }
 "             \ }
 "
-let g:airline_theme="base16_icy"
+let g:airline_theme="night_owl"
 let g:airline_powerline_fonts = 1
 
 " doq for pydocstring
@@ -221,4 +221,4 @@ let maplocalleader = ","
 " testing
 let test#python#runner = 'pytest'
 let test#python#pytest#options = "--color=yes"
-
+let g:ultest_use_pty = 1

@@ -174,7 +174,7 @@ nmap <silent> <leader>g :TestVisit<CR>
 
 nnoremap <silent> <leader><leader>t :UltestNearest<cr>
 nnoremap <silent> <leader><leader>s :UltestSummary<cr>
-
+nmap ss <Plug>(ultest-output-jump) 
 
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
