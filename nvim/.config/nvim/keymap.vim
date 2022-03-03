@@ -12,7 +12,7 @@ filetype plugin indent on    " required
 " Be faster
 :command W w
 " Enable folding with space f
-nnoremap <space> f
+nnoremap <leader> za
 " navigation
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Behave Vim
@@ -69,8 +69,6 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-k> <esc>:m .-2<CR>==
-nnoremap <leader>j :m .+1<CR>==
-nnoremap <leader>k :m .-2<CR>==
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -92,8 +90,6 @@ function! s:ag_with_opts(arg, bang)
         autocmd VimEnter * command! -nargs=* -bang Ag call s:ag_with_opts(<q-args>, <bang>0)
 
 nnoremap <Leader>r :Ag --hidden<CR>
-
-"nnoremap <Leader>l :<C-u>call gitblame#echo()<CR>
 
 " remap visual block mode so ctrl v can be paste
 
@@ -158,6 +154,27 @@ nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>vll :call LspLocationList()<CR>
 
 nnoremap <leader>x :!chmod +x %
+
+" Open the current file in the default program
+nmap <leader>o :!xdg-open %<cr><cr>
+
+" Coverage navigation
+noremap [C :<C-U>PrevUncovered<CR>
+noremap ]C :<C-U>NextUncovered<CR>
+nnoremap <leader>c <cmd>ToggleCoverage<CR>
+
+
+" Testing
+
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+nnoremap <silent> <leader><leader>t :UltestNearest<cr>
+nnoremap <silent> <leader><leader>s :UltestSummary<cr>
+nmap ss <Plug>(ultest-output-jump) 
 
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 

@@ -5,11 +5,19 @@ require("telescope").setup({
         prompt_prefix = " >",
         color_devicons = true,
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-         vimgrep_arguments = {
+        find_command = {
+            'rg', 
+            '--no-ignore',
+            '--files',
+            '--hidden',  
+            -- '--ignore-file',
+            -- '.venv',
+            '-g',
+            '!.git' 
+        },
+        vimgrep_arguments = {
               'rg',
-              -- '--color=never',
-              -- '--no-heading',
-              -- '--no-ignore',
+              '--no-ignore',
               '--hidden',
               '--with-filename',
               '--line-number',
@@ -18,13 +26,19 @@ require("telescope").setup({
               '-u'},
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-        file_ignore_patterns = {'.venv/','.venv3/','.git/', '.pyc', 'mypy_cache'},
+        file_ignore_patterns = {'logs/','build/','.venv/','.venv3/','.git/', '.pyc', 'mypy_cache', 'htmlcov', 'pytest_cache'},
         mappings = {
             i = {
                 ["<C-x>"] = false,
                 ["<C-q>"] = actions.send_to_qflist,
             },
         },
+    },
+    pickers = {
+        find_files = {
+            hidden = true
+        }
+            -- theme = "dropdown"
     },
     extensions = {
         fzy_native = {
@@ -46,52 +60,6 @@ M.search_dotfiles = function()
     })
 end
 
-local function set_background(content)
-    vim.fn.system(
-        "feh --bg-scale"
-            .. content
-            .. "'\""
-    )
-end
-
-local function select_background(prompt_bufnr, map)
-    local function set_the_background(close)
-        local content = require("telescope.actions.state").get_selected_entry(
-            prompt_bufnr
-        )
-        set_background(content.cwd .. "/" .. content.value)
-        if close then
-            require("telescope.actions").close(prompt_bufnr)
-        end
-    end
-
-    map("i", "<C-p>", function()
-        set_the_background()
-    end)
-
-    map("i", "<CR>", function()
-        set_the_background(true)
-    end)
-end
-
-local function image_selector(prompt, cwd)
-    return function()
-        require("telescope.builtin").find_files({
-            prompt_title = prompt,
-            cwd = cwd,
-            preview=false,
-            attach_mappings = function(prompt_bufnr, map)
-                select_background(prompt_bufnr, map)
-
-                -- Please continue mapping (attaching additional key maps):
-                -- Ctrl+n/p to move up and down the list.
-                return true
-            end,
-        })
-    end
-end
-
-M.bg_selector = image_selector("< wallpapers > ", "~/dotfiles/backgrounds")
 --M.chat_selector = image_selector("< Chat Sucks > ", "~/dotfiles/chat")
 
 local function refactor(prompt_bufnr)

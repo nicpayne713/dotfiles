@@ -58,3 +58,30 @@ yes, with "bp
 ## What Makes a Good Plugin
 * If you have to memorize bunch of things that aren't a simple set of keystrokes that eventully become second nature than there is something wrong with the plugin
 
+
+## v4l2loopback
+
+Sometimes at work the module isn't found right "module v4l2loopback not found in directory <kernel stufff>"
+my fix is to go to ~//third-party/v4l2loopback anad run:
+v4l2loopback  🌱 main on ☁️  (us-east-1)
+❯ make clean
+rm -f *~
+rm -f Module.symvers Module.markers modules.order
+make -C /lib/modules/`uname -r`/build M=/home/u_paynen3/third-party/v4l2loopback clean
+make[1]: Entering directory '/usr/src/linux-headers-5.4.0-94-generic'
+make[1]: Leaving directory '/usr/src/linux-headers-5.4.0-94-generic'
+make -C utils clean
+make[1]: Entering directory '/home/u_paynen3/third-party/v4l2loopback/utils'
+rm v4l2loopback-ctl
+make[1]: Leaving directory '/home/u_paynen3/third-party/v4l2loopback/utils'
+
+
+v4l2loopback  🌱 main on ☁️  (us-east-1)
+❯ sudo make install
+
+v4l2loopback  🌱 main on ☁️  (us-east-1)
+❯ sudo depmod -a
+
+v4l2loopback  🌱 main on ☁️  (us-east-1)  took 26s
+❯ sudo modprobe v4l2loopback video_nr=10 card_label="OBS Video Source" exclusive_caps=1
+

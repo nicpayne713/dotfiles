@@ -14,6 +14,8 @@
 - - polybar
 - - starship prompt
 - - Need powerline fonts for oh-my-zsh
+- - speedscope
+
 ### Neovim
 - Need to create a python3 environment with 'python -m venv ~/.config/neovim/.venv3/' for the python3 provider for neovim and install "pip install neovim"
 - Also for python lsp stuff need to use these 2 commands from Waylon's repo:
@@ -51,6 +53,10 @@ For a quick intro check out [ThePrimeagen's YT video](https://www.youtube.com/wa
 
 Caveats: fresh machine will need https://github.com/gpakosz/.tmux and https://github.com/ohmyzsh/ohmyzsh setup first
 Then using the OS script (`ubuntu` or `work` set the variables and let `stow` do the rest!)
+
+## Speedscope
+for visualizing python profiling results from `pyinstrument -r speedscope script.py`
+`npm install -g speedscope`
 
 ## Notes
 - My tmux stuff jumps you right into `base` tmux session when you open a terminal that inits my `zshrc`

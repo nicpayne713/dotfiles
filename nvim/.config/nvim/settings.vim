@@ -1,18 +1,39 @@
-"             _   _   _                       _           
-"   / __|/ _ \ __| __| | '_ \ / _` / __\ \ / / | '_ ` _ \ 
-"    ___  ___| |_| |_(_)_ __   __ _ _____   _(_)_ __ ___  
-"   \__ \  __/ |_| |_| | | | | (_| \__ \\ V /| | | | | | |
-"   |___/\___|\__|\__|_|_| |_|\__, |___(_)_/ |_|_| |_| |_|
-"                             |___/                       
+"           _   _   _                       _           
+"  ___  ___| |_| |_(_)_ __   __ _ _____   _(_)_ __ ___  
+" / __|/ _ \ __| __| | '_ \ / _` / __\ \ / / | '_ ` _ \ 
+" \__ \  __/ |_| |_| | | | | (_| \__ \\ V /| | | | | | |
+" |___/\___|\__|\__|_|_| |_|\__, |___(_)_/ |_|_| |_| |_|
+"                           |___/                       
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
- 
+
+" startify
+let g:ascii=[
+ \ '                                        ▟▙            ',
+ \ '                                        ▝▘            ',
+ \ '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
+ \ '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
+ \ '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
+ \ '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
+ \ '▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+ \ '                    The superior editor               ',
+ \ '                       Welcome, Nic!                  ',
+ \ '',
+ \]
+let g:startify_custom_header =
+      \ 'startify#center(g:ascii + startify#fortune#boxed())'
+
+let g:startify_lists = []
+
+
 set scrolloff=30
 set nowrap
 set colorcolumn=88
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 
-" Transparency
-hi Normal guibg=NONE ctermbg=NONE
+set list
+set listchars=tab:▸\ ,trail:·
+
+
 
 "" Ignore files
 set wildignore+=*.pyc
@@ -37,6 +58,7 @@ let g:python3_host_prog = '~/.config/nvim/.venv3/bin/python'
 
 " isort
 let g:isort_cmd='isort'
+" autocmd bufwritepre *.py execute 'isort'
 
 "" black
 " let g:black_virtualenv = '~/.venv/dotfiles/bin/python' 
@@ -49,7 +71,8 @@ autocmd bufwritepre *.py execute 'Black'
 " endfunction
 
 function! s:PyPostSave()
-    execute "silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE " . bufname("%")
+    execute 'silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE ' . bufname("%")
+    execute 'silent !isort' . bufname("%")
     execute "e"
 endfunction
 
@@ -85,7 +108,9 @@ let g:UltiSnipsJumpForwardTrigger="<C-e>"
 let g:UltiSnipsJumpBackwardTrigger="<C-i>"
 
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"" Add fzf to vim
+let g:UltiSnipsEditSplit="vertical"
+
+" Add fzf to vim
 set rtp+=/usr/local/opt/fzf
 
 " Enable folding
@@ -96,16 +121,24 @@ syntax enable
 set statusline+=%#warningmsg#
 set statusline+=%*
 set laststatus=2
-let g:lightline = {
-            \'colorscheme': "tokyonight",
-            \ 'active': {
-            \ 'left': [ [ 'mode', 'paste' ],
-            \          [ 'gitbranch', 'readonly', 'filename', 'modified' ]]
-            \ },
-            \ 'component_function': {
-            \ 'gitbranch': 'gitbranch#name'
-            \ }
-            \ }
+" \ 'seperator': {'left': '\uE0B0', 'right': '\uE0B2'},
+" \ 'subseperator': {'left': '\uE0B1', 'right': '\uE0B3'},
+" let g:lightline = {
+"             \'colorscheme': "tokyonight",
+"             \ 'seperator': {'left': '|', 'right': '|'},
+"             \ 'subseperator': {'left': '|', 'right': '|'},
+"             \ 'active': {
+"             \ 'left': [ [ 'mode', 'paste' ],
+"             \          [ 'gitbranch', 'readonly', 'filename', 'modified', 'coverage' ]]
+"             \ },
+"             \ 'component_function': {
+"             \ 'gitbranch': 'gitbranch#name',
+"             \ 'coverage': 'coverage_highlight#get_current'
+"             \ }
+"             \ }
+"
+let g:airline_theme="night_owl"
+let g:airline_powerline_fonts = 1
 
 " doq for pydocstring
 let g:pydocstring_doq_path = '$HOME/.local/bin/doq'
@@ -154,3 +187,38 @@ set completefunc=emoji#complete
 " quit tree when file is opened
 let g:nvim_tree_quit_on_open=1
 
+" nerdtree
+let NERDTreeShowHidden=1
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['py'] = "689FB6"
+
+" LaTex
+" This is necessary for VimTeX to load properly. The "indent" is optional.
+" Note that most plugin managers will do this automatically.
+filetype plugin indent on
+
+" Viewer options: One may configure the viewer either by specifying a built-in
+" viewer method:
+" let g:vimtex_view_method = 'okular'
+
+" Or with a generic interface:
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+let g:vimtex_view_general_options_latexmk = '--unique'
+
+" VimTeX uses latexmk as the default compiler backend. If you use it, which is
+" strongly recommended, you probably don't need to configure anything. If you
+" want another compiler backend, you can change it as follows. The list of
+" supported backends and further explanation is provided in the documentation,
+" see ":help vimtex-compiler".
+let g:vimtex_compiler_method = 'latexrun'
+let g:vimtex_compiler_method = 'latexmk'
+
+" Most VimTeX mappings rely on localleader and this can be changed with the
+" following line. The default is usually fine and is the symbol "\".
+let maplocalleader = ","
+
+" testing
+let test#python#runner = 'pytest'
+let test#python#pytest#options = "--color=yes"
+let g:ultest_use_pty = 1
