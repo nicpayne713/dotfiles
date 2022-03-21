@@ -21,6 +21,7 @@ vnoremap < <gv
 vnoremap > >gv
 " yank text to first regiter then when you paste it the yanked text is still first in the register
 vnoremap <Leader>p "_P 
+vnoremap p "0p
 
 " ESC
 inoremap jk <esc>
@@ -156,7 +157,7 @@ nnoremap <leader>vll :call LspLocationList()<CR>
 nnoremap <leader>x :!chmod +x %
 
 " Open the current file in the default program
-nmap <leader>o :!xdg-open %<cr><cr>
+nmap <leader>o :!xdg-open "%"<cr><cr>
 
 " Coverage navigation
 noremap [C :<C-U>PrevUncovered<CR>

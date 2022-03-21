@@ -62,8 +62,8 @@ let g:isort_cmd='isort'
 
 "" black
 " let g:black_virtualenv = '~/.venv/dotfiles/bin/python' 
-let g:black_virtualenv = '~/.local/pipx/venvs/black/bin' 
-" let g:black_cmd='~/.local/bin/black'
+# let g:black_virtualenv = '~/.local/pipx/venvs/black/bin' 
+let g:black_cmd='~/.local/bin/black'
 autocmd bufwritepre *.py execute 'Black'
 
 " function! s:PyPreSave()
