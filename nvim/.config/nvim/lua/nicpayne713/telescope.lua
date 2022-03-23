@@ -26,7 +26,7 @@ require("telescope").setup({
               '-u'},
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-        file_ignore_patterns = {'logs/','build/','.venv/','.venv3/','.git/', '.pyc', 'mypy_cache', 'htmlcov', 'pytest_cache'},
+        file_ignore_patterns = {'markout/', '.markata.cache/', 'logs/','build/','.venv/','.venv3/','.git/', '.pyc', 'mypy_cache', 'htmlcov', 'pytest_cache'},
         mappings = {
             i = {
                 ["<C-x>"] = false,
