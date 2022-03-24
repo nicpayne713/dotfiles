@@ -7,6 +7,7 @@ export APPIMAGE_ROOT="$HOME/AppImages:"
 export PATH="$APP_IMAGE_ROOT:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=nvim
+export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/shims/python"
 # export TERM=screen-256color-bce
 # export TERM=xterm-256color
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
