@@ -48,19 +48,19 @@ set -g default-terminal "screen-256color-bce" # colors!
 # default theme
 tmux_conf_theme_colour_1="#080808"    # dark gray
 tmux_conf_theme_colour_2="#303030"    # gray
-tmux_conf_theme_colour_3="#8a8a8a"    # light gray
+tmux_conf_theme_colour_3="#282c34"    # night own gui black 
 tmux_conf_theme_colour_4="#052e34"    # lighter gray
 tmux_conf_theme_colour_5="#ffff00"    # yellow
-tmux_conf_theme_colour_6="#080808"    # dark gray
+tmux_conf_theme_colour_6="#282c34"    # night own gui black 
 tmux_conf_theme_colour_7="#e4e4e4"    # white
-tmux_conf_theme_colour_8="#080808"    # dark gray
+tmux_conf_theme_colour_8="#282c34"    # night own gui black 
 tmux_conf_theme_colour_9="#83DCC8"    # night_owl cyan  # session name
 tmux_conf_theme_colour_10="#041f23"   # gray 
 tmux_conf_theme_colour_11="#5fff00"   # green
 tmux_conf_theme_colour_12="#8a8a8a"   # light gray
 tmux_conf_theme_colour_13="#81AAFF"   # night_owl blue 
-tmux_conf_theme_colour_14="#080808"   # dark gray
-tmux_conf_theme_colour_15="#080808"   # dark gray
+tmux_conf_theme_colour_14="#282c34"    # night own gui black 
+tmux_conf_theme_colour_15="#282c34"    # night own gui black
 tmux_conf_theme_colour_16="#041f23"   # gray 
 tmux_conf_theme_colour_17="#83DCC8"    # night_owl cyan  # host name
 
@@ -85,7 +85,7 @@ tmux_conf_theme_colour_17="#83DCC8"    # night_owl cyan  # host name
 
 # window style
 tmux_conf_theme_window_fg="default"
-tmux_conf_theme_window_bg="default"
+tmux_conf_theme_window_bg="tmux_conf_theme_colour_13"
 
 # highlight focused pane (tmux >= 2.1), possible values are:
 #   - true
@@ -126,8 +126,8 @@ tmux_conf_theme_mode_bg="default"
 tmux_conf_theme_mode_attr="bold"
 
 # status line style
-tmux_conf_theme_status_fg="$tmux_conf_theme_colour_3"
-tmux_conf_theme_status_bg="$tmux_conf_theme_colour_1"
+tmux_conf_theme_status_fg="$tmux_conf_theme_colour_9"
+tmux_conf_theme_status_bg="$tmux_conf_theme_colour_3"
 tmux_conf_theme_status_attr="none"
 
 # terminal title
@@ -153,7 +153,7 @@ tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_fg="$tmux_conf_theme_colour_3"
-tmux_conf_theme_window_status_bg="$tmux_conf_theme_colour_1"
+tmux_conf_theme_window_status_bg="$tmux_conf_theme_colour_17"
 tmux_conf_theme_window_status_attr="none"
 #tmux_conf_theme_window_status_format="#I #W"
 tmux_conf_theme_window_status_format="#{circled_window_index} #W"
