@@ -101,3 +101,9 @@ style = "bold green"
 [username]
 style_user = "bold dimmed blue"
 show_always = false
+
+
+[custom.zsh]
+when = '[[ ! -n "${VIRTUAL_ENV}" ]] '
+style = "bold red"
+format = '[ NOT SET ]($style)'
