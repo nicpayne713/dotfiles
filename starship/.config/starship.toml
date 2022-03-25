@@ -10,7 +10,7 @@ style = "fg:dimmed white"
 [aws]
 format = 'on [$symbol($profile )(\($region\) )]($style)'
 style = "bold blue"
-symbol ="☁️ " 
+symbol =" " 
 
 [cmd_duration]
 min_time = 5_000  # Show command duration over 5,000 milliseconds (=5 sec)
