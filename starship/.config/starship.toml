@@ -6,7 +6,7 @@
 [character]
 success_symbol = "[❯ ](fg:#83DCC8)" # normal prompt
 error_symbol = "[✗](bold red)" # used if previous command failed
-[env_var.http_proxy]
+[env_var.proxy_set]
 default ="" 
 format = "[$env_value]($style)"
 style = "fg:dimmed white"
