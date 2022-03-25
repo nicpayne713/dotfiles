@@ -4,7 +4,7 @@
 # Displays text, typically a single character,
 # based on the status of the previous command.
 [character]
-success_symbol = "[❯ ](fg:#83DCC8)" # normal prompt
+success_symbol = "[❯](fg:#83DCC8)" # normal prompt
 error_symbol = "[✗](bold red)" # used if previous command failed
 
 
