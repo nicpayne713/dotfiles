@@ -6,6 +6,8 @@
 [character]
 success_symbol = "[❯ ](fg:#83DCC8)" # normal prompt
 error_symbol = "[✗](bold red)" # used if previous command failed
+
+
 [env_var.proxy_set]
 default ="" 
 format = "[$env_value]($style)"
@@ -104,6 +106,6 @@ show_always = false
 
 
 [custom.zsh]
-when = '[[ ! -n "${VIRTUAL_ENV}" ]] '
+when = '[[ ! -n "${VIRTUAL_ENV}" ]]'
 style = "bold red"
-format = '[ NOT SET ]($style)'
+format = '[ NO PYTHON VENV SET ]($style)'
