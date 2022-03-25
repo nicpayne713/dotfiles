@@ -65,7 +65,7 @@ staged = "  ×${count}"
 renamed = "   ×${count}"
 deleted = "  ×${count}"
 style = "bright-white"
-format = "[$stashed](fg:white)[$conflicted](fg:red)[$ahead](fg: blue)[$behind](fg: red)[$diverged](fg: bold yellow)[$untracked](fg: dimmed white)[$staged](fg: green)[$renamed](fg: bold red)[$deleted](fg: dimmed red)"
+format = "[$stashed](fg:white)[$conflicted](fg:red)[$ahead](fg: blue)[$behind](fg: red)[$diverged](fg: bold yellow)[$untracked](fg: dimmed white)[$modified](fg: white)[$staged](fg: green)[$renamed](fg: bold red)[$deleted](fg: dimmed red)"
 
 [hostname]
 ssh_only = false
