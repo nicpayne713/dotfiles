@@ -1,6 +1,11 @@
 
 # ~/.config/starship.toml
 
+# Displays text, typically a single character,
+# based on the status of the previous command.
+[character]
+success_symbol = "[❯ ](fg:#83DCC8)" # normal prompt
+error_symbol = "[✗](bold red)" # used if previous command failed
 [env_var.http_proxy]
 default ="" 
 format = "[$env_value]($style)"
