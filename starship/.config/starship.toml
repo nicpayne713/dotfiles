@@ -59,6 +59,7 @@ format = "[$symbol$version]($style) "
 symbol = "ஃ "
 style = "bold green"
 
+#comment
 [package]
 disabled = true
 
