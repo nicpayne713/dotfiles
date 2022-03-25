@@ -12,12 +12,13 @@ export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/shims/python"
 # export TERM=xterm-256color
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export ZSH_DISABLE_COMPFIX="true"
-#ZSH_THEME="robbyrussell"
+# export PS1="%F{#83DCC8}❯%f"  # trying to set prompt chevron icon to a blue that matches
+# ZSH_THEME="robbyrussell"
 # ZSH_THEME=random
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 # ZSH_THEME_RANDOM_QUIET=true
 
-plugins=(git dotenv ag colorize zsh-autosuggestions)
+plugins=(git dotenv ag zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.zprofile
