@@ -1,7 +1,13 @@
 
 # ~/.config/starship.toml
 
-[env_var.http_proxy]
+# Displays text, typically a single character,
+# based on the status of the previous command.
+[character]
+success_symbol = "[❯](fg:#83DCC8)" # normal prompt
+error_symbol = "[✗](bold red)" # used if previous command failed
+
+[env_var.proxy_set]
 default ="" 
 format = "[$env_value]($style)"
 style = "fg:dimmed white"
@@ -10,7 +16,7 @@ style = "fg:dimmed white"
 [aws]
 format = 'on [$symbol($profile )(\($region\) )]($style)'
 style = "bold blue"
-symbol ="☁️ " 
+symbol =" " 
 
 [cmd_duration]
 min_time = 5_000  # Show command duration over 5,000 milliseconds (=5 sec)
@@ -30,7 +36,6 @@ format = "via [🐋 $context](blue bold)"
 format = " [$symbol](bold purple)[$branch]($style) "
 symbol = " "  
 #symbol = "🌱 " 
-#style = "bold yellow"
 style = "fg:#83DCC8"
 
 [git_commit]
@@ -42,17 +47,6 @@ format = '[\($state( $progress_current of $progress_total)\)]($style) '
 cherry_pick = "[🍒 PICKING](bold red)"
 
 [git_status]
-# conflicted = "⚔️ "
-# ahead = "🏎️ 💨 ×${count}"
-# behind = "🐢 ×${count}"
-# diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
-# untracked = "🛤️  ×${count}"
-# stashed = "📦 "
-# modified = "📝 ×${count}"
-# staged = "🗃️  ×${count}"
-# renamed = "📛 ×${count}"
-# deleted = "🗑️  ×${count}"
-# style = "bright-white"
 format = "$all_status$ahead_behind"
 conflicted = "  " 
 ahead = "  ×${count}"
@@ -65,7 +59,6 @@ staged = "  ×${count}"
 renamed = "   ×${count}"
 deleted = "  ×${count}"
 style = "bright-white"
-# format = "[$stashed](fg:white)[$conflicted](fg:red)[$ahead](fg:red)[$behind](fg:red)[$diverged](fg:bold yellow)[$untracked](fg:dimmed white)[$modified](fg:white)[$staged](fg:green)[$renamed](fg:bold red)[$deleted](fg:dimmed red)"
 
 [hostname]
 ssh_only = false
@@ -86,7 +79,6 @@ disabled = true
 format = '[ via ](dimmed white)[${symbol}(${version})(\($virtualenv\) )]($style)'
 style = "fg:#83DCC8"
 python_binary = ["python3", "python"]
-# symbol = "🐍 "
 symbol = "[ ](fg:#3776ab) "  # actual python blue
 
 [rust]
@@ -96,3 +88,8 @@ style = "bold green"
 [username]
 style_user = "bold dimmed blue"
 show_always = false
+
+[custom.zsh]
+when = '[[ ! -n "${VIRTUAL_ENV}" ]]'
+style = "bold red"
+format = '[ NO PYTHON VENV SET ]($style)'
