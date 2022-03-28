@@ -17,10 +17,3 @@ _/      _/  _/            $rootFree   $homeFree   $memAvailable   $c
                          
                          
 " | lolcat --seed=39 --spread=20
-
-printf "
-        ⢸⣦⡈⠻⣿⣿⣿⣶⣄          ⣸ ⣯ ⣫ ⣫  ⣵ ⣟ ⣏ ⣿ ⣯ ⣟
-        ⢸⣿⣿⣦⡈⠻⣿⣿⣿⣷⣄
-  ⣀⣀⣀⣀⣀⣀⣼⣿⣿⣿⣿ ⠈⠻⣿⣿⣿⣷⣄        $os
-  ⠈⠻⣿⣿⣿⣿⣿⡿⠿⠛⠁   ⠈⠻⢿⣿⣿⣷⣄     $rootFree   $homeFree   $memAvailable   $cpuTemp  辰$loadAvg
-" | lolcat --truecolor --seed=22 --spread=6
