@@ -1,3 +1,4 @@
+# : << EOF
 # https://github.com/gpakosz/.tmux
 # (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
 #         without any warranty.
@@ -43,26 +44,44 @@ tmux_conf_new_session_prompt=false
 #  - true
 #  - false (default)
 tmux_conf_24b_colour=false
-set -g default-terminal "screen-256color-bce" # colors!
+
+# pseudo vim-airline night own theme
+tmux_conf_theme_colour_1="#282c34"    # gui_black  # middle status bar background
+tmux_conf_theme_colour_2="#282c34"    # gui_black  # inactive window bg
+tmux_conf_theme_colour_3="#484e5a"    # light gray  # no idea
+tmux_conf_theme_colour_4="#83DCC8"    # gui_cyan  # active window bg AND inactive window txt
+tmux_conf_theme_colour_5="#c792ea"    # gui_purple  # command bar flash
+tmux_conf_theme_colour_6="#282c34"    # gui_black  # session name text
+tmux_conf_theme_colour_7="#83DCC8"    # gui_cyan  # uptime text
+tmux_conf_theme_colour_8="#282c34"    # gui_black  # no idea
+tmux_conf_theme_colour_9="#83DCC8"    # gui_cyan  # hostname bg
+tmux_conf_theme_colour_10="#484e5a"    # light gray  # uptime bg
+tmux_conf_theme_colour_11="#afd75f"   # gui_green  # command bar
+tmux_conf_theme_colour_12="#83DCC8"    # gui_cyan  # time/date
+tmux_conf_theme_colour_13="#83DCC8"    # gui_cyan  # username text
+tmux_conf_theme_colour_14="#282c34"   # gui_black  # hostname text
+tmux_conf_theme_colour_15="#282c34"   # gui_black  # time/date ribbon bg
+tmux_conf_theme_colour_16="#484e5a"    # light gray  # username bg
+tmux_conf_theme_colour_17="#83DCC8"    # gui_cyan  # hostname
 
 # default theme
-tmux_conf_theme_colour_1="#080808"    # dark gray
-tmux_conf_theme_colour_2="#303030"    # gray
-tmux_conf_theme_colour_3="#8a8a8a"    # light gray
-tmux_conf_theme_colour_4="#052e34"    # lighter gray
-tmux_conf_theme_colour_5="#ffff00"    # yellow
-tmux_conf_theme_colour_6="#080808"    # dark gray
-tmux_conf_theme_colour_7="#e4e4e4"    # white
-tmux_conf_theme_colour_8="#080808"    # dark gray
-tmux_conf_theme_colour_9="#83DCC8"    # night_owl cyan  # session name
-tmux_conf_theme_colour_10="#041f23"   # gray 
-tmux_conf_theme_colour_11="#5fff00"   # green
-tmux_conf_theme_colour_12="#8a8a8a"   # light gray
-tmux_conf_theme_colour_13="#81AAFF"   # night_owl blue 
-tmux_conf_theme_colour_14="#080808"   # dark gray
-tmux_conf_theme_colour_15="#080808"   # dark gray
-tmux_conf_theme_colour_16="#041f23"   # gray 
-tmux_conf_theme_colour_17="#83DCC8"    # night_owl cyan  # host name
+# tmux_conf_theme_colour_1="#080808"    # dark gray
+# tmux_conf_theme_colour_2="#303030"    # gray
+# tmux_conf_theme_colour_3="#8a8a8a"    # light gray
+# tmux_conf_theme_colour_4="#00afff"    # light blue
+# tmux_conf_theme_colour_5="#ffff00"    # yellow
+# tmux_conf_theme_colour_6="#080808"    # dark gray
+# tmux_conf_theme_colour_7="#e4e4e4"    # white
+# tmux_conf_theme_colour_8="#080808"    # dark gray
+# tmux_conf_theme_colour_9="#ffff00"    # yellow
+# tmux_conf_theme_colour_10="#ff00af"   # pink
+# tmux_conf_theme_colour_11="#5fff00"   # green
+# tmux_conf_theme_colour_12="#8a8a8a"   # light gray
+# tmux_conf_theme_colour_13="#e4e4e4"   # white
+# tmux_conf_theme_colour_14="#080808"   # dark gray
+# tmux_conf_theme_colour_15="#080808"   # dark gray
+# tmux_conf_theme_colour_16="#d70000"   # red
+# tmux_conf_theme_colour_17="#e4e4e4"   # white
 
 # default theme (ansi)
 #tmux_conf_theme_colour_1="colour0"
@@ -90,11 +109,10 @@ tmux_conf_theme_window_bg="default"
 # highlight focused pane (tmux >= 2.1), possible values are:
 #   - true
 #   - false (default)
-tmux_conf_theme_highlight_focused_pane=true
+tmux_conf_theme_highlight_focused_pane=false
 
 # focused pane colours:
-#tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_colour_2"
-tmux_conf_theme_focused_pane_bg="default"
+tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_colour_2"
 
 # pane border style, possible values are:
 #   - thin (default)
@@ -121,8 +139,7 @@ tmux_conf_theme_message_command_attr="bold"
 
 # window modes style
 tmux_conf_theme_mode_fg="$tmux_conf_theme_colour_1"
-#tmux_conf_theme_mode_bg="$tmux_conf_theme_colour_5"
-tmux_conf_theme_mode_bg="default"
+tmux_conf_theme_mode_bg="$tmux_conf_theme_colour_5"
 tmux_conf_theme_mode_attr="bold"
 
 # status line style
@@ -169,8 +186,8 @@ tmux_conf_theme_window_status_format="#{circled_window_index} #W"
 #     - #{hostname_full_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_current_fg="$tmux_conf_theme_colour_8"
-tmux_conf_theme_window_status_current_bg="$tmux_conf_theme_colour_13"
+tmux_conf_theme_window_status_current_fg="$tmux_conf_theme_colour_1"
+tmux_conf_theme_window_status_current_bg="$tmux_conf_theme_colour_4"
 tmux_conf_theme_window_status_current_attr="bold"
 #tmux_conf_theme_window_status_current_format="#I #W"
 tmux_conf_theme_window_status_current_format="#{circled_window_index} #W"
@@ -187,8 +204,8 @@ tmux_conf_theme_window_status_bell_bg="default"
 tmux_conf_theme_window_status_bell_attr="blink,bold"
 
 # window last status style
-tmux_conf_theme_window_status_last_fg="$tmux_conf_theme_colour_9"
-tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_colour_1"
+tmux_conf_theme_window_status_last_fg="$tmux_conf_theme_colour_4"
+tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_colour_2"
 tmux_conf_theme_window_status_last_attr="none"
 
 # status left/right sections separators
@@ -228,15 +245,13 @@ tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-# Just keeping here for safe keeping
-#| #{?vpn_status, #{vpn_status},}
 tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
 tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} "
 
 # status left style
-tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7
-tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10
-tmux_conf_theme_status_left_attr="none,none"
+tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
+tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colour_10,$tmux_conf_theme_colour_11"
+tmux_conf_theme_status_left_attr="none,none,none"
 
 # status right style
 tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_12,$tmux_conf_theme_colour_13,$tmux_conf_theme_colour_14"
@@ -288,14 +303,14 @@ tmux_conf_battery_bar_length="auto"
 #   - gradient (default)
 #   - heat
 #   - "colour_full_fg,colour_empty_fg,colour_bg"
-tmux_conf_battery_bar_palette="heat"
+tmux_conf_battery_bar_palette="gradient"
 #tmux_conf_battery_bar_palette="#d70000,#e4e4e4,#000000"   # red, white, black
 
 # battery hbar palette, possible values are:
 #   - gradient (default)
 #   - heat
 #   - "colour_low,colour_half,colour_full"
-tmux_conf_battery_hbar_palette="heat"
+tmux_conf_battery_hbar_palette="gradient"
 #tmux_conf_battery_hbar_palette="#d70000,#ff5f00,#5fff00"  # red, orange, green
 
 # battery vbar palette, possible values are:
@@ -324,7 +339,7 @@ tmux_conf_theme_clock_style="24"
 #   - false (default)
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
-tmux_conf_copy_to_os_clipboard=true
+tmux_conf_copy_to_os_clipboard=false
 
 
 # -- user customizations -------------------------------------------------------
@@ -351,6 +366,7 @@ tmux_conf_copy_to_os_clipboard=true
 # move status line to top
 #set -g status-position top
 
+
 # -- tpm -----------------------------------------------------------------------
 
 # while I don't use tpm myself, many people requested official support so here
@@ -370,6 +386,17 @@ tmux_conf_update_plugins_on_launch=true
 #   - false
 tmux_conf_update_plugins_on_reload=true
 
+# by default, reloading the configuration will uninstall tpm and plugins when no
+# plugins are enabled
+#   - true (default)
+#   - false
+tmux_conf_uninstall_plugins_on_reload=true
+
+# /!\ the tpm bindings differ slightly from upstream:
+#   - installing plugins: <prefix> + I
+#   - uninstalling plugins: <prefix> + Alt + u
+#   - updating plugins: <prefix> + u
+
 # /!\ do not add set -g @plugin 'tmux-plugins/tpm'
 # /!\ do not add run '~/.tmux/plugins/tpm/tpm'
 
@@ -384,7 +411,7 @@ tmux_conf_update_plugins_on_reload=true
 
 # -- custom variables ----------------------------------------------------------
 
-# to define a custom #{foo} variable, define a PO IX shell function between the
+# to define a custom #{foo} variable, define a POSIX shell function between the
 # '# EOF' and the '# "$@"' lines. Please note that the opening brace { character
 # must be on the same line as the function name otherwise the parse won't detect
 # it.
@@ -405,15 +432,6 @@ tmux_conf_update_plugins_on_reload=true
 # online() {
 #   ping -c 1 1.1.1.1 >/dev/null 2>&1 && printf '✔' || printf '✘'
 # }
-#
-#
-# vpn_status() {
-#  if [[ "$(/opt/cisco/anyconnect/bin/vpn status)" == *"state: Connected"* ]]; then
-#    printf '✔'
-#  else
-#    printf '✘'
-#  fi
-# } 
 #
 # "$@"
 # # /!\ do not remove the previous line
