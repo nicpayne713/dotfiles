@@ -16,7 +16,7 @@ printf "
 _/      _/  _/            $rootFree   $homeFree   $memAvailable   $cpuTemp  辰$loadAvg
                          
                          
-" | lolcat --seed=23 --spread=3
+" | lolcat --seed=39 --spread=20
 
 printf "
         ⢸⣦⡈⠻⣿⣿⣿⣶⣄          ⣸ ⣯ ⣫ ⣫  ⣵ ⣟ ⣏ ⣿ ⣯ ⣟
