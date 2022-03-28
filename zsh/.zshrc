@@ -90,6 +90,6 @@ bindkey -s '^o' 'background \n'
 bindkey '^e' edit-command-line
 # when sourcing zshrc make sure PATH variables aren't duplicated
 eval "typeset -U path"
-hello() { clear && lolcat $HOME/dotfiles/motd.txt }
+hello() { clear && ~/dotfiles/scripts/login.sh }
 bindkey -s '^k' 'hello \n'
 hello \n
