@@ -7,12 +7,11 @@ cpuTemp=`echo ?`  #`sensors | grep CPU | awk '{print $2}' | sed 's/+//' | tr -d 
 loadAvg=`cat /proc/loadavg | awk '{printf "%s %s %s", $1, $2, $3}'`
 
 printf "
-                                  
-    _      _  ___            
-   __    _  _    _               
-  _  _  _  ____    
+
+    _      _  ___
+   __    _  _    _       @pypeaday
+  _  _  _  ____
  _    __  _          漢  $os
 _      _  _            $rootFree   $memAvailable   $cpuTemp  辰$loadAvg
-                         
-                         
-" | lolcat --seed=39 --spread=20
+
+" | lolcat --seed=39 --spread=35
