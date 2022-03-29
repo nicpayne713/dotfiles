@@ -10,8 +10,8 @@ printf "
 
     __     __  ____
    ___   __  __    __       @pypeaday
-  __ __ __  _____
+  __ __ __  _____   
  __   ___  __          漢  $os
-__     __  __            $rootFree   $memAvailable   $cpuTemp  辰$loadAvg
+__     __  __            `date`  $memAvailable  辰$loadAvg
 
 " | lolcat --seed=39 --spread=35
