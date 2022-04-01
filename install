@@ -18,6 +18,6 @@ do
     stow $folder
 done
 # eval ./shortcuts/.local/bin/multimonitor
-eval ./shortcuts/.local/bin/launch_polybar 
+eval $HOME/dotfiles/polybar/launch.sh
 
 popd
