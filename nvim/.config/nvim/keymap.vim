@@ -20,8 +20,8 @@ nnoremap Y y$
 vnoremap < <gv
 vnoremap > >gv
 " yank text to first regiter then when you paste it the yanked text is still first in the register
-vnoremap <Leader>p "_P 
-vnoremap p "0p
+" vnoremap <Leader>p "_P 
+vnoremap <leader>p "0p
 
 " ESC
 inoremap jk <esc>
