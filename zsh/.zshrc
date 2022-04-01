@@ -88,6 +88,7 @@ fi
 #
 bindkey -s '^o' 'background \n'
 bindkey '^e' edit-command-line
+bindkey -s '^a' 'source auto_proxy \n'
 # when sourcing zshrc make sure PATH variables aren't duplicated
 eval "typeset -U path"
 hello() { clear && ~/dotfiles/scripts/login.sh }
