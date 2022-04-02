@@ -41,26 +41,28 @@ red = "#E06C75"
 yellow = "#E5C07B"
 magenta = "#C678DD"
 
+white = "#ffffff"
+
 
 c.TerminalInteractiveShell.highlighting_style_overrides = {
     ## Standard Pygments tokens (are all used by IPython ?)
     Whitespace: grey,
     Comment: f"italic {green}",
-    Comment.Preproc: f"noitalic",
+    Comment.Preproc: "noitalic",
     # Comment.Special: f"noitalic bold",
     Keyword: f"bold {magenta}",
-    Keyword.Pseudo: f"nobold",
+    Keyword.Pseudo: "nobold",
     Keyword.Type: f"bold {green}",
     Operator: grey,
     Operator.Word: f"bold {magenta}",
-    Name.Builtin: f"#fff",  # ""#AA22FF",
+    Name.Builtin: f"{cyan}",
     Name.Function: purple,
     Name.Class: yellow,
-    # Name.Namespace: f"bold {blue}",
+    Name.Namespace: f"bold {blue}",
     Name.Exception: f"bold {red}",
     Name.Variable: yellow,
-    # Name.Constant: red,
-    # Name.Label: red,
+    Name.Constant: red,
+    Name.Label: red,
     Name.Entity: f"bold {grey}",
     Name.Attribute: red,
     Name.Tag: f"bold {green}",
@@ -78,18 +80,18 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     Generic.Deleted: red,
     Generic.Inserted: green,
     Generic.Error: red,
-    Generic.Emph: f"italic",
-    Generic.Strong: f"bold",
+    Generic.Emph: "italic",
+    Generic.Strong: "bold",
     Generic.Prompt: f"bold {blue}",
     Generic.Output: grey,
     Generic.Traceback: blue,
     Error: f"border:{red}",
-    Token.Number: f"#ffffff",
-    Token.Operator: f"noinherit",
+    Token.Number: f"{white}",
+    Token.Operator: "noinherit",
     Token.String: green,
     Token.Name.Function: cyan,
     Token.Name.Class: f"{cyan_offset}",
-    Token.
+    # Token.
     # Token.Name.Namespace: f"bold {blue}",
     Token.Name.Field: yellow,
     Token.Prompt: f"{grey} bold",
