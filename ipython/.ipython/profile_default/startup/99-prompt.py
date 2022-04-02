@@ -1,4 +1,5 @@
 from IPython.terminal.prompts import Prompts, Token
+import os
 from pathlib import Path
 from platform import python_version
 import subprocess
@@ -20,17 +21,25 @@ def get_branch():
         return ""
 
 
+def get_venv():
+    v = os.environ.get("VIRTUAL_ENV", None)
+    if v:
+        return f"{python_version()} {Path(v).stem}"
+    else:
+        return python_version()
+
+
 class MyPrompt(Prompts):
     def in_prompt_tokens(self, cli=None):
         return [
             (Token, ""),
             (Token.OutPrompt, Path().absolute().stem),
             (Token, " "),
-            (Token.Generic.Subheading, "↪"),
+            (Token.Generic.Subheading, ""),
             (Token, " "),
             (Token.Generic.Subheading, get_branch()),
             (Token, " "),
-            (Token.Name.Class, "v" + python_version()),
+            (Token.Name.Class, "via " + get_venv()),
             (Token, " "),
             (Token.Name.Entity, "ipython"),
             (Token, "\n"),
