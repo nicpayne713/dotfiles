@@ -15,26 +15,31 @@ c.InteractiveShell.colors = colorLabel
 
 
 from pygments.token import (
-    Token,
+    Comment,
+    Error,
+    Generic,
     Keyword,
     Name,
-    Comment,
-    String,
-    Error,
     Number,
     Operator,
-    Generic,
+    String,
+    Token,
     Whitespace,
 )
 
-black = "#282C34"
+
+# starting to try to match vim-airline and my tmux
+black = "#282c34"  # gui_black
+grey = "#484e5a"  # light gray
+cyan = "#83DCC8"  # gui_cyan
+cyan_offset = "#68b0a0"  # gui_cyan_offset
+purple = "#c792ea"  # gui_purple
+green = "#afd75f"  # gui_green
+blue = "#81aaff"  # gui_blue
+
 red = "#E06C75"
-green = "#98C379"
 yellow = "#E5C07B"
-blue = "#61AFEF"
 magenta = "#C678DD"
-cyan = "#56B6C2"
-grey = "#ABB2BF"
 
 
 c.TerminalInteractiveShell.highlighting_style_overrides = {
@@ -49,7 +54,7 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     Operator: grey,
     Operator.Word: f"bold {magenta}",
     Name.Builtin: f"#fff",  # ""#AA22FF",
-    Name.Function: cyan,
+    Name.Function: purple,
     Name.Class: yellow,
     # Name.Namespace: f"bold {blue}",
     Name.Exception: f"bold {red}",
@@ -68,8 +73,8 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     String.Symbol: yellow,
     String.Other: green,
     Number: grey,
-    Generic.Heading: blue,
-    Generic.Subheading: magenta,
+    Generic.Heading: cyan,
+    Generic.Subheading: f"bold {purple}",
     Generic.Deleted: red,
     Generic.Inserted: green,
     Generic.Error: red,
@@ -83,13 +88,13 @@ c.TerminalInteractiveShell.highlighting_style_overrides = {
     Token.Operator: f"noinherit",
     Token.String: green,
     Token.Name.Function: cyan,
-    Token.Name.Class: f"bold {yellow}",
+    Token.Name.Class: f"{cyan_offset}",
     Token.
     # Token.Name.Namespace: f"bold {blue}",
     Token.Name.Field: yellow,
-    Token.Prompt: f"{green} bold",
+    Token.Prompt: f"{grey} bold",
     Token.PromptNum: f"{grey} bold",
-    Token.OutPrompt: f"{cyan} bold",
+    Token.OutPrompt: f"{blue}",
     Token.OutPromptNum: f"{cyan} bold",
 }
 
