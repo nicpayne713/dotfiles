@@ -1,12 +1,15 @@
 from IPython.terminal.prompts import Prompts, Token
+import os
 from pathlib import Path
 from platform import python_version
 import subprocess
+from typing import Any, Tuple
 
 
-def get_branch():
+def get_branch() -> Tuple[Any, str]:
     try:
         return (
+            " ",
             subprocess.check_output(
                 "git rev-parse --abbrev-ref HEAD",
                 shell=True,
@@ -14,10 +17,18 @@ def get_branch():
                 # "git branch --show-current", shell=True, stderr=subprocess.DEVNULL
             )
             .decode("utf-8")
-            .replace("\n", "")
+            .replace("\n", ""),
         )
     except BaseException:
-        return ""
+        return "NO VCS", ""
+
+
+def get_venv() -> str:
+    v = os.environ.get("VIRTUAL_ENV", None)
+    if v:
+        return f"{python_version()}({Path(v).stem})"
+    else:
+        return python_version()
 
 
 class MyPrompt(Prompts):
@@ -26,11 +37,11 @@ class MyPrompt(Prompts):
             (Token, ""),
             (Token.OutPrompt, Path().absolute().stem),
             (Token, " "),
-            (Token.Generic.Subheading, "↪"),
+            (Token.Generic.Subheading, get_branch()[0]),
             (Token, " "),
-            (Token.Generic.Subheading, get_branch()),
+            (Token.Generic.Heading, get_branch()[1]),
             (Token, " "),
-            (Token.Name.Class, "v" + python_version()),
+            (Token.Name.Class, "via " + get_venv()),
             (Token, " "),
             (Token.Name.Entity, "ipython"),
             (Token, "\n"),
