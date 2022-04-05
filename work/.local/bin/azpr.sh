@@ -14,7 +14,9 @@ read -p "Squash? (y/n): " squash
 if [ $squash == "y" ]
 then
     echo "az repos pr create -o table --target-branch $target --squash  --title \"$title\" --reviewers \"$emails\""
+    `az repos pr create -o table --target-branch $target --squash  --title \"$title\" --reviewers \"$emails\"`
 else
     echo "az repos pr create -o table --target-branch $target --title \"$title\" --reviewers \"$emails\""
+    `az repos pr create -o table --target-branch $target --title \"$title\" --reviewers \"$emails\"`
 fi
 
