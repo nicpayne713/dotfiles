@@ -3,7 +3,7 @@
 # emails=`cat ~/dotfiles/work/.caterpillar/emails | fzf -m | sed 's/^\|$/"/g'|paste -sd,` 
 
 read -p "Pick reviewers (hit enter)"
-emails=`cat ~/dotfiles/work/.caterpillar/email.examples | fzf -m | sed 's/^\|$//g'|paste -sd,` 
+emails=`cat ~/dotfiles/work/.caterpillar/emails | fzf -m | sed 's/^\|$//g'|paste -sd,` 
 
 read -p "PR Title: " title
 
