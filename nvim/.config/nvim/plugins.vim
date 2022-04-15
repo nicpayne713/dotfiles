@@ -7,6 +7,9 @@
 "
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'godlygeek/tabular'
+
 Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
