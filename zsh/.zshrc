@@ -31,7 +31,7 @@ a() {
  }
 
 c() {
-     cd && cd "$(find -maxdepth 2 -type d  | cut -c 3-  | fzf | awk '{print $1}')"
+     cd && cd "$(find -maxdepth 2 -type d 2>/dev/null  | cut -c 3-  | fzf | awk '{print $1}')"
  }
 
 # Change backgrounds
