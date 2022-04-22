@@ -62,8 +62,6 @@ let g:flake8_pyflake_marker=''     " disable PyFlakes warnings
 let g:flake8_complexity_marker=''  " disable McCabe complexity warnings
 
 let g:flake8_naming_marker=''      " disable naming warnings
-" Terraform
-autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 
 function! s:PyPostSave()
     execute 'silent !$HOME/.local/bin/tidy-imports --quiet --replace-star-imports --action REPLACE ' . bufname("%")
@@ -83,6 +81,7 @@ augroup pypeaday
     autocmd bufwritepost .tmux.conf execute ':!tmux source-file %'
     autocmd bufwritepost .tmux.local.conf execute ':!tmux source-file %'
     " autocmd bufwritepost *.vim execute ':source %'
+    autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 augroup end
 
 " docstring
