@@ -112,21 +112,6 @@ syntax enable
 set statusline+=%#warningmsg#
 set statusline+=%*
 set laststatus=2
-" \ 'seperator': {'left': '\uE0B0', 'right': '\uE0B2'},
-" \ 'subseperator': {'left': '\uE0B1', 'right': '\uE0B3'},
-" let g:lightline = {
-"             \'colorscheme': "tokyonight",
-"             \ 'seperator': {'left': '|', 'right': '|'},
-"             \ 'subseperator': {'left': '|', 'right': '|'},
-"             \ 'active': {
-"             \ 'left': [ [ 'mode', 'paste' ],
-"             \          [ 'gitbranch', 'readonly', 'filename', 'modified', 'coverage' ]]
-"             \ },
-"             \ 'component_function': {
-"             \ 'gitbranch': 'gitbranch#name',
-"             \ 'coverage': 'coverage_highlight#get_current'
-"             \ }
-"             \ }
 "
 let g:airline_theme="night_owl"
 let g:airline_powerline_fonts = 1
