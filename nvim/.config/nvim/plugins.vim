@@ -69,8 +69,8 @@ Plug 'fladson/vim-kitty'
 " Plug 'mhinz/vim-stratify'
 Plug 'https://github.com/mhinz/vim-startify'
 " formatter
-Plug 'psf/black', { 'tag': '20.8b1' }
-Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'psf/black', { 'tag': '20.8b1' }
+" Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " navigation
 Plug 'ThePrimeagen/harpoon'

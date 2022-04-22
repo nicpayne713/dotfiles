@@ -52,29 +52,17 @@ let g:python3_host_prog = '~/.config/nvim/.venv3/bin/python'
 " LSP
 
 "" flake8
-" let g:flake8_cmd='$HOME/.local/bin/flake8'
-" let g:flake8_quickfix_location="bottom"
-" autocmd BufWritePost *.py call flake8#Flake8()
-
-" isort
-let g:isort_cmd='isort'
-" autocmd bufwritepre *.py execute 'isort'
-
-"" black
-" let g:black_virtualenv = '~/.venv/dotfiles/bin/python' 
-" let g:black_virtualenv = '~/.local/pipx/venvs/black/bin' 
-let g:black_cmd='~/.local/bin/black'
-autocmd bufwritepre *.py execute 'Black'
-
-" function! s:PyPreSave()
-"     Black
-" endfunction
+" sudo ln -s $HOME/.local/bin/flake8 /bin/flake8 ... this isn't finding pix
+" installed flake8 for some reason
+let g:flake8_cmd='/bin/flake8'
+let g:flake8_quickfix_location="bottom"
+autocmd BufWritePost *.py call flake8#Flake8()
 " Terraform
 autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 
 function! s:PyPostSave()
-    execute 'silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE ' . bufname("%")
-    execute 'silent !isort' . bufname("%")
+    execute 'silent !$HOME/.local/bin/tidy-imports --black --quiet --replace-star-imports --action REPLACE ' . bufname("%")
+    execute 'silent !$HOME/.local/bin/isort ' . bufname("%")
     execute "e"
 endfunction
 
