@@ -56,7 +56,7 @@ let g:python3_host_prog = '~/.config/nvim/.venv3/bin/python'
 " installed flake8 for some reason
 let g:flake8_cmd='/bin/flake8'
 let g:flake8_quickfix_location="bottom"
-autocmd BufWritePost *.py call flake8#Flake8()
+
 " Terraform
 autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 
@@ -73,6 +73,7 @@ augroup pypeaday
     autocmd!
     " autocmd bufwritepre *.py execute 'PyPreSave'
     autocmd bufwritepost *.py execute 'PyPostSave'
+    autocmd BufWritePost *.py call flake8#Flake8()
     autocmd bufwritepost .tmux.conf execute ':!tmux source-file %'
     autocmd bufwritepost .tmux.local.conf execute ':!tmux source-file %'
     " autocmd bufwritepost *.vim execute ':source %'
