@@ -52,17 +52,23 @@ let g:python3_host_prog = '~/.config/nvim/.venv3/bin/python'
 " LSP
 
 "" flake8
-" sudo ln -s $HOME/.local/bin/flake8 /bin/flake8 ... this isn't finding pix
-" installed flake8 for some reason
-let g:flake8_cmd='/bin/flake8'
-let g:flake8_quickfix_location="bottom"
+let g:flake8_cmd='flake8'
+let g:flake8_show_quickfix=1  " show (default)
+let g:flake8_quickfix_location="top-left"
+let g:flake8_quickfix_height=3
+let g:flake8_error_marker='EE'     " set error marker to 'EE'
+let g:flake8_warning_marker='WW'   " set warning marker to 'WW'
+let g:flake8_pyflake_marker=''     " disable PyFlakes warnings
+let g:flake8_complexity_marker=''  " disable McCabe complexity warnings
 
+let g:flake8_naming_marker=''      " disable naming warnings
 " Terraform
 autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 
 function! s:PyPostSave()
-    execute 'silent !$HOME/.local/bin/tidy-imports --black --quiet --replace-star-imports --action REPLACE ' . bufname("%")
+    execute 'silent !$HOME/.local/bin/tidy-imports --quiet --replace-star-imports --action REPLACE ' . bufname("%")
     execute 'silent !$HOME/.local/bin/isort ' . bufname("%")
+    execute 'silent !$HOME/.local/bin/black ' . bufname("%")
     execute "e"
 endfunction
 
