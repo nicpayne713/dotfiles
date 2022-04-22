@@ -14,7 +14,7 @@ style = "fg:dimmed white"
 # format= "[$symbol](dimmed red)"
 
 [aws]
-format = 'on [$symbol($profile )(\($region\) )]($style)'
+format = ' on [$symbol($profile )(\($region\) )]($style)'
 style = "bold blue"
 symbol =" " 
 
