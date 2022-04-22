@@ -94,3 +94,6 @@ eval "typeset -U path"
 hello() { clear && ~/dotfiles/scripts/login.sh }
 bindkey -s '^k' 'hello \n'
 hello \n
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform

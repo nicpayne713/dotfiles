@@ -69,6 +69,8 @@ autocmd bufwritepre *.py execute 'Black'
 " function! s:PyPreSave()
 "     Black
 " endfunction
+" Terraform
+autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 
 function! s:PyPostSave()
     execute 'silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE ' . bufname("%")
