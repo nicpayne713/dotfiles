@@ -6,6 +6,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export APPIMAGE_ROOT="$HOME/AppImages:"
 export PATH="$APP_IMAGE_ROOT:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PYFLYBY_PATH="$HOME/dotfiles/pyflyby/.pyflyby"
 export EDITOR=nvim
 export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/shims/python"
 # export TERM=screen-256color-bce
