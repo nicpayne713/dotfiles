@@ -77,3 +77,5 @@ require('lspconfig').texlab.setup{
     }
 }
 -- require('telescope').load_extension('dap')
+--
+require('lspconfig').terraformls.setup{}
