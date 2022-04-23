@@ -52,27 +52,21 @@ let g:python3_host_prog = '~/.config/nvim/.venv3/bin/python'
 " LSP
 
 "" flake8
-" let g:flake8_cmd='$HOME/.local/bin/flake8'
-" let g:flake8_quickfix_location="bottom"
-" autocmd BufWritePost *.py call flake8#Flake8()
+let g:flake8_cmd='flake8'
+let g:flake8_show_quickfix=1  " show (default)
+let g:flake8_quickfix_location="top-left"
+let g:flake8_quickfix_height=3
+let g:flake8_error_marker='EE'     " set error marker to 'EE'
+let g:flake8_warning_marker='WW'   " set warning marker to 'WW'
+let g:flake8_pyflake_marker=''     " disable PyFlakes warnings
+let g:flake8_complexity_marker=''  " disable McCabe complexity warnings
 
-" isort
-let g:isort_cmd='isort'
-" autocmd bufwritepre *.py execute 'isort'
-
-"" black
-" let g:black_virtualenv = '~/.venv/dotfiles/bin/python' 
-" let g:black_virtualenv = '~/.local/pipx/venvs/black/bin' 
-let g:black_cmd='~/.local/bin/black'
-autocmd bufwritepre *.py execute 'Black'
-
-" function! s:PyPreSave()
-"     Black
-" endfunction
+let g:flake8_naming_marker=''      " disable naming warnings
 
 function! s:PyPostSave()
-    execute 'silent !tidy-imports --black --quiet --replace-star-imports --action REPLACE ' . bufname("%")
-    execute 'silent !isort' . bufname("%")
+    execute 'silent !$HOME/.local/bin/tidy-imports --quiet --replace-star-imports --action REPLACE ' . bufname("%")
+    execute 'silent !$HOME/.local/bin/isort ' . bufname("%")
+    execute 'silent !$HOME/.local/bin/black ' . bufname("%")
     execute "e"
 endfunction
 
@@ -83,9 +77,11 @@ augroup pypeaday
     autocmd!
     " autocmd bufwritepre *.py execute 'PyPreSave'
     autocmd bufwritepost *.py execute 'PyPostSave'
+    autocmd BufWritePost *.py call flake8#Flake8()
     autocmd bufwritepost .tmux.conf execute ':!tmux source-file %'
     autocmd bufwritepost .tmux.local.conf execute ':!tmux source-file %'
     " autocmd bufwritepost *.vim execute ':source %'
+    autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
 augroup end
 
 " docstring
@@ -121,21 +117,6 @@ syntax enable
 set statusline+=%#warningmsg#
 set statusline+=%*
 set laststatus=2
-" \ 'seperator': {'left': '\uE0B0', 'right': '\uE0B2'},
-" \ 'subseperator': {'left': '\uE0B1', 'right': '\uE0B3'},
-" let g:lightline = {
-"             \'colorscheme': "tokyonight",
-"             \ 'seperator': {'left': '|', 'right': '|'},
-"             \ 'subseperator': {'left': '|', 'right': '|'},
-"             \ 'active': {
-"             \ 'left': [ [ 'mode', 'paste' ],
-"             \          [ 'gitbranch', 'readonly', 'filename', 'modified', 'coverage' ]]
-"             \ },
-"             \ 'component_function': {
-"             \ 'gitbranch': 'gitbranch#name',
-"             \ 'coverage': 'coverage_highlight#get_current'
-"             \ }
-"             \ }
 "
 let g:airline_theme="night_owl"
 let g:airline_powerline_fonts = 1

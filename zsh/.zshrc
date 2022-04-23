@@ -51,6 +51,8 @@ alias envrc="cp $HOME/dotfiles/.envrc ."
 alias azlogin="az login --allow-no-subscriptions"
 alias azcheckout='az repos pr checkout --id $(az repos pr list --output table | tail -n -2 | fzf | cut -d " " -f1)'
 alias awsrules="aws events list-rules | visidata -f json"
+alias nrows="awk 'END {print NR}'"
+
 # temp git diff shortcuts
 alias gdiff="git diff main.. | nvim - -R +Diffurcate"
 # starship
@@ -94,3 +96,6 @@ eval "typeset -U path"
 hello() { clear && ~/dotfiles/scripts/login.sh }
 bindkey -s '^k' 'hello \n'
 hello \n
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/terraform terraform

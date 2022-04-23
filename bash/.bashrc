@@ -129,3 +129,5 @@ if [ -e "$HOME/.pyenv/.pyenvrc" ]; then
   fi
 fi
 # END ANSIBLE MANAGED BLOCK: pyenv
+
+complete -C /usr/local/bin/terraform terraform
