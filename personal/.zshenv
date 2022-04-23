@@ -1,4 +1,4 @@
-export STOW_FOLDERS="direnv,personal,nvim,tmux,starship,ipython,i3,shortcuts,polybar,picom,gitui,visidata"
+export STOW_FOLDERS="personal"
 export POLYBAR_BAR="home"
 
 ## for starting dropbox at home

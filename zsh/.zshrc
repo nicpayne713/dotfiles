@@ -6,6 +6,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export APPIMAGE_ROOT="$HOME/AppImages:"
 export PATH="$APP_IMAGE_ROOT:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export STOW_FOLDERS="$STOW_FOLDERS:bash,direnv,git,nvim,tmux,starship,ipython,pip,i3,scripts,polybar,picom,gitui,visidata,rofi"
 export EDITOR=nvim
 export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/shims/python"
 # export TERM=screen-256color-bce
