@@ -67,7 +67,6 @@ function! s:PyPostSave()
     execute 'silent !$HOME/.local/bin/tidy-imports --quiet --replace-star-imports --action REPLACE ' . bufname("%")
     execute 'silent !$HOME/.local/bin/isort ' . bufname("%")
     execute 'silent !$HOME/.local/bin/black ' . bufname("%")
-    execute "e"
 endfunction
 
 " :command! PyPreSave :call s:PyPreSave()
