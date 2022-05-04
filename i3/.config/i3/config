@@ -170,7 +170,7 @@ for_window [class="microsoft teams - insiders"] move to $workspace3
 for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] floating enable
 for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
 
-bindsym $mod+y exec $HOME/.local/bin/rofimoji -a copy
+bindsym $mod+y exec $HOME/.local/bin/rofimoji --skin-tone neutral -a copy
 
 # Moving workspaces between screens 
 bindsym $mod+p move workspace to output right
