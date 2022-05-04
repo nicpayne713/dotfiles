@@ -15,3 +15,10 @@ settings:
       DEFAULT: https://google.com/search?q={}
   url.start_pages:
     global: https://google.com
+  editor.command:
+    global:
+    - kitty
+    - nvim
+    - '{file}'
+  editor.remove_file:
+    global: true
