@@ -20,7 +20,7 @@ export ZSH_DISABLE_COMPFIX="true"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 # ZSH_THEME_RANDOM_QUIET=true
 
-plugins=(git dotenv ag zsh-autosuggestions)
+plugins=(dotenv ag zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.zprofile
