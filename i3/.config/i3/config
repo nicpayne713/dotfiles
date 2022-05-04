@@ -43,6 +43,7 @@ bindsym $mod+Shift+q kill
 # Use rofi instead
 # bindsym $mod+d exec rofi -show run -modi run
 bindsym $mod+d exec rofi -show drun -sorting-method fzf -sort -show-icons
+bindsym $mod+Shift+d exec rofi -show run -sorting-method fzf -sort -show-icons
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
