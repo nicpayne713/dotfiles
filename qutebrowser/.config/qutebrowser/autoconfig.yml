@@ -6,15 +6,10 @@
 
 config_version: 2
 settings:
+  colors.webpage.darkmode.enabled:
+    global: true
   content.notifications.enabled:
     https://element.cyborgman.co: true
-  url.default_page:
-    global: https://google.com
-  url.searchengines:
-    global:
-      DEFAULT: https://google.com/search?q={}
-  url.start_pages:
-    global: https://google.com
   editor.command:
     global:
     - kitty
@@ -22,3 +17,16 @@ settings:
     - '{file}'
   editor.remove_file:
     global: true
+  fileselect.multiple_files.command:
+    global:
+    - xterm
+    - -e
+    - ranger
+    - --choosefiles={}
+  url.default_page:
+    global: https://google.com
+  url.searchengines:
+    global:
+      DEFAULT: https://google.com/search?q={}
+  url.start_pages:
+    global: https://google.com
