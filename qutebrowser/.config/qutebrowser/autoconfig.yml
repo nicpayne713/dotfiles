@@ -6,10 +6,10 @@
 
 config_version: 2
 settings:
+  colors.tabs.pinned.even.bg:
+    global: darkseagreen
   colors.webpage.darkmode.enabled:
-    global: true
-  content.notifications.enabled:
-    https://element.cyborgman.co: true
+    global: false
   editor.command:
     global:
     - kitty
@@ -23,10 +23,14 @@ settings:
     - -e
     - ranger
     - --choosefiles={}
+  statusbar.show:
+    global: always
+  tabs.show:
+    global: always
   url.default_page:
-    global: https://google.com
+    global: https://reman-analytics-cat-com.visualstudio.com/_pulls
   url.searchengines:
     global:
       DEFAULT: https://google.com/search?q={}
   url.start_pages:
-    global: https://google.com
+    global: https://reman-analytics-cat-com.visualstudio.com/_pulls
