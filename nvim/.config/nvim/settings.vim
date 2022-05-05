@@ -81,6 +81,7 @@ augroup pypeaday
     autocmd bufwritepost .tmux.local.conf execute ':!tmux source-file %'
     " autocmd bufwritepost *.vim execute ':source %'
     autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
+    autocmd TextChanged,TextChangedI *qutebrowser-editor* silent write
 augroup end
 
 " docstring
