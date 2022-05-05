@@ -10,14 +10,14 @@ CONFIG_DIR=$HOME/dotfiles/polybar/config.ini
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     echo "$m"
-    if [[ $m == *"eDP"* ]]; then
-      echo "skipping laptop monitor"
-    else
-      MONITOR=$m 
-      export MONITOR=$m
+    # if [[ $m == *"eDP"* ]]; then
+    #   echo "skipping laptop monitor"
+    # else
+    MONITOR=$m 
+    export MONITOR=$m
 
-      polybar --reload $POLYBAR_BAR  -c $CONFIG_DIR &
-    fi
+    polybar --reload $POLYBAR_BAR  -c $CONFIG_DIR &
+    # fi
   done
 else
   polybar --reload $POLYBAR_BAR  -c $CONFIG_DIR &

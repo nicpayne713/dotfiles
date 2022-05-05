@@ -6,7 +6,8 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export APPIMAGE_ROOT="$HOME/AppImages:"
 export PATH="$APP_IMAGE_ROOT:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export STOW_FOLDERS="$STOW_FOLDERS:bash,direnv,git,nvim,tmux,starship,ipython,pip,i3,scripts,polybar,picom,gitui,visidata,rofi"
+export PYFLYBY_PATH="$HOME/dotfiles/pyflyby/.pyflyby"
+export STOW_FOLDERS="$STOW_FOLDERS,bash,direnv,git,nvim,tmux,starship,ipython,pip,i3,scripts,polybar,picom,gitui,visidata,rofi,qutebrowser"
 export EDITOR=nvim
 export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/shims/python"
 # export TERM=screen-256color-bce
@@ -19,7 +20,7 @@ export ZSH_DISABLE_COMPFIX="true"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 # ZSH_THEME_RANDOM_QUIET=true
 
-plugins=(git dotenv ag zsh-autosuggestions)
+plugins=(dotenv ag zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 # source ~/.zprofile

@@ -67,7 +67,6 @@ function! s:PyPostSave()
     execute 'silent !$HOME/.local/bin/tidy-imports --quiet --replace-star-imports --action REPLACE ' . bufname("%")
     execute 'silent !$HOME/.local/bin/isort ' . bufname("%")
     execute 'silent !$HOME/.local/bin/black ' . bufname("%")
-    execute "e"
 endfunction
 
 " :command! PyPreSave :call s:PyPreSave()
@@ -75,9 +74,9 @@ endfunction
 
 augroup pypeaday
     autocmd!
+    autocmd BufWritePost *.py call flake8#Flake8()
     " autocmd bufwritepre *.py execute 'PyPreSave'
     autocmd bufwritepost *.py execute 'PyPostSave'
-    autocmd BufWritePost *.py call flake8#Flake8()
     autocmd bufwritepost .tmux.conf execute ':!tmux source-file %'
     autocmd bufwritepost .tmux.local.conf execute ':!tmux source-file %'
     " autocmd bufwritepost *.vim execute ':source %'

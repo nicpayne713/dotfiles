@@ -1,5 +1,10 @@
 # My Notes
 
+## copier
+
+`pipx install --pip-args '\--pre' copier`  # make sure you're greater than v6
+maybe need `pipx inject copier "MarkupSafe<2.1.0"`
+
 ## Presenting 
 * Customizing vim with vimrc
 * File and Nav remaps
