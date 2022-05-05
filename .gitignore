@@ -6,3 +6,6 @@ key
 ipython/.ipython/profile_default/history.sqlite
 
 *.sqlite
+
+
+work/.caterpillar/emails
