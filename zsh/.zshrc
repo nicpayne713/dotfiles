@@ -101,3 +101,4 @@ hello \n
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
