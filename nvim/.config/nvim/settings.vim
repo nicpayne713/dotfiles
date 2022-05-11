@@ -203,3 +203,8 @@ let maplocalleader = ","
 let test#python#runner = 'pytest'
 let test#python#pytest#options = "--color=yes"
 let g:ultest_use_pty = 1
+
+
+" not for me
+let g:loaded_ruby_provider = 0
+let g:loaded_perl_provider = 0
