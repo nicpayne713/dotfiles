@@ -106,7 +106,7 @@ Plug 'folke/lsp-colors.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
-Plug 'nvim-lua/completion-nvim'
+" Plug 'nvim-lua/completion-nvim'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
