@@ -143,6 +143,7 @@ nnoremap <leader>vrn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>vh <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>vca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>vsd <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()
+nnoremap <leader>vsl <cmd> lua vim.diagnostic.setloclist({open=false})<CR>
 nnoremap <leader>vn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 nnoremap <leader>x <cmd>!chmod +x %
