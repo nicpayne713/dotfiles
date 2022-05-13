@@ -60,17 +60,17 @@ function! s:ToggleQuickFix()
 endfunction
 
 :command! ToggleQuickFix :call s:ToggleQuickFix()
-nnoremap <Leader>qft :ToggleQuickFix<CR>
+nnoremap <Leader>qft <cmd>ToggleQuickFix<CR>
 
 nnoremap <Leader>qfc <cmd>cexpr []<CR>
 nnoremap <C-n> <cmd>cnext<CR>
 nnoremap <C-p> <cmd>cprev<CR>
 
 " Moving text
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-inoremap <C-j> <esc>:m .+1<CR>==
-inoremap <C-k> <esc>:m .-2<CR>==
+vnoremap J <cmd>m '>+1<CR>gv=gv
+vnoremap K <cmd>m '<-2<CR>gv=gv
+inoremap <C-j> <esc><cmd>m .+1<CR>==
+inoremap <C-k> <esc><cmd>m .-2<CR>==
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -79,7 +79,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Python
-nnoremap <leader>ad :Pydocstring<CR>
+nnoremap <leader>ad <cmd>Pydocstring<CR>
 
 " fzf searching until Telescope has better grep
 function! s:ag_with_opts(arg, bang)
@@ -91,7 +91,7 @@ function! s:ag_with_opts(arg, bang)
 
         autocmd VimEnter * command! -nargs=* -bang Ag call s:ag_with_opts(<q-args>, <bang>0)
 
-nnoremap <Leader>r :Ag --hidden<CR>
+nnoremap <Leader>r <cmd>Ag --hidden<CR>
 
 " copy to clipbord
 vnoremap <Leader>y "+y
@@ -141,38 +141,39 @@ nnoremap <silent> )) <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> gh <cmd>Lspsaga lsp_finder<CR>
 " nnoremap <silent>K <cmd>Lspsaga hover_doc<CR>
 
-nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
-nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
-nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
-nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
-nnoremap <leader>vrn :lua vim.lsp.buf.rename()<CR>
-nnoremap <leader>vh :lua vim.lsp.buf.hover()<CR>
-nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
-nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
-nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <leader>vll :call LspLocationList()<CR>
+nnoremap <leader>vd <cmd>lua vim.lsp.buf.definition()<CR>
 
-nnoremap <leader>x :!chmod +x %
+nnoremap <leader>vi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <leader>vsh <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <leader>vrr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <leader>vrn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>vh <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>vca <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>vsd <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()
+nnoremap <leader>vn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>vll <cmd>call LspLocationList()<CR>
+
+nnoremap <leader>x <cmd>!chmod +x %
 
 " Open the current file in the default program
-nmap <leader>o :!xdg-open "%"<cr><cr>
+nmap <leader>o <cmd>!xdg-open "%"<cr><cr>
 
 " Coverage navigation
-noremap [C :<C-U>PrevUncovered<CR>
-noremap ]C :<C-U>NextUncovered<CR>
+noremap [C <cmd><C-U>PrevUncovered<CR>
+noremap ]C <cmd><C-U>NextUncovered<CR>
 nnoremap <leader>c <cmd>ToggleCoverage<CR>
 
 
 " Testing
 
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+nmap <silent> <leader>t <cmd>TestNearest<CR>
+nmap <silent> <leader>T <cmd>TestFile<CR>
+nmap <silent> <leader>a <cmd>TestSuite<CR>
+nmap <silent> <leader>l <cmd>TestLast<CR>
+nmap <silent> <leader>g <cmd>TestVisit<CR>
 
-nnoremap <silent> <leader><leader>t :UltestNearest<cr>
-nnoremap <silent> <leader><leader>s :UltestSummary<cr>
+nnoremap <silent> <leader><leader>t <cmd>UltestNearest<cr>
+nnoremap <silent> <leader><leader>s <cmd>UltestSummary<cr>
 nmap ss <Plug>(ultest-output-jump) 
 
 " Testing things
