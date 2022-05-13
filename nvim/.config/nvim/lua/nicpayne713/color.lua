@@ -17,5 +17,5 @@ vim.cmd[[hi clear Function]]  -- Had annoying function highlighting in python
 vim.cmd[[hi LineNR guibg=None guifg=gray]]
 vim.cmd[[hi clear SignColumn ]]
 vim.cmd[[hi ColorColumn ctermbg=darkgrey guibg=darkgrey]]
-
+vim.cmd[[hi Folded ctermfg=darkgray]]  -- code fold
 
