@@ -23,12 +23,13 @@ require'nvim-treesitter.configs'.setup {
         ["iB"] = "@block.inner",
 
         -- Or you can define your own textobjects like this
-        ["iF"] = {
-          python = "(function_definition) @function",
-          cpp = "(function_definition) @function",
-          c = "(function_definition) @function",
-          java = "(method_declaration) @function",
-        },
+        -- Bug that if there's any errors reading a file you have to :w! so comment out
+        -- ["iF"] = {
+        --   python = "(function_definition) @function",
+        --   cpp = "(function_definition) @function",
+        --   c = "(function_definition) @function",
+        --   java = "(method_declaration) @function",
+        -- },
       },
       goto_next_start = {
         ["]m"] = "@function.outer",
