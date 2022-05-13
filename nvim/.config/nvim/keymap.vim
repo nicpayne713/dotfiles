@@ -13,6 +13,7 @@ filetype plugin indent on    " required
 :command W w
 " Enable folding with space f
 nnoremap <leader> za
+
 " navigation
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Behave Vim
@@ -59,26 +60,26 @@ function! s:ToggleQuickFix()
 endfunction
 
 :command! ToggleQuickFix :call s:ToggleQuickFix()
-nnoremap <Leader>qft :ToggleQuickFix<CR>
+nnoremap <Leader>qft <cmd>ToggleQuickFix<CR>
 
 nnoremap <Leader>qfc <cmd>cexpr []<CR>
 nnoremap <C-n> <cmd>cnext<CR>
 nnoremap <C-p> <cmd>cprev<CR>
 
 " Moving text
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-inoremap <C-j> <esc>:m .+1<CR>==
-inoremap <C-k> <esc>:m .-2<CR>==
+vnoremap J <cmd>m '>+1<CR>gv=gv
+vnoremap K <cmd>m '<-2<CR>gv=gv
+inoremap <C-j> <esc><cmd>m .+1<CR>==
+inoremap <C-k> <esc><cmd>m .-2<CR>==
 
-"split navigations
+" split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Python
-nnoremap <leader>ad :Pydocstring<CR>
+nnoremap <leader>ad <cmd>Pydocstring<CR>
 
 " fzf searching until Telescope has better grep
 function! s:ag_with_opts(arg, bang)
@@ -90,9 +91,7 @@ function! s:ag_with_opts(arg, bang)
 
         autocmd VimEnter * command! -nargs=* -bang Ag call s:ag_with_opts(<q-args>, <bang>0)
 
-nnoremap <Leader>r :Ag --hidden<CR>
-
-" remap visual block mode so ctrl v can be paste
+nnoremap <Leader>s <cmd>Ag --hidden<CR>
 
 " copy to clipbord
 vnoremap <Leader>y "+y
@@ -117,6 +116,7 @@ nnoremap ges <cmd>e ~/.config/nvim/settings.vim<CR>
 nnoremap get <cmd>e ~/.tmux.conf.local<CR>
 " edit zshrc
 nnoremap gez <cmd>e ~/.zshrc<CR>
+
 " Plug
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 nnoremap gpi <cmd>PlugInstall<CR>
@@ -129,58 +129,40 @@ nnoremap <leader>fb <cmd>Black<CR>
 
 " LSP
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
-nnoremap gR <cmd>Telescope lsp_references<cr>
-nnoremap gr <cmd>lua vim.lsp.buf.references()<cr>
-"nnoremap gd <cmd>Telescope lsp_definitions<cr>
-nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
-"nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-"nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-"nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+" nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> (( <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> )) <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> gh <cmd>Lspsaga lsp_finder<CR>
-" nnoremap <silent>K <cmd>Lspsaga hover_doc<CR>
 
-nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
-nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
-nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
-nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
-nnoremap <leader>vrn :lua vim.lsp.buf.rename()<CR>
-nnoremap <leader>vh :lua vim.lsp.buf.hover()<CR>
-nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
-nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
-nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <leader>vll :call LspLocationList()<CR>
+nnoremap <leader>vd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>vi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <leader>vsh <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <leader>vrr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <leader>vrn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>vh <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>vca <cmd>lua vim.lsp.buf.code_action()<CR>
+" show_line_diagnostics deprecated for open_float
+nnoremap <leader>vsd vim.diagnostic.open_float()<CR>  
+nnoremap <leader>vsl <cmd> lua vim.diagnostic.setloclist({open=false})<CR>
+nnoremap <leader>vn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-nnoremap <leader>x :!chmod +x %
+nnoremap <leader>x <cmd>!chmod +x %
 
 " Open the current file in the default program
-nmap <leader>o :!xdg-open "%"<cr><cr>
+" using double leader since I kept accidently opening things
+nmap <leader><leader>o <cmd>!xdg-open "%"<cr><cr>
 
 " Coverage navigation
-noremap [C :<C-U>PrevUncovered<CR>
-noremap ]C :<C-U>NextUncovered<CR>
+noremap [C <cmd><C-U>PrevUncovered<CR>
+noremap ]C <cmd><C-U>NextUncovered<CR>
 nnoremap <leader>c <cmd>ToggleCoverage<CR>
 
-
-" Testing
-
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
-
-nnoremap <silent> <leader><leader>t :UltestNearest<cr>
-nnoremap <silent> <leader><leader>s :UltestSummary<cr>
-nmap ss <Plug>(ultest-output-jump) 
 
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Work
 nnoremap gec <cmd>e ~/.caterpillar/credentials.yml<CR>
 " nnoremap <leader><leader>vd <cmd>lua require'telegraph'.telegraph({cmd='pipx run visidata {cWORD}', how='tmux'})<CR>
-nnoremap <leader><leader>vd <cmd>lua require'telegraph'.telegraph({cmd='tmux display-popup  -h 95% -w 95% -E "visidata {cWORD}"', how='subprocess'})<CR>
+nnoremap <leader><leader>vd <cmd>lua require'telegraph'.telegraph({cmd='tmux
+display-popup  -h 95% -w 95% -E "visidata {cWORD}"', how='subprocess'})<CR>
 " nnoremap <leader><leader>vd <cmd>lua require'telegraph'.telegraph({cmd='visidata {cWORD}', how='tmux_popup'})<CR>
