@@ -16,3 +16,5 @@
 	defaultBranch = main
 [push]
 	default = current
+[pager]
+	diff = dunk
