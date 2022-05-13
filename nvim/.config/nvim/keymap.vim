@@ -157,12 +157,11 @@ noremap ]C <cmd><C-U>NextUncovered<CR>
 nnoremap <leader>c <cmd>ToggleCoverage<CR>
 
 
-
-
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Work
 nnoremap gec <cmd>e ~/.caterpillar/credentials.yml<CR>
 " nnoremap <leader><leader>vd <cmd>lua require'telegraph'.telegraph({cmd='pipx run visidata {cWORD}', how='tmux'})<CR>
-nnoremap <leader><leader>vd <cmd>lua require'telegraph'.telegraph({cmd='tmux display-popup  -h 95% -w 95% -E "visidata {cWORD}"', how='subprocess'})<CR>
+nnoremap <leader><leader>vd <cmd>lua require'telegraph'.telegraph({cmd='tmux
+display-popup  -h 95% -w 95% -E "visidata {cWORD}"', how='subprocess'})<CR>
 " nnoremap <leader><leader>vd <cmd>lua require'telegraph'.telegraph({cmd='visidata {cWORD}', how='tmux_popup'})<CR>
