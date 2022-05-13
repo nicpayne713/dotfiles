@@ -148,7 +148,8 @@ nnoremap <leader>vn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <leader>x <cmd>!chmod +x %
 
 " Open the current file in the default program
-nmap <leader>o <cmd>!xdg-open "%"<cr><cr>
+" using double leader since I kept accidently opening things
+nmap <leader><leader>o <cmd>!xdg-open "%"<cr><cr>
 
 " Coverage navigation
 noremap [C <cmd><C-U>PrevUncovered<CR>
