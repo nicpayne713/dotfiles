@@ -16,15 +16,11 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+
 Plug 'waylonwalker/Telegraph.nvim'
 
 " LaTex
-" Plug 'jakewvincent/texmagic.nvim'
 Plug 'lervag/vimtex'
-" For vsnip user.
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
-" Plug 'hrsh7th/vim-vsnip-integ'
 
 " For ultisnips users.
 Plug 'SirVer/ultisnips'
@@ -54,23 +50,18 @@ Plug 'nvie/vim-flake8'
 " braces
 Plug 'jiangmiao/auto-pairs'
 
-" Lightline
-" Plug 'itchyny/lightline.vim'
+" Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-
 " color
 Plug 'folke/tokyonight.nvim'
-Plug 'fladson/vim-kitty'
+" Plug 'fladson/vim-kitty'
 
 " splash screen
 " using https link since git username error
 " Plug 'mhinz/vim-stratify'
 Plug 'https://github.com/mhinz/vim-startify'
-" formatter
-" Plug 'psf/black', { 'tag': '20.8b1' }
-" Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " navigation
 Plug 'ThePrimeagen/harpoon'
@@ -91,8 +82,11 @@ Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
+
+" File Tree
 " Plug 'kyazdani42/nvim-tree.lua'
 Plug 'preservim/nerdtree'
+
 " objects
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -106,35 +100,34 @@ Plug 'folke/lsp-colors.nvim'
 Plug 'tami5/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
-" Plug 'nvim-lua/completion-nvim'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
+" testing
 Plug 'vim-test/vim-test'
 Plug 'rcarriga/vim-ultest'
-"Plug 'eddyekofo94/gruvbox-flat.nvim'
 "Plug 'mfussenegger/nvim-dap'
 "Plug 'nvim-telescope/telescope-dap.nvim'
 "Plupg 'mfussenegger/nvim-dap-python'
-"
+
 " Coverage
 Plug 'mgedmin/coverage-highlight.vim'
 
-Plug 'hrsh7th/vim-vsnip/'
-Plug 'L3MON4D3/LuaSnip'
+" Plug 'hrsh7th/vim-vsnip/'
+" Plug 'L3MON4D3/LuaSnip'
 
 " prettier
 Plug 'sbdchd/neoformat'
 
 " emoji
-Plug 'junegunn/vim-emoji'
+" Plug 'junegunn/vim-emoji'
 
 " icons need loaded last
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'PhilRunninger/nerdtree-visual-selection'
-" Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
 call plug#end()
