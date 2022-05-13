@@ -129,9 +129,7 @@ nnoremap <leader>fb <cmd>Black<CR>
 
 " LSP
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
-nnoremap gR <cmd>Telescope lsp_references<cr>
 nnoremap gr <cmd>lua vim.lsp.buf.references()<cr>
-"nnoremap gd <cmd>Telescope lsp_definitions<cr>
 nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
 "nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
