@@ -2,7 +2,7 @@
 todo () {
 filter=`basename $PWD`
 (
-cd ~/work/todos && /home/u_paynen3/work/todos/.venv/bin/markata todoui --global-filter "'$filter' in tags"
+cd ~/work/todos && /home/u_paynen3/work/todos/.venv/todos/bin/markata todoui --global-filter "'$filter' in tags"
 )
 }
 
