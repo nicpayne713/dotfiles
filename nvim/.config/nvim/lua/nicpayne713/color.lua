@@ -32,6 +32,7 @@ vim.g.tokyonight_dark_sidebar=0
 vim.g.tokyonight_dark_float=1
 
 vim.cmd[[colorscheme tokyonight]]
+vim.cmd("colorscheme nord")
 
 -- Transparency
 vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
