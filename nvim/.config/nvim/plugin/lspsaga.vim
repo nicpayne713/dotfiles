@@ -7,12 +7,12 @@ vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_a
 nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
 
 " -- scroll down hover doc or scroll in definition preview
-nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
+nnoremap <silent> <C-g> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
 " -- scroll up hover doc
-nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
+nnoremap <silent> <C-h> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 " -- show signature help
 nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
 
 " -- rename
-nnoremap <leader> rn <cmd>lua require('lspsaga.rename').rename()<CR>
+nnoremap <leader>rn  <cmd>lua require('lspsaga.rename').rename()<CR>
 " -- close rename win use <C-c> in insert mode or `q` in noremal mode or `:q`
