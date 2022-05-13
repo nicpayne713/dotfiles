@@ -136,8 +136,8 @@ nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 "nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 "nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> [d <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> ]d <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> (( <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> )) <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> gh <cmd>Lspsaga lsp_finder<CR>
 " nnoremap <silent>K <cmd>Lspsaga hover_doc<CR>
 
