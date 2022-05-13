@@ -7,7 +7,7 @@ export APPIMAGE_ROOT="$HOME/AppImages:"
 export PATH="$APP_IMAGE_ROOT:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PYFLYBY_PATH="$HOME/dotfiles/pyflyby/.pyflyby"
-export STOW_FOLDERS="$STOW_FOLDERS,bash,direnv,git,nvim,tmux,starship,ipython,pip,i3,scripts,polybar,picom,gitui,visidata,rofi,qutebrowser"
+export STOW_FOLDERS="$STOW_FOLDERS,bash,direnv,git,nvim,tmux,starship,ipython,pip,i3,scripts,polybar,picom,gitui,visidata,rofi,qutebrowser,copier"
 export EDITOR=nvim
 export PIPX_DEFAULT_PYTHON="$HOME/.pyenv/shims/python"
 # export TERM=screen-256color-bce
@@ -101,3 +101,4 @@ hello \n
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
+function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
