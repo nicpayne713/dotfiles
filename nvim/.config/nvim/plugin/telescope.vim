@@ -1,6 +1,6 @@
 lua require("nicpayne713")
 
-nnoremap gR <cmd>Telescope lsp_references<cr>
+nnoremap gr <cmd>Telescope lsp_references<cr>
 nnoremap gd <cmd>Telescope lsp_definitions<cr>
 
 nnoremap <leader>ps <cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
