@@ -156,17 +156,7 @@ noremap ]C <cmd><C-U>NextUncovered<CR>
 nnoremap <leader>c <cmd>ToggleCoverage<CR>
 
 
-" Testing
 
-nmap <silent> <leader>t <cmd>TestNearest<CR>
-nmap <silent> <leader>T <cmd>TestFile<CR>
-nmap <silent> <leader>a <cmd>TestSuite<CR>
-nmap <silent> <leader>l <cmd>TestLast<CR>
-nmap <silent> <leader>g <cmd>TestVisit<CR>
-
-nnoremap <silent> <leader><leader>t <cmd>UltestNearest<cr>
-nnoremap <silent> <leader><leader>s <cmd>UltestSummary<cr>
-nmap ss <Plug>(ultest-output-jump) 
 
 " Testing things
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
