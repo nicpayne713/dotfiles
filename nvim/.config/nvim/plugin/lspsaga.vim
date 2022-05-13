@@ -14,5 +14,5 @@ nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_sag
 nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
 
 " -- rename
-nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
+nnoremap <leader> rn <cmd>lua require('lspsaga.rename').rename()<CR>
 " -- close rename win use <C-c> in insert mode or `q` in noremal mode or `:q`
