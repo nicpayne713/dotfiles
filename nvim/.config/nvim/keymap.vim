@@ -133,7 +133,6 @@ nnoremap <leader>fb <cmd>Black<CR>
 nnoremap <silent> (( <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> )) <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> gh <cmd>Lspsaga lsp_finder<CR>
-" nnoremap <silent>K <cmd>Lspsaga hover_doc<CR>
 
 nnoremap <leader>vd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>vi <cmd>lua vim.lsp.buf.implementation()<CR>
