@@ -103,7 +103,7 @@ Plug 'tpope/vim-commentary'
 
 " lsp
 Plug 'folke/lsp-colors.nvim'
-Plug 'glepnir/lspsaga.nvim'
+Plug 'tami5/lspsaga.nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 " Plug 'nvim-lua/completion-nvim'
