@@ -141,7 +141,8 @@ nnoremap <leader>vrr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <leader>vrn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>vh <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>vca <cmd>lua vim.lsp.buf.code_action()<CR>
-nnoremap <leader>vsd <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()
+" show_line_diagnostics deprecated for open_float
+nnoremap <leader>vsd vim.diagnostic.open_float()<CR>  
 nnoremap <leader>vsl <cmd> lua vim.diagnostic.setloclist({open=false})<CR>
 nnoremap <leader>vn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
