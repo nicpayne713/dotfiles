@@ -13,6 +13,7 @@ filetype plugin indent on    " required
 :command W w
 " Enable folding with space f
 nnoremap <leader> za
+
 " navigation
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 " Behave Vim
@@ -71,7 +72,7 @@ vnoremap K :m '<-2<CR>gv=gv
 inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-k> <esc>:m .-2<CR>==
 
-"split navigations
+" split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -91,8 +92,6 @@ function! s:ag_with_opts(arg, bang)
         autocmd VimEnter * command! -nargs=* -bang Ag call s:ag_with_opts(<q-args>, <bang>0)
 
 nnoremap <Leader>r :Ag --hidden<CR>
-
-" remap visual block mode so ctrl v can be paste
 
 " copy to clipbord
 vnoremap <Leader>y "+y
@@ -117,6 +116,7 @@ nnoremap ges <cmd>e ~/.config/nvim/settings.vim<CR>
 nnoremap get <cmd>e ~/.tmux.conf.local<CR>
 " edit zshrc
 nnoremap gez <cmd>e ~/.zshrc<CR>
+
 " Plug
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 nnoremap gpi <cmd>PlugInstall<CR>
