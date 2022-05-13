@@ -1,6 +1,8 @@
 local actions = require("telescope.actions")
 require("telescope").setup({
     defaults = {
+        layout_strategy = 'vertical',
+        layout_config = { height = 0.95 },
         file_sorter = require("telescope.sorters").get_fzy_sorter,
         prompt_prefix = " >",
         color_devicons = true,
@@ -36,9 +38,9 @@ require("telescope").setup({
     },
     pickers = {
         find_files = {
-            hidden = true
-        }
+            hidden = true,
             -- theme = "dropdown"
+        }
     },
     extensions = {
         fzy_native = {
