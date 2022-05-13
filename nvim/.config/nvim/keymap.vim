@@ -129,20 +129,13 @@ nnoremap <leader>fb <cmd>Black<CR>
 
 " LSP
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
-nnoremap gr <cmd>lua vim.lsp.buf.references()<cr>
-nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
-"nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-"nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-"nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+" nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> (( <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> )) <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> gh <cmd>Lspsaga lsp_finder<CR>
 " nnoremap <silent>K <cmd>Lspsaga hover_doc<CR>
 
 nnoremap <leader>vd <cmd>lua vim.lsp.buf.definition()<CR>
-
 nnoremap <leader>vi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <leader>vsh <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>vrr <cmd>lua vim.lsp.buf.references()<CR>
@@ -151,7 +144,6 @@ nnoremap <leader>vh <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>vca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>vsd <cmd>lua vim.lsp.diagnostic.show_line_diagnostics()
 nnoremap <leader>vn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <leader>vll <cmd>call LspLocationList()<CR>
 
 nnoremap <leader>x <cmd>!chmod +x %
 
