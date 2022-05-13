@@ -28,7 +28,6 @@ let g:startify_lists = []
 set scrolloff=30
 set nowrap
 set colorcolumn=88
-hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 set list
 set listchars=tab:▸\ ,trail:·
