@@ -91,7 +91,7 @@ function! s:ag_with_opts(arg, bang)
 
         autocmd VimEnter * command! -nargs=* -bang Ag call s:ag_with_opts(<q-args>, <bang>0)
 
-nnoremap <Leader>r <cmd>Ag --hidden<CR>
+nnoremap <Leader>s <cmd>Ag --hidden<CR>
 
 " copy to clipbord
 vnoremap <Leader>y "+y
