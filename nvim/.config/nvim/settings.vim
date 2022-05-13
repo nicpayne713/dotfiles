@@ -28,7 +28,6 @@ let g:startify_lists = []
 set scrolloff=30
 set nowrap
 set colorcolumn=88
-hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 set list
 set listchars=tab:▸\ ,trail:·
@@ -67,6 +66,7 @@ function! s:PyPostSave()
     execute 'silent !$HOME/.local/bin/tidy-imports --quiet --replace-star-imports --action REPLACE ' . bufname("%")
     execute 'silent !$HOME/.local/bin/isort ' . bufname("%")
     execute 'silent !$HOME/.local/bin/black ' . bufname("%")
+    execute 'silent lua vim.diagnostic.setloclist({open=false})'
 endfunction
 
 " :command! PyPreSave :call s:PyPreSave()
@@ -81,6 +81,7 @@ augroup pypeaday
     autocmd bufwritepost .tmux.local.conf execute ':!tmux source-file %'
     " autocmd bufwritepost *.vim execute ':source %'
     autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
+    autocmd TextChanged,TextChangedI *qutebrowser-editor* silent write
 augroup end
 
 " docstring
@@ -157,15 +158,6 @@ let g:SimpylFold_docstring_preview=1
 " indent guide
 let g:indent_guides_enable_on_vim_startup = 1
 
-" emoji
-"for e in emoji#list():
-"    call append(line('$'), printf('%s (%s)', emoji#for(e), e))
-"endfor
-set completefunc=emoji#complete
-
-" nvimtree
-" quit tree when file is opened
-let g:nvim_tree_quit_on_open=1
 
 " nerdtree
 let NERDTreeShowHidden=1
@@ -202,3 +194,8 @@ let maplocalleader = ","
 let test#python#runner = 'pytest'
 let test#python#pytest#options = "--color=yes"
 let g:ultest_use_pty = 1
+
+
+" not for me
+let g:loaded_ruby_provider = 0
+let g:loaded_perl_provider = 0

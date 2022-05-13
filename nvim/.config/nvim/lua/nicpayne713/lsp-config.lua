@@ -27,8 +27,9 @@ require'lspconfig'.pylsp.setup{
 
 local configs = require 'lspconfig/configs'
 
-configs.kedro = {
-    default_config = {
+if not configs.kedro then
+    configs.kedro = {
+        default_config = {
         cmd = {"kedro-lsp"};
         filetypes = {"python"};
         root_dir = function(fname)
@@ -36,6 +37,7 @@ configs.kedro = {
         end;
     };
 };
+end
 require'lspconfig'.kedro.setup{
         on_attach=on_attach,
         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
@@ -45,6 +47,9 @@ require'lspconfig'.jedi_language_server.setup{
         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
     }
 require'lspconfig'.bashls.setup{on_attach=on_attach,
+        capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+}
+require'lspconfig'.jsonls.setup{on_attach=on_attach,
         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 }
 require'lspconfig'.yamlls.setup{
