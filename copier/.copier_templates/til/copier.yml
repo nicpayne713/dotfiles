@@ -5,6 +5,10 @@ slug:
   type: str
   default: "{{  title.lower().replace(' ', '-')  }}"
 
+body:
+  type: str
+  default: "TODO: Write a description"
+
 tag1:
   type: str
   choices:

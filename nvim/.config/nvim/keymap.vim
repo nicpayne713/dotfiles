@@ -146,7 +146,7 @@ nnoremap <leader>vsd vim.diagnostic.open_float()<CR>
 nnoremap <leader>vsl <cmd> lua vim.diagnostic.setloclist({open=false})<CR>
 nnoremap <leader>vn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
-nnoremap <leader>x <cmd>!chmod +x %
+nnoremap <leader>x <cmd>!chmod +x %<CR>
 
 " Open the current file in the default program
 " using double leader since I kept accidently opening things
