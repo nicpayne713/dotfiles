@@ -57,6 +57,28 @@ require'lspconfig'.yamlls.setup{
     capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
     settings = {
         yaml = {
+            format = {enable = true},
+            completion = true, 
+            customTags = {  -- for CloudFormation
+                "!fn",
+                "!And",
+                "!If",
+                "!Not",
+                "!Equals",
+                "!Or",
+                "!FindInMap sequence",
+                "!Base64",
+                "!Cidr",
+                "!Ref",
+                "!Ref Scalar",
+                "!Sub",
+                "!GetAtt",
+                "!GetAZs",
+                "!ImportValue",
+                "!Select",
+                "!Split",
+                "!Join sequence"
+            },
             schemas = {
                 -- ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"]= "conf/**/*catalog*",
                 ["/home/u_paynen3/.caterpillar/kedro-catalog-0.17.json"]= "conf/**/*catalog*",
