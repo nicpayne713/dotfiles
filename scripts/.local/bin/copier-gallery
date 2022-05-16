@@ -11,8 +11,6 @@ fzf\
   --header $(pwd)\
   --preview='tree $COPIER_GALLERY_DIR/{} | lolcat'`
 
-echo "${template}"
-
 if [[ "$template" = "til" ]]
 then 
     save_dir="$HOME/personal/mental-data-lake/pages/til/"
@@ -20,7 +18,7 @@ else
     save_dir="."
 
 fi
-echo "${save_dir}"
+
 if [ -z "$template" ]
 then
     echo "no template was selected"
