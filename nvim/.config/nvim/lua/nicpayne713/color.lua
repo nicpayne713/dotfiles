@@ -6,8 +6,8 @@
 --  \___\___/|_|\___/|_|(_)_|\__,_|\__,_|
 --
 
--- nord is the winner so far
-vim.cmd("colorscheme nord")
+vim.cmd("set termguicolors")
+vim.cmd("colorscheme ariake")
 
 -- Transparency
 vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
