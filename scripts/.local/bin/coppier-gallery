@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# if COPIER_GALLERY_DIR is not set then ue ~/.copier_templates as a default
+if [ -z "$COPIER_GALLERY_DIR" ]
+then
+    COPIER_GALLERY_DIR="$HOME/.copier_templates"
+fi
+
+template=`ls $COPIER_GALLERY_DIR |\
+fzf\
+  --header $(pwd)\
+  --preview='tree $COPIER_GALLERY_DIR/{} | lolcat'`
+
+echo "${template}"
+
+if [[ "$template" = "til" ]]
+then 
+    save_dir="$HOME/personal/mental-data-lake/pages/til/"
+else
+    save_dir="."
+
+fi
+echo "${save_dir}"
+if [ -z "$template" ]
+then
+    echo "no template was selected"
+else
+    copier copy ${COPIER_GALLERY_DIR}/${template} ${save_dir} 
+fi
