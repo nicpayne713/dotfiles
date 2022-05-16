@@ -459,3 +459,5 @@ bind s display-popup -E "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(t
 # bind C-g "tmux new-window -n diff 'git diff ..main | nvim - -R +Diffurcate'" *1/ 
 # bind C-g display-popup -h 95% -w 95% -d '#{pane_current_path}' -E 'tmux new-window -n diff 'git diff ..main | nvim - -R +Diffurcate'
 
+# copier
+bind-key c-b popup -w 80% -d '#{pane_current_path}' "copier-gallery"
