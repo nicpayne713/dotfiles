@@ -14,6 +14,8 @@ fzf\
 if [[ "$template" = "til" ]]
 then 
     save_dir="$HOME/personal/mental-data-lake/pages/til/"
+elif [[ "$template" = "blog" ]]; then
+    save_dir="$HOME/personal/mental-data-lake/pages/blog/"
 else
     save_dir="."
 
