@@ -8,7 +8,7 @@
 "―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'arcticicestudio/nord-vim'
+Plug 'jim-at-jibba/ariake-vim-colors'
 
 Plug 'godlygeek/tabular'
 

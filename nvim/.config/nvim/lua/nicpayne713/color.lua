@@ -6,8 +6,8 @@
 --  \___\___/|_|\___/|_|(_)_|\__,_|\__,_|
 --
 
--- nord is the winner so far
-vim.cmd("colorscheme nord")
+vim.cmd("set termguicolors")
+vim.cmd("colorscheme ariake")
 
 -- Transparency
 vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
@@ -19,6 +19,6 @@ vim.cmd[[hi clear SignColumn ]]
 vim.cmd[[hi ColorColumn ctermbg=darkgrey guibg=darkgrey]]
 -- vim.cmd[[hi FoldColumn guibg=blue guifg=white ctermbg=red ctermfg=black]]  -- code folds
 vim.cmd[[hi Folded ctermfg=darkgray]]
-
-
+vim.cmd[[hi clear CursorLine]]
+vim.cmd[[hi CursorLine guifg=none guibg=black ]]
 
