@@ -61,6 +61,7 @@ require'lspconfig'.yamlls.setup{
             completion = true, 
             customTags = {  -- for CloudFormation
                 "!fn",
+                "!Equals",
                 "!And",
                 "!If",
                 "!Not",
