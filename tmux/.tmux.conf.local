@@ -442,6 +442,7 @@ tmux_conf_uninstall_plugins_on_reload=true
 set-option -sa terminal-overrides ',screen-256color-bce:RGB'
 bind C-u popup -E -h 95% -w 95%  "tmux new-session -A -s remananalytics_wiki 'cd ~/work/remananalytics.wiki && nvim'"
 bind C-i popup -E -h 95% -w 95%  "tmux new-session -A -s dotfiles -d '~/dotfiles' 'nvim'"
+bind C-o popup -E -h 99% -w 99%  "tmux new-session -A -s blog 'cd ~/personal/mental-data-lake && zsh'"  # need to source zsh for copier-gallery command
 bind C-n popup -E ~/.local/bin/ta 
 bind C-k display-popup -h 95% -w 95% -d '#{pane_current_path}' -E 'gitui'
 bind C-p display-popup -E -h 60% -w 60% "tmux new-session -A -s prompt 'cd && zsh'"
