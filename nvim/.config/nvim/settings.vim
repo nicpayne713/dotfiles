@@ -158,6 +158,9 @@ set cursorline
 " show the matching part of the pair for [] {} and ()
 set showmatch
 
+" cmp
+set completeopt=menu,menuone,noselect
+
 " set python style line folding
 let g:vim_markdown_folding_style_pythonic = 1
 
