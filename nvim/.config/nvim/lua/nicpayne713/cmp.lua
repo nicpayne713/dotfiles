@@ -15,6 +15,9 @@ cmp.setup({
       vim.fn["UltiSnips#Anon"](args.body)
     end,
   },
+  window = {
+      completion = cmp.config.window.bordered(),
+  },
   mapping = {
     -- ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
     -- ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -30,22 +33,15 @@ cmp.setup({
       select = true,
     })
   },
-sources = {
+  sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'treesitter' },
-
-    -- For vsnip user.
-    -- { name = 'vsnip' },
-
-    -- For luasnip user.
-    -- { name = 'luasnip' },
-
     -- For ultisnips user.
     { name = 'ultisnips' },
-
+}, {
     { name = 'buffer' },
-    { name = 'tmux' }
-  }
+    { name = 'tmux' },
+    })
 })
 
 local lspkind = require('lspkind')
