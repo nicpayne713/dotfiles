@@ -38,8 +38,8 @@ cmp.setup({
     { name = 'treesitter' },
     -- For ultisnips user.
     { name = 'ultisnips' },
-}, {
     { name = 'buffer' },
+    { name = 'path' },
     { name = 'tmux' },
     })
 })
