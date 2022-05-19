@@ -13,6 +13,8 @@ tag1:
   type: str
   choices:
     - python
+    - homelab
+    - zfs
     - linux
     - kedro
     - bash
@@ -41,6 +43,8 @@ tag3:
   type: str
   choices:
     - python
+    - homelab
+    - zfs
     - linux
     - kedro
     - bash
