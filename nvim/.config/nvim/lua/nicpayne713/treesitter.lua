@@ -1,7 +1,8 @@
 
 require'nvim-treesitter.configs'.setup {
   highlight = {
-      enable = { "python", "lua", "json" } 
+      -- enable = { "python", "lua", "json" } 
+      enable = true
   },
   playground = {
     enable = true,
