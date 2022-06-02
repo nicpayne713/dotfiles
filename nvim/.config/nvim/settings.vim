@@ -17,6 +17,8 @@ let g:ascii=[
 \ '  . :: ::::::::::: :::: :::::::: : :::: : :: :::: :::: :::: ',
 \ '  :.......:::..::::::::::::..:::::..:::::::::........::..:::::..::........:::..:::::..:::::..::::: ',
 \ '                                                                                                   ',
+\ '                                                                                                   ',
+\ '                                                                                                   ',
 \ '',
 \]
 " let g:ascii=[
@@ -111,6 +113,7 @@ let g:vsnip_filetypes = {}
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
+set runtimepath+=~/.config/nvim/my-snippets/UltiSnips/
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-e>"
 let g:UltiSnipsJumpBackwardTrigger="<C-i>"
@@ -157,6 +160,9 @@ set cursorline
 
 " show the matching part of the pair for [] {} and ()
 set showmatch
+
+" cmp
+set completeopt=menu,menuone,noselect
 
 " set python style line folding
 let g:vim_markdown_folding_style_pythonic = 1

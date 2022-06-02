@@ -27,33 +27,37 @@ require'lspconfig'.pylsp.setup{
 
 local configs = require 'lspconfig/configs'
 
-if not configs.kedro then
-    configs.kedro = {
-        default_config = {
-        cmd = {"kedro-lsp"};
-        filetypes = {"python"};
-        root_dir = function(fname)
-            return vim.fn.getcwd()
-        end;
-    };
-};
-end
-require'lspconfig'.kedro.setup{
-        on_attach=on_attach,
-        capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-    }
+-- configs.kedro = {
+--     default_config = {
+--     -- cmd = {"kedro-lsp"};
+--     cmd = {"/home/u_paynen3/third-party/kedro-lsp/.venv/kedro-lsp/bin/kedro-lsp"};
+--     filetypes = {"python"};
+--     root_dir = function(fname)
+--         return vim.fn.getcwd()
+--     end;
+--     };
+-- };
+
+-- require'lspconfig'.kedro.setup{
+--         on_attach=on_attach,
+--         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+--     }
 require'lspconfig'.jedi_language_server.setup{
         on_attach=on_attach,
         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
     }
-require'lspconfig'.bashls.setup{on_attach=on_attach,
+
+require'lspconfig'.bashls.setup{on_attach=on_attach, filetypes={"sh"},
         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 }
+
 require'lspconfig'.jsonls.setup{on_attach=on_attach,
         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
 }
+
 require'lspconfig'.yamlls.setup{
     on_attach=on_attach,
+    filetypes={"yml", "yaml"},
     capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
     settings = {
         yaml = {
@@ -82,8 +86,24 @@ require'lspconfig'.yamlls.setup{
             },
             schemas = {
                 -- ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"]= "conf/**/*catalog*",
-                ["/home/u_paynen3/.caterpillar/kedro-catalog-0.17.json"]= "conf/**/*catalog*",
-                ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+                {
+                    fileMatch="/conf/**/*catalog*",
+                    url="/home/u_paynen3/.caterpillar/kedro-catalog-0.17.json"
+                },
+                {
+                    fileMatch="/.azure-pipelines/*.yaml",
+                    url="/home/u_paynen3/.caterpillar/azure-pipelines-schema.json"
+                },
+                {
+                    fileMatch="/.azure-pipelines/*.yml",
+                    url="/home/u_paynen3/.caterpillar/azure-pipelines-schema.json"
+                },
+                -- ["/home/u_paynen3/.caterpillar/kedro-catalog-0.17.json"]= "/conf/**/*catalog*",
+                -- ["https://json.schemastore.org/github-workflow.json" ]= "/.github/workflows/*",
+                -- -- ["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"]= "/.azure-pipelines/*.yml",
+                -- ["/home/u_paynen3/.caterpillar/azure-pipelines-schema.json"]= "/.azure-pipelines/*.yml",
+                -- ["https://raw.githubusercontent.com/docker/compose/master/compose/config/config_schema_v3.7.json"]= "/docker-compose.yml",
+
             }
         }
     }

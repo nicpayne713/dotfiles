@@ -9,6 +9,8 @@ tag1:
   type: str
   choices:
     - python
+    - homelab
+    - zfs
     - linux
     - kedro
     - bash
@@ -23,20 +25,8 @@ tag2:
   type: str
   choices:
     - python
-    - linux
-    - kedro
-    - bash
-    - cli
-    - tmux
-    - webdev
-    - vim
-    - catalytic
-    - data
-
-tag3:
-  type: str
-  choices:
-    - python
+    - homelab
+    - zfs
     - linux
     - kedro
     - bash

@@ -18,6 +18,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'f3fora/cmp-spell'
 
 Plug 'waylonwalker/Telegraph.nvim'
 

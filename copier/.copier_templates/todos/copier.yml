@@ -14,6 +14,3 @@ tag1:
 
 tag2:
   type: str
-
-tag3:
-  type: str
