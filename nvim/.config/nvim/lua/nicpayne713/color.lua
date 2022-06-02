@@ -22,4 +22,4 @@ vim.cmd[[hi Folded ctermfg=darkgray]]
 vim.cmd[[hi clear CursorLine]]
 vim.cmd[[hi CursorLine guifg=none guibg=black ]]
 vim.cmd[[hi Search guifg=red guibg=none ]]
-
+vim.cmd[[hi TSConstant  guifg=lightmagenta ]]
