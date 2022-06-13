@@ -52,6 +52,7 @@ alias envrc="cp $HOME/dotfiles/.envrc ."
 
 alias azlogin="az login --allow-no-subscriptions"
 alias azcheckout='az repos pr checkout --id $(az repos pr list --output table | tail -n -2 | fzf | cut -d " " -f1)'
+alias azprojects="az repos list --project RA-Pipelines | vd -f json"
 alias awsrules="aws events list-rules | visidata -f json"
 alias nrows="awk 'END {print NR}'"
 
