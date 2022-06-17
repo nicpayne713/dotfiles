@@ -55,6 +55,7 @@ alias azcheckout='az repos pr checkout --id $(az repos pr list --output table | 
 alias azprojects="az repos list --project RA-Pipelines | vd -f json"
 alias awsrules="aws events list-rules | visidata -f json"
 alias nrows="awk 'END {print NR}'"
+alias trackme='git branch --set-upstream-to=origin/$(git symbolic-ref --short HEAD)'
 
 # temp git diff shortcuts
 alias gdiff="git diff main.. | nvim - -R +Diffurcate"
