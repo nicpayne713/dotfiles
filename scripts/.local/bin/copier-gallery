@@ -13,9 +13,9 @@ fzf\
 
 if [[ "$template" = "til" ]]
 then 
-    save_dir="$HOME/personal/mental-data-lake/pages/til/"
+    save_dir="$HOME/personal/pype.dev/pages/til/"
 elif [[ "$template" = "blog" ]]; then
-    save_dir="$HOME/personal/mental-data-lake/pages/blog/"
+    save_dir="$HOME/personal/pype.dev/pages/blog/"
 else
     save_dir="."
 
