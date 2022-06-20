@@ -68,9 +68,9 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # autoproxy for work
-if [ $POLYBAR_BAR=="work" ]; then
-    eval source auto_proxy
-fi
+# if [ $POLYBAR_BAR=="work" ]; then
+#     eval source auto_proxy
+# fi
 # source rust 
 source "$HOME/.cargo/env"
 # Jump into a tmux session
