@@ -50,6 +50,7 @@ alias cdp="cd ~/personal"
 alias deac="conda deactivate && conda deactivate"
 alias src="source ~/.zshrc"
 alias envrc="cp $HOME/dotfiles/.envrc ."
+alias inst="source ~/dotfiles/install"
 
 alias azlogin="az login --allow-no-subscriptions"
 alias azcheckout='az repos pr checkout --id $(az repos pr list --output table | tail -n -2 | fzf | cut -d " " -f1)'
