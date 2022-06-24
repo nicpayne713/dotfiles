@@ -1,9 +1,9 @@
 [user]
-	name = Nicholas Payne
-	email = nic.payne@protonmail.com
+    name = Pypeaday 
+    email = pypeaday@pm.me
 
 [credential]
-	helper = store
+    helper = store
 
 [core]
     editor = nvim
@@ -13,6 +13,6 @@
 [includeIf "gitdir:~/personal/"]
         path = ~/.gitconfig-personal
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [push]
-	default = current
+    default = current

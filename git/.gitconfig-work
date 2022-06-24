@@ -1,6 +1,6 @@
 [user]
-    name = Nicholas Payne
-    email = payne_nicholas@cat.com
+    name = Pypeaday 
+    email = pypeaday@pm.me
 
 [http "https://visualstudio.com"]
     proxy = http://proxy.cat.com:80
