@@ -27,6 +27,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # fuzzies
 a() {
      conda activate "$(conda info --envs | fzf | awk '{print $1}')"
@@ -68,9 +69,9 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # autoproxy for work
-if [ $POLYBAR_BAR=="work" ]; then
-    eval source auto_proxy
-fi
+# if [ $POLYBAR_BAR=="work" ]; then
+#     eval source auto_proxy
+# fi
 # source rust 
 source "$HOME/.cargo/env"
 # Jump into a tmux session
